@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Prime Interiors | Your Space Our Expertise</title>
+    
+    <!-- Primary Meta Tags (SEO) -->
+    <title>Art Prime Interiors | Premium Furniture & Decor in Nairobi</title>
+    <meta name="title" content="Art Prime Interiors | Premium Furniture & Decor in Nairobi">
+    <meta name="description" content="Discover our curated collection of premium interior pieces, furniture, and decor designed to elevate your living and working environments in Kenya.">
+    <meta name="keywords" content="interior design Nairobi, premium furniture Kenya, home decor, office furniture, Art Prime, interior pieces">
+    
+    <!-- Open Graph / WhatsApp Link Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://collinsiswerve.github.io/artprime-web/">
+    <meta property="og:title" content="Art Prime Interiors | Premium Furniture & Decor">
+    <meta property="og:description" content="Discover our curated collection of premium interior pieces designed to elevate your space.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,54 +35,71 @@
         body.modal-open { overflow: hidden; }
         .cart-open { transform: translateX(0%); }
         .cart-closed { transform: translateX(100%); }
+        /* Smooth scrolling padding for fixed header */
+        html { scroll-padding-top: 100px; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen pt-20 md:pt-24">
 
-    <!-- Navigation Bar -->
-    <nav class="absolute w-full top-0 z-50 py-6 px-6 md:px-12 text-white">
+    <!-- Sticky Navigation Bar -->
+    <nav class="fixed w-full top-0 z-50 py-4 px-6 md:px-12 text-white bg-navy shadow-xl transition-all">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
             <div class="flex items-center">
-                <img src="Artprime lg.jpg.jpeg" alt="Art Prime Interiors Logo" class="h-16 md:h-20 object-contain bg-white bg-opacity-90 p-2 rounded shadow-sm">
+                <img src="Artprime lg.jpg.jpeg" alt="Art Prime Interiors Logo" class="h-14 md:h-16 object-contain bg-white bg-opacity-90 p-2 rounded shadow-sm">
             </div>
             <div class="hidden md:flex space-x-10 text-xs md:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
                 <a href="#collections" class="hover:text-terra transition-colors">Collections</a>
                 <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-terra transition-colors">Studio</a>
                 <a href="#footer" class="hover:text-terra transition-colors">Contact</a>
             </div>
-            <div onclick="toggleCart()" class="flex items-center cursor-pointer hover:text-terra transition-colors duration-300 drop-shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div onclick="toggleCart()" class="flex items-center cursor-pointer hover:text-terra transition-colors duration-300 drop-shadow-md bg-white bg-opacity-10 px-4 py-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-                <span id="nav-cart-count" class="ml-2 font-semibold text-sm tracking-widest">CART (0)</span>
+                <span id="nav-cart-count" class="ml-2 font-semibold text-xs tracking-widest">CART (0)</span>
             </div>
         </div>
     </nav>
 
     <!-- Main Hero Section -->
-    <main class="relative h-screen flex flex-col items-center justify-center text-center px-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 bg-navy bg-opacity-40"></div>
-        <div class="relative z-10 flex flex-col items-center mt-16">
-            <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide drop-shadow-lg">Your Space <span class="text-terra italic">Our Expertise</span></h1>
+<main class="relative h-[85vh] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center mt-[-100px]" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">        <div class="absolute inset-0 bg-navy bg-opacity-50"></div>
+        <div class="relative z-10 flex flex-col items-center">
+            <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide drop-shadow-lg mt-10">Your Space <span class="text-terra italic">Our Expertise</span></h1>
             <p class="max-w-2xl text-gray-100 text-lg md:text-xl mb-10 font-light drop-shadow-md">Discover our curated collection of premium interior pieces designed to elevate your living and working environments.</p>
             <a href="#collections" class="bg-terra text-white px-10 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-white hover:text-navy transition-all duration-300 shadow-xl">View Collection</a>
         </div>
     </main>
 
-    <!-- Collections Section -->
-    <section id="collections" class="py-24 bg-white px-6">
+    <!-- Collections & Search Section -->
+    <section id="collections" class="py-20 bg-white px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif text-navy mb-8">Curated Collections</h2>
-                <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-sm tracking-widest uppercase font-semibold text-gray-400" id="category-tabs">
-                    <button onclick="renderProducts('All')" class="tab-btn hover:text-terra text-navy border-b-2 border-terra transition-colors pb-1">All Products</button>
-                    <button onclick="renderProducts('New Arrivals')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">New Arrivals</button>
-                    <button onclick="renderProducts('Best Sellers')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">Best Sellers</button>
-                    <button onclick="renderProducts('Sale')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">Sale</button>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif text-navy mb-10">Curated Collections</h2>
+                
+                <!-- Dynamic Filters & Search Bar -->
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-10 border-b border-gray-200 pb-6">
+                    <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-sm tracking-widest uppercase font-semibold text-gray-400" id="category-tabs">
+                        <button onclick="renderProducts('All')" class="tab-btn hover:text-terra text-navy border-b-2 border-terra transition-colors pb-1">All</button>
+                        <button onclick="renderProducts('New Arrivals')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">New Arrivals</button>
+                        <button onclick="renderProducts('Best Sellers')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">Best Sellers</button>
+                        <button onclick="renderProducts('Sale')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">Sale</button>
+                    </div>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative w-full lg:w-72">
+                        <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-4 text-sm text-navy focus:outline-none focus:border-terra transition-colors">
+                        <svg class="w-4 h-4 absolute left-4 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
                 </div>
             </div>
+            
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"></div>
+            <!-- Empty Search State -->
+            <div id="empty-state" class="hidden text-center py-20 text-gray-500 font-light">
+                <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p>No products found matching your search.</p>
+            </div>
         </div>
     </section>
 
@@ -82,8 +112,8 @@
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 bg-gray-100 min-h-[40vh] md:min-h-[60vh] relative">
                     <div id="modal-sale-badge"></div>
-                    <img id="modal-image" src="" alt="Product" class="absolute inset-0 w-full h-full object-cover">
-                    <!-- Dynamic Sold Out Overlay added here via JS -->
+                    <!-- The image sizing fix is applied right here -->
+                    <img id="modal-image" src="" alt="Product" class="absolute inset-0 w-full h-full object-contain p-6 md:p-10">
                     <div id="modal-sold-out-overlay"></div>
                 </div>
                 <div class="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
@@ -150,12 +180,13 @@
         </div>
     </footer>
 
-    <!-- GOOGLE SHEETS ENGINE -->
+    <!-- GOOGLE SHEETS & LOGIC ENGINE -->
     <script>
         let allProducts = [];
         let currentProduct = null;
         let selectedQty = 1;
         let cart = [];
+        let activeCategory = 'All';
 
         document.addEventListener("DOMContentLoaded", () => {
             const sheetId = '1A7pErif9dQMJ8Q-yclWOFDSgKzUNg4qLFbm6u-_Be5k';
@@ -178,7 +209,7 @@
                             isBestSeller: row.c[6] ? Boolean(row.c[6].v) : false,
                             isOnSale: row.c[7] ? Boolean(row.c[7].v) : false,
                             description: row.c[8] ? row.c[8].v : '',
-                            isSoldOut: row.c[9] ? Boolean(row.c[9].v) : false // Added Sold Out Flag
+                            isSoldOut: row.c[9] ? Boolean(row.c[9].v) : false
                         };
                     }).filter(p => typeof p.id === 'number');
 
@@ -187,9 +218,19 @@
                 .catch(error => console.error('Error reading Google Sheet:', error));
         });
 
+        // Search Bar Listener
+        function handleSearch() {
+            renderProducts(activeCategory);
+        }
+
         function renderProducts(category) {
+            activeCategory = category;
             const grid = document.getElementById('product-grid');
+            const emptyState = document.getElementById('empty-state');
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            
             grid.innerHTML = '';
+            
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 if(btn.innerText.includes(category) || (category === 'All' && btn.innerText.includes('All'))) {
                     btn.classList.add('text-navy', 'border-terra'); btn.classList.remove('border-transparent');
@@ -203,24 +244,35 @@
             if (category === 'Best Sellers') filtered = allProducts.filter(p => p.isBestSeller);
             if (category === 'Sale') filtered = allProducts.filter(p => p.isOnSale);
 
-            filtered.forEach(product => {
-                const priceHTML = product.isOnSale ? `<span class="line-through text-gray-400 text-sm mr-2">KES ${product.originalPrice.toLocaleString()}</span> KES ${product.salePrice.toLocaleString()}` : `KES ${product.originalPrice.toLocaleString()}`;
-                const badgeHTML = product.isOnSale && !product.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
-                
-                // Dynamic Sold Out HTML for the grid
-                const soldOutBadge = product.isSoldOut ? `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-5 py-2 uppercase tracking-widest text-sm font-semibold shadow-md border border-white">Sold Out</span></div>` : '';
+            // Apply text filtering
+            if (searchTerm !== "") {
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(searchTerm) || 
+                    p.description.toLowerCase().includes(searchTerm)
+                );
+            }
 
-                grid.innerHTML += `
-                    <div class="group cursor-pointer flex flex-col" onclick="openModal(${product.id})">
-                        <div class="relative overflow-hidden mb-4 bg-gray-100 aspect-[3/4]">
-                            ${soldOutBadge}
-                            ${badgeHTML}
-                            <img src="${product.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <h3 class="font-serif text-lg text-navy">${product.name}</h3>
-                        <p class="text-gray-600 mt-1">${priceHTML}</p>
-                    </div>`;
-            });
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                filtered.forEach(product => {
+                    const priceHTML = product.isOnSale ? `<span class="line-through text-gray-400 text-sm mr-2">KES ${product.originalPrice.toLocaleString()}</span> KES ${product.salePrice.toLocaleString()}` : `KES ${product.originalPrice.toLocaleString()}`;
+                    const badgeHTML = product.isOnSale && !product.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
+                    const soldOutBadge = product.isSoldOut ? `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-5 py-2 uppercase tracking-widest text-sm font-semibold shadow-md border border-white">Sold Out</span></div>` : '';
+
+                    grid.innerHTML += `
+                        <div class="group cursor-pointer flex flex-col" onclick="openModal(${product.id})">
+                            <div class="relative overflow-hidden mb-4 bg-gray-100 aspect-[3/4]">
+                                ${soldOutBadge}
+                                ${badgeHTML}
+                                <img src="${product.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <h3 class="font-serif text-lg text-navy">${product.name}</h3>
+                            <p class="text-gray-600 mt-1">${priceHTML}</p>
+                        </div>`;
+                });
+            }
         }
 
         function openModal(id) {
@@ -233,7 +285,6 @@
             document.getElementById('modal-price').innerHTML = currentProduct.isOnSale ? `<span class="line-through text-gray-400 text-lg mr-2">KES ${currentProduct.originalPrice.toLocaleString()}</span> KES ${currentProduct.salePrice.toLocaleString()}` : `KES ${currentProduct.originalPrice.toLocaleString()}`;
             document.getElementById('modal-sale-badge').innerHTML = currentProduct.isOnSale && !currentProduct.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
             
-            // Handle Sold Out Logic inside the Modal
             const btn = document.getElementById('add-to-cart-btn');
             const overlay = document.getElementById('modal-sold-out-overlay');
             if (currentProduct.isSoldOut) {
@@ -288,21 +339,30 @@
         }
 
         function addToCart() {
-            if (currentProduct.isSoldOut) return; // Failsafe
+            if (currentProduct.isSoldOut) return;
             const finalPrice = currentProduct.isOnSale ? currentProduct.salePrice : currentProduct.originalPrice;
-            cart.push({ id: currentProduct.id, name: currentProduct.name, price: finalPrice, qty: selectedQty, image: currentProduct.image });
+            
+            // Check if item is already in cart, if so, increase quantity instead of duplicating
+            const existingItem = cart.find(item => item.id === currentProduct.id);
+            if (existingItem) {
+                existingItem.qty += selectedQty;
+            } else {
+                cart.push({ id: currentProduct.id, name: currentProduct.name, price: finalPrice, qty: selectedQty, image: currentProduct.image });
+            }
+            
             updateCartUI();
             
-            const btn = document.getElementById('add-to-cart-btn');
-            btn.innerText = "✓ Added!";
-            btn.classList.add('bg-terra'); btn.classList.remove('bg-navy');
-            setTimeout(() => { btn.innerText = "Add to Cart"; btn.classList.remove('bg-terra'); btn.classList.add('bg-navy'); }, 2000);
+            // Close the product modal and instantly open the cart drawer for checkout flow
+            closeModal();
+            toggleCart(true); 
         }
 
-        function toggleCart() {
+        // Modified to allow forced opening
+        function toggleCart(forceOpen = false) {
             const drawer = document.getElementById('cart-drawer');
             const overlay = document.getElementById('cart-overlay');
-            if (drawer.classList.contains('cart-closed')) {
+            
+            if (drawer.classList.contains('cart-closed') || forceOpen) {
                 drawer.classList.remove('cart-closed'); drawer.classList.add('cart-open');
                 overlay.classList.remove('hidden'); document.body.classList.add('modal-open');
             } else {
@@ -311,6 +371,15 @@
                 if(document.getElementById('product-modal').classList.contains('hidden')){
                     document.body.classList.remove('modal-open');
                 }
+            }
+        }
+
+        function changeCartQty(index, amount) {
+            cart[index].qty += amount;
+            if (cart[index].qty <= 0) {
+                removeFromCart(index);
+            } else {
+                updateCartUI();
             }
         }
 
@@ -328,11 +397,19 @@
                         <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
                             <img src="${item.image}" class="w-20 h-20 object-cover bg-gray-100">
                             <div class="flex-1">
-                                <h4 class="font-serif text-navy text-sm">${item.name}</h4>
-                                <p class="text-xs text-gray-500 mt-1">Qty: ${item.qty} x KES ${item.price.toLocaleString()}</p>
+                                <h4 class="font-serif text-navy text-sm leading-tight">${item.name}</h4>
                                 <p class="text-terra font-semibold text-sm mt-1">KES ${(item.price * item.qty).toLocaleString()}</p>
+                                
+                                <!-- Dynamic Quantity Controllers inside Cart -->
+                                <div class="flex items-center mt-3 border border-gray-200 w-fit rounded">
+                                    <button onclick="changeCartQty(${index}, -1)" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition">-</button>
+                                    <span class="px-3 text-xs font-semibold text-navy">${item.qty}</span>
+                                    <button onclick="changeCartQty(${index}, 1)" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition">+</button>
+                                </div>
                             </div>
-                            <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button>
+                            <button onclick="removeFromCart(${index})" class="text-gray-300 hover:text-red-500 transition ml-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            </button>
                         </div>
                     `;
                 });
