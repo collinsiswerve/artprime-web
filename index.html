@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Meta Tags (SEO) -->
     <title>Art Prime Interiors | Premium Furniture & Decor in Nairobi</title>
     <meta name="title" content="Art Prime Interiors | Premium Furniture & Decor in Nairobi">
     <meta name="description" content="Discover our curated collection of premium interior pieces, furniture, and decor designed to elevate your living and working environments in Kenya.">
     <meta name="keywords" content="interior design Nairobi, premium furniture Kenya, home decor, office furniture, Art Prime, interior pieces">
     
-    <!-- Open Graph / WhatsApp Link Previews -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://collinsiswerve.github.io/artprime-web/">
     <meta property="og:title" content="Art Prime Interiors | Premium Furniture & Decor">
@@ -29,91 +27,112 @@
         }
     </script>
     <style>
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
         .fade-in { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         body.modal-open { overflow: hidden; }
         .cart-open { transform: translateX(0%); }
         .cart-closed { transform: translateX(100%); }
-        /* Smooth scrolling padding for fixed header */
-        html { scroll-padding-top: 100px; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen pt-20 md:pt-24">
 
-    <!-- Sticky Navigation Bar -->
-    <nav class="fixed w-full top-0 z-50 py-4 px-6 md:px-12 text-white bg-navy shadow-xl transition-all">
+    <!-- Sticky Navigation Bar with Frosted Glass Effect -->
+    <nav class="fixed w-full top-0 z-50 py-4 px-6 md:px-12 text-white bg-navy bg-opacity-90 backdrop-blur-md shadow-xl transition-all">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
-            <div class="flex items-center">
+            <a href="#" aria-label="Home" class="flex items-center">
                 <img src="Artprime lg.jpg.jpeg" alt="Art Prime Interiors Logo" class="h-14 md:h-16 object-contain bg-white bg-opacity-90 p-2 rounded shadow-sm">
-            </div>
+            </a>
+            
             <div class="hidden md:flex space-x-10 text-xs md:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
-                <a href="#collections" class="hover:text-terra transition-colors">Collections</a>
-                <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-terra transition-colors">Studio</a>
-                <a href="#footer" class="hover:text-terra transition-colors">Contact</a>
+                <a href="#collections" class="hover:text-terra transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Collections</a>
+                <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-terra transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Studio</a>
+                <a href="#footer" class="hover:text-terra transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Contact</a>
             </div>
-            <div onclick="toggleCart()" class="flex items-center cursor-pointer hover:text-terra transition-colors duration-300 drop-shadow-md bg-white bg-opacity-10 px-4 py-2 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-                <span id="nav-cart-count" class="ml-2 font-semibold text-xs tracking-widest">CART (0)</span>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="flex items-center hover:text-terra transition-colors duration-300 drop-shadow-md bg-white bg-opacity-10 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="nav-cart-count" class="ml-2 font-semibold text-xs tracking-widest">CART (0)</span>
+                </button>
+                
+                <!-- Mobile Hamburger Icon -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-terra focus:outline-none p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-navy border-t border-gray-700 flex flex-col shadow-xl z-50">
+            <a href="#collections" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-terra uppercase tracking-widest text-sm border-b border-gray-800">Collections</a>
+            <a href="#" onclick="alert('Studio is coming soon.'); toggleMobileMenu(); return false;" class="px-6 py-4 text-white hover:text-terra uppercase tracking-widest text-sm border-b border-gray-800">Studio</a>
+            <a href="#footer" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-terra uppercase tracking-widest text-sm">Contact</a>
         </div>
     </nav>
 
-    <!-- Main Hero Section -->
-<main class="relative h-[85vh] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center mt-[-100px]" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">        <div class="absolute inset-0 bg-navy bg-opacity-50"></div>
-        <div class="relative z-10 flex flex-col items-center">
-            <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide drop-shadow-lg mt-10">Your Space <span class="text-terra italic">Our Expertise</span></h1>
-            <p class="max-w-2xl text-gray-100 text-lg md:text-xl mb-10 font-light drop-shadow-md">Discover our curated collection of premium interior pieces designed to elevate your living and working environments.</p>
-            <a href="#collections" class="bg-terra text-white px-10 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-white hover:text-navy transition-all duration-300 shadow-xl">View Collection</a>
-        </div>
-    </main>
+    <!-- Content wrapped in Main for accessibility landmarks -->
+    <main>
+        <section class="relative h-[85vh] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center mt-[-100px]" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="absolute inset-0 bg-navy bg-opacity-50"></div>
+            <div class="relative z-10 flex flex-col items-center">
+                <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide drop-shadow-lg mt-10">Your Space <span class="text-terra italic">Our Expertise</span></h1>
+                <p class="max-w-2xl text-gray-100 text-lg md:text-xl mb-10 font-light drop-shadow-md">Discover our curated collection of premium interior pieces designed to elevate your living and working environments.</p>
+                <a href="#collections" class="bg-terra text-white px-10 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-white hover:text-navy transition-all duration-300 shadow-xl focus:outline-none focus:ring-4 focus:ring-white">View Collection</a>
+            </div>
+        </section>
 
-    <!-- Collections & Search Section -->
-    <section id="collections" class="py-20 bg-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-serif text-navy mb-10">Curated Collections</h2>
-                
-                <!-- Dynamic Filters & Search Bar -->
-                <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-10 border-b border-gray-200 pb-6">
-                    <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-sm tracking-widest uppercase font-semibold text-gray-400" id="category-tabs">
-                        <button onclick="renderProducts('All')" class="tab-btn hover:text-terra text-navy border-b-2 border-terra transition-colors pb-1">All</button>
-                        <button onclick="renderProducts('New Arrivals')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">New Arrivals</button>
-                        <button onclick="renderProducts('Best Sellers')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">Best Sellers</button>
-                        <button onclick="renderProducts('Sale')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent">Sale</button>
-                    </div>
+        <!-- Collections & Search Section -->
+        <section id="collections" class="py-20 bg-white px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif text-navy mb-10">Curated Collections</h2>
                     
-                    <!-- Search Bar -->
-                    <div class="relative w-full lg:w-72">
-                        <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-4 text-sm text-navy focus:outline-none focus:border-terra transition-colors">
-                        <svg class="w-4 h-4 absolute left-4 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-10 border-b border-gray-200 pb-6">
+                        <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-sm tracking-widest uppercase font-semibold text-gray-600" id="category-tabs">
+                            <button onclick="renderProducts('All')" class="tab-btn hover:text-terra text-navy border-b-2 border-terra transition-colors pb-1 focus:outline-none focus:ring-2 focus:ring-terra">All</button>
+                            <button onclick="renderProducts('New Arrivals')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent focus:outline-none focus:ring-2 focus:ring-terra">New Arrivals</button>
+                            <button onclick="renderProducts('Best Sellers')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent focus:outline-none focus:ring-2 focus:ring-terra">Best Sellers</button>
+                            <button onclick="renderProducts('Sale')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent focus:outline-none focus:ring-2 focus:ring-terra">Sale</button>
+                        </div>
+                        
+                        <!-- Search uses oninput to capture pasting and autofill -->
+                        <div class="relative w-full lg:w-72">
+                            <input type="text" id="search-input" aria-label="Search products" oninput="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-4 text-sm text-navy focus:outline-none focus:border-terra focus:ring-1 focus:ring-terra transition-colors">
+                            <svg class="w-4 h-4 absolute left-4 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Loading State -->
+                <div id="loading-state" class="text-center py-20">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-terra mx-auto mb-4"></div>
+                    <p class="text-gray-600 font-light tracking-widest uppercase text-sm">Loading Catalog...</p>
+                </div>
+
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"></div>
+                
+                <div id="empty-state" class="hidden text-center py-20 text-gray-500 font-light">
+                    <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <p>No products found matching your search.</p>
+                </div>
             </div>
-            
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"></div>
-            <!-- Empty Search State -->
-            <div id="empty-state" class="hidden text-center py-20 text-gray-500 font-light">
-                <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <p>No products found matching your search.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Detailed Product Modal -->
-    <div id="product-modal" class="fixed inset-0 z-[100] hidden bg-navy bg-opacity-90 flex justify-center items-center p-4 md:p-10 fade-in">
+    <div id="product-modal" role="dialog" aria-modal="true" class="fixed inset-0 z-[100] hidden bg-navy bg-opacity-90 flex justify-center items-center p-4 md:p-10 fade-in">
         <div class="bg-white w-full max-w-6xl max-h-full overflow-y-auto flex flex-col relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-500 hover:text-terra z-10 bg-white p-2 rounded-full shadow-sm">
+            <button onclick="closeModal()" aria-label="Close product details" class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-500 hover:text-terra z-10 bg-white p-3 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-terra">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 bg-gray-100 min-h-[40vh] md:min-h-[60vh] relative">
                     <div id="modal-sale-badge"></div>
-                    <!-- The image sizing fix is applied right here -->
-                    <img id="modal-image" src="" alt="Product" class="absolute inset-0 w-full h-full object-contain p-6 md:p-10">
+                    <img id="modal-image" src="" alt="Product details" class="absolute inset-0 w-full h-full object-contain p-6 md:p-10">
                     <div id="modal-sold-out-overlay"></div>
                 </div>
                 <div class="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
@@ -121,13 +140,13 @@
                     <p id="modal-price" class="text-xl text-terra mb-6 font-semibold">Price</p>
                     <div class="w-12 h-1 bg-terra mb-6"></div>
                     <p id="modal-desc" class="text-gray-600 mb-10 leading-relaxed font-light">Desc</p>
-                    <div class="flex items-center gap-6 mb-8">
-                        <div class="flex items-center border border-gray-300 text-navy font-semibold">
-                            <button onclick="updateQty(-1)" class="px-4 py-3 hover:bg-gray-100 transition">-</button>
-                            <span id="modal-qty" class="px-4 py-3 w-12 text-center">1</span>
-                            <button onclick="updateQty(1)" class="px-4 py-3 hover:bg-gray-100 transition">+</button>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
+                        <div class="flex items-center border border-gray-300 text-navy font-semibold w-full sm:w-auto justify-center">
+                            <button onclick="updateQty(-1)" aria-label="Decrease quantity" class="px-5 py-4 hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-inset focus:ring-terra">-</button>
+                            <span id="modal-qty" class="px-5 py-4 w-12 text-center">1</span>
+                            <button onclick="updateQty(1)" aria-label="Increase quantity" class="px-5 py-4 hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-inset focus:ring-terra">+</button>
                         </div>
-                        <button id="add-to-cart-btn" onclick="addToCart()" class="bg-navy text-white px-8 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-terra transition-colors flex-1 shadow-md">
+                        <button id="add-to-cart-btn" onclick="addToCart()" class="w-full sm:flex-1 bg-navy text-white px-8 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-terra transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2">
                             Add to Cart
                         </button>
                     </div>
@@ -142,10 +161,12 @@
 
     <!-- CART SIDE DRAWER -->
     <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-navy bg-opacity-50 z-[110] hidden fade-in"></div>
-    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white z-[120] shadow-2xl transition-transform duration-300 ease-in-out cart-closed flex flex-col">
+    <div id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white z-[120] shadow-2xl transition-transform duration-300 ease-in-out cart-closed flex flex-col">
         <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-light">
             <h2 class="text-xl font-serif text-navy">Your Cart</h2>
-            <button onclick="toggleCart()" class="text-gray-500 hover:text-terra"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <button onclick="toggleCart()" aria-label="Close cart" class="text-gray-500 hover:text-terra p-2 focus:outline-none focus:ring-2 focus:ring-terra rounded-full">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
         </div>
         <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-6"></div>
         <div class="p-6 border-t border-gray-200 bg-light">
@@ -153,10 +174,11 @@
                 <span>Subtotal:</span>
                 <span id="cart-subtotal">KES 0</span>
             </div>
-            <button onclick="checkoutWhatsApp()" class="w-full bg-terra text-white py-4 uppercase tracking-widest text-sm font-semibold hover:bg-navy transition-colors flex items-center justify-center gap-2 shadow-lg">
+            <button id="checkout-btn" onclick="checkoutWhatsApp()" class="w-full bg-terra text-white py-4 uppercase tracking-widest text-sm font-semibold hover:bg-navy transition-colors flex items-center justify-center gap-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.646.843 5.116 2.378 7.214l-1.579 5.768 5.897-1.547a11.96 11.96 0 0 0 5.335 1.258h.005c6.645 0 12.03-5.385 12.03-12.03S18.676 0 12.031 0zm0 22.185h-.004a9.92 9.92 0 0 1-5.068-1.39l-.363-.215-3.766.988 1.006-3.673-.236-.376A9.92 9.92 0 0 1 2.046 12.03c0-5.503 4.478-9.981 9.985-9.981 2.668 0 5.174 1.04 7.059 2.926A9.95 9.95 0 0 1 22.016 12.03c0 5.503-4.478 9.98-9.985 9.98zm5.474-7.48c-.3-.15-1.775-.876-2.05-.976-.275-.1-.476-.15-.676.15-.2.3-.776.976-.951 1.176-.175.2-.35.226-.65.076-1.503-.76-2.583-1.326-3.568-2.65-.2-.275.051-.25.326-.775.125-.25.075-.476-.05-.726-.176-.35-.676-1.626-.926-2.226-.25-.6-.501-.525-.676-.525h-.576c-.2 0-.526.075-.8.375-.275.3-1.05 1.026-1.05 2.502 0 1.476 1.075 2.902 1.226 3.102.15.2 2.1 3.203 5.078 4.478.71.304 1.264.486 1.696.622.713.225 1.363.193 1.876.117.575-.084 1.775-.726 2.025-1.426.25-.7.25-1.302.175-1.426-.075-.125-.275-.2-.575-.35z"/></svg>
                 Order via WhatsApp
             </button>
+            <p class="text-xs text-gray-500 text-center mt-3 font-light">Payment and delivery will be finalized via WhatsApp.</p>
         </div>
     </div>
 
@@ -168,12 +190,13 @@
                 <p class="text-sm font-light leading-relaxed max-w-xs">Premium interior design and curated decor pieces to transform your residential and commercial spaces.</p>
             </div>
             <div class="flex flex-col items-center md:items-start">
-                <h3 class="text-terra tracking-widest text-sm uppercase font-semibold mb-4">Contact Us</h3>
-                <p class="text-sm font-light mb-2">📞 07 48 649 103</p>
-                <p class="text-sm font-light">✉️ artprimeinteriorsltd@gmail.com</p>
+                <h3 class="text-white tracking-widest text-sm uppercase font-semibold mb-4">Contact Us</h3>
+                <!-- Fixed actionable links -->
+                <a href="tel:+254748649103" class="text-sm font-light mb-2 hover:text-terra transition-colors focus:outline-none focus:ring-1 focus:ring-terra">📞 07 48 649 103</a>
+                <a href="mailto:artprimeinteriorsltd@gmail.com" class="text-sm font-light hover:text-terra transition-colors focus:outline-none focus:ring-1 focus:ring-terra">✉️ artprimeinteriorsltd@gmail.com</a>
             </div>
             <div class="flex flex-col items-center md:items-start">
-                <h3 class="text-terra tracking-widest text-sm uppercase font-semibold mb-4">Visit Us</h3>
+                <h3 class="text-white tracking-widest text-sm uppercase font-semibold mb-4">Visit Us</h3>
                 <p class="text-sm font-light mb-2">Spur Mall, Thika Road</p>
                 <p class="text-sm font-light">Nairobi, Kenya</p>
             </div>
@@ -185,10 +208,14 @@
         let allProducts = [];
         let currentProduct = null;
         let selectedQty = 1;
-        let cart = [];
+        // Initialize cart from localStorage so it survives page refreshes
+        let cart = JSON.parse(localStorage.getItem('artPrimeCart')) || [];
         let activeCategory = 'All';
 
         document.addEventListener("DOMContentLoaded", () => {
+            // Update cart UI on initial load to handle empty states and restored items
+            updateCartUI();
+
             const sheetId = '1A7pErif9dQMJ8Q-yclWOFDSgKzUNg4qLFbm6u-_Be5k';
             const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
 
@@ -213,12 +240,39 @@
                         };
                     }).filter(p => typeof p.id === 'number');
 
+                    document.getElementById('loading-state').classList.add('hidden');
                     renderProducts('All');
                 })
-                .catch(error => console.error('Error reading Google Sheet:', error));
+                .catch(error => {
+                    console.error('Error reading Google Sheet:', error);
+                    document.getElementById('loading-state').innerHTML = '<p class="text-red-500">Failed to load catalog. Please refresh the page.</p>';
+                });
         });
 
-        // Search Bar Listener
+        // Global Escape Key Listener for Accessibility
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!document.getElementById('product-modal').classList.contains('hidden')) {
+                    closeModal();
+                }
+                if (!document.getElementById('cart-drawer').classList.contains('cart-closed')) {
+                    toggleCart(false);
+                }
+            }
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.querySelector('button[aria-controls="mobile-menu"]');
+            if(menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                menu.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
         function handleSearch() {
             renderProducts(activeCategory);
         }
@@ -244,7 +298,6 @@
             if (category === 'Best Sellers') filtered = allProducts.filter(p => p.isBestSeller);
             if (category === 'Sale') filtered = allProducts.filter(p => p.isOnSale);
 
-            // Apply text filtering
             if (searchTerm !== "") {
                 filtered = filtered.filter(p => 
                     p.name.toLowerCase().includes(searchTerm) || 
@@ -262,15 +315,15 @@
                     const soldOutBadge = product.isSoldOut ? `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-5 py-2 uppercase tracking-widest text-sm font-semibold shadow-md border border-white">Sold Out</span></div>` : '';
 
                     grid.innerHTML += `
-                        <div class="group cursor-pointer flex flex-col" onclick="openModal(${product.id})">
-                            <div class="relative overflow-hidden mb-4 bg-gray-100 aspect-[3/4]">
+                        <button onclick="openModal(${product.id})" class="text-left w-full group cursor-pointer flex flex-col focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2 rounded" aria-label="View details for ${product.name}">
+                            <div class="relative w-full overflow-hidden mb-4 bg-gray-100 aspect-[3/4]">
                                 ${soldOutBadge}
                                 ${badgeHTML}
-                                <img src="${product.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                <img src="${product.image}" alt="${product.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             </div>
                             <h3 class="font-serif text-lg text-navy">${product.name}</h3>
                             <p class="text-gray-600 mt-1">${priceHTML}</p>
-                        </div>`;
+                        </button>`;
                 });
             }
         }
@@ -282,6 +335,7 @@
             document.getElementById('modal-title').innerText = currentProduct.name;
             document.getElementById('modal-desc').innerText = currentProduct.description;
             document.getElementById('modal-image').src = currentProduct.image;
+            document.getElementById('modal-image').alt = currentProduct.name;
             document.getElementById('modal-price').innerHTML = currentProduct.isOnSale ? `<span class="line-through text-gray-400 text-lg mr-2">KES ${currentProduct.originalPrice.toLocaleString()}</span> KES ${currentProduct.salePrice.toLocaleString()}` : `KES ${currentProduct.originalPrice.toLocaleString()}`;
             document.getElementById('modal-sale-badge').innerHTML = currentProduct.isOnSale && !currentProduct.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
             
@@ -306,11 +360,14 @@
             renderRecommendations(id);
             document.getElementById('product-modal').classList.remove('hidden');
             document.body.classList.add('modal-open');
+            document.getElementById('add-to-cart-btn').focus();
         }
 
         function closeModal() {
             document.getElementById('product-modal').classList.add('hidden');
-            document.body.classList.remove('modal-open');
+            if (document.getElementById('cart-drawer').classList.contains('cart-closed')) {
+                document.body.classList.remove('modal-open');
+            }
         }
 
         function updateQty(change) {
@@ -327,14 +384,14 @@
                 const price = p.isOnSale ? p.salePrice : p.originalPrice;
                 const soldOutRecBadge = p.isSoldOut ? `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-3 py-1 uppercase tracking-widest text-[10px] font-semibold shadow-md border border-white">Sold Out</span></div>` : '';
                 recGrid.innerHTML += `
-                    <div class="group cursor-pointer" onclick="openModal(${p.id})">
-                        <div class="relative overflow-hidden mb-3 bg-gray-100 aspect-square">
+                    <button onclick="openModal(${p.id})" class="text-left w-full group cursor-pointer focus:outline-none focus:ring-2 focus:ring-terra rounded" aria-label="View ${p.name}">
+                        <div class="relative overflow-hidden mb-3 bg-gray-100 aspect-square w-full">
                             ${soldOutRecBadge}
-                            <img src="${p.image}" class="w-full h-full object-cover group-hover:scale-105 transition">
+                            <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition">
                         </div>
                         <h4 class="font-serif text-navy">${p.name}</h4>
                         <p class="text-sm text-gray-500">KES ${price.toLocaleString()}</p>
-                    </div>`;
+                    </button>`;
             });
         }
 
@@ -342,7 +399,6 @@
             if (currentProduct.isSoldOut) return;
             const finalPrice = currentProduct.isOnSale ? currentProduct.salePrice : currentProduct.originalPrice;
             
-            // Check if item is already in cart, if so, increase quantity instead of duplicating
             const existingItem = cart.find(item => item.id === currentProduct.id);
             if (existingItem) {
                 existingItem.qty += selectedQty;
@@ -351,20 +407,20 @@
             }
             
             updateCartUI();
-            
-            // Close the product modal and instantly open the cart drawer for checkout flow
             closeModal();
             toggleCart(true); 
         }
 
-        // Modified to allow forced opening
         function toggleCart(forceOpen = false) {
             const drawer = document.getElementById('cart-drawer');
             const overlay = document.getElementById('cart-overlay');
             
-            if (drawer.classList.contains('cart-closed') || forceOpen) {
-                drawer.classList.remove('cart-closed'); drawer.classList.add('cart-open');
-                overlay.classList.remove('hidden'); document.body.classList.add('modal-open');
+            if (drawer.classList.contains('cart-closed') || forceOpen === true) {
+                if (forceOpen !== false) {
+                    drawer.classList.remove('cart-closed'); drawer.classList.add('cart-open');
+                    overlay.classList.remove('hidden'); document.body.classList.add('modal-open');
+                    document.getElementById('checkout-btn').focus();
+                }
             } else {
                 drawer.classList.add('cart-closed'); drawer.classList.remove('cart-open');
                 overlay.classList.add('hidden');
@@ -384,30 +440,47 @@
         }
 
         function updateCartUI() {
+            // Save to localStorage every time the cart updates
+            localStorage.setItem('artPrimeCart', JSON.stringify(cart));
+            
             const cartItemsContainer = document.getElementById('cart-items');
+            const checkoutBtn = document.getElementById('checkout-btn');
             cartItemsContainer.innerHTML = '';
             let totalItems = 0; let subtotal = 0;
 
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center mt-10">Your cart is empty.</p>';
+                cartItemsContainer.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-gray-500">
+                        <svg class="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <p class="font-light">Your cart is empty.</p>
+                        <button onclick="toggleCart()" class="mt-6 border-b border-terra text-terra hover:text-navy transition-colors">Continue Shopping</button>
+                    </div>`;
+                checkoutBtn.disabled = true;
+                checkoutBtn.classList.replace('bg-terra', 'bg-gray-300');
+                checkoutBtn.classList.remove('hover:bg-navy');
+                checkoutBtn.classList.add('cursor-not-allowed');
             } else {
+                checkoutBtn.disabled = false;
+                checkoutBtn.classList.replace('bg-gray-300', 'bg-terra');
+                checkoutBtn.classList.add('hover:bg-navy');
+                checkoutBtn.classList.remove('cursor-not-allowed');
+
                 cart.forEach((item, index) => {
                     totalItems += item.qty; subtotal += item.price * item.qty;
                     cartItemsContainer.innerHTML += `
                         <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
-                            <img src="${item.image}" class="w-20 h-20 object-cover bg-gray-100">
+                            <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover bg-gray-100">
                             <div class="flex-1">
                                 <h4 class="font-serif text-navy text-sm leading-tight">${item.name}</h4>
                                 <p class="text-terra font-semibold text-sm mt-1">KES ${(item.price * item.qty).toLocaleString()}</p>
                                 
-                                <!-- Dynamic Quantity Controllers inside Cart -->
                                 <div class="flex items-center mt-3 border border-gray-200 w-fit rounded">
-                                    <button onclick="changeCartQty(${index}, -1)" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition">-</button>
+                                    <button onclick="changeCartQty(${index}, -1)" aria-label="Decrease quantity" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition focus:outline-none focus:ring-1 focus:ring-terra">-</button>
                                     <span class="px-3 text-xs font-semibold text-navy">${item.qty}</span>
-                                    <button onclick="changeCartQty(${index}, 1)" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition">+</button>
+                                    <button onclick="changeCartQty(${index}, 1)" aria-label="Increase quantity" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition focus:outline-none focus:ring-1 focus:ring-terra">+</button>
                                 </div>
                             </div>
-                            <button onclick="removeFromCart(${index})" class="text-gray-300 hover:text-red-500 transition ml-2">
+                            <button onclick="removeFromCart(${index})" aria-label="Remove ${item.name} from cart" class="text-gray-300 hover:text-red-500 transition ml-2 p-2 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                             </button>
                         </div>
@@ -424,7 +497,7 @@
         }
 
         function checkoutWhatsApp() {
-            if (cart.length === 0) return alert("Your cart is empty. Please add items before checking out.");
+            if (cart.length === 0) return;
             let message = "Hello Art Prime, I would like to place an order:\n\n";
             let subtotal = 0;
             cart.forEach(item => {
