@@ -38,7 +38,7 @@
 </head>
 <body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen pt-20 md:pt-24">
 
-    <!-- Sticky Navigation Bar with Frosted Glass Effect -->
+    <!-- Sticky Navigation Bar -->
     <nav class="fixed w-full top-0 z-50 py-4 px-6 md:px-12 text-white bg-navy bg-opacity-90 backdrop-blur-md shadow-xl transition-all">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
             <a href="#" aria-label="Home" class="flex items-center">
@@ -46,35 +46,32 @@
             </a>
             
             <div class="hidden md:flex space-x-10 text-xs md:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
-                <a href="#collections" class="hover:text-terra transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Collections</a>
-                <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-terra transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Studio</a>
-                <a href="#footer" class="hover:text-terra transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Contact</a>
+                <a href="#collections" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Collections</a>
+                <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Studio</a>
+                <a href="#footer" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Contact</a>
             </div>
 
             <div class="flex items-center gap-4">
-                <button onclick="toggleCart()" class="flex items-center hover:text-terra transition-colors duration-300 drop-shadow-md bg-white bg-opacity-10 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
+                <button onclick="toggleCart()" class="flex items-center hover:text-gray-300 transition-colors duration-300 drop-shadow-md bg-white bg-opacity-10 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                     <span id="nav-cart-count" class="ml-2 font-semibold text-xs tracking-widest">CART (0)</span>
                 </button>
                 
-                <!-- Mobile Hamburger Icon -->
-                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-terra focus:outline-none p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-gray-300 focus:outline-none p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-navy border-t border-gray-700 flex flex-col shadow-xl z-50">
-            <a href="#collections" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-terra uppercase tracking-widest text-sm border-b border-gray-800">Collections</a>
-            <a href="#" onclick="alert('Studio is coming soon.'); toggleMobileMenu(); return false;" class="px-6 py-4 text-white hover:text-terra uppercase tracking-widest text-sm border-b border-gray-800">Studio</a>
-            <a href="#footer" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-terra uppercase tracking-widest text-sm">Contact</a>
+            <a href="#collections" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-gray-300 uppercase tracking-widest text-sm border-b border-gray-800">Collections</a>
+            <a href="#" onclick="alert('Studio is coming soon.'); toggleMobileMenu(); return false;" class="px-6 py-4 text-white hover:text-gray-300 uppercase tracking-widest text-sm border-b border-gray-800">Studio</a>
+            <a href="#footer" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-gray-300 uppercase tracking-widest text-sm">Contact</a>
         </div>
     </nav>
 
-    <!-- Content wrapped in Main for accessibility landmarks -->
     <main>
         <section class="relative h-[85vh] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center mt-[-100px]" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
             <div class="absolute inset-0 bg-navy bg-opacity-50"></div>
@@ -85,7 +82,6 @@
             </div>
         </section>
 
-        <!-- Collections & Search Section -->
         <section id="collections" class="py-20 bg-white px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-12">
@@ -99,7 +95,6 @@
                             <button onclick="renderProducts('Sale')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent focus:outline-none focus:ring-2 focus:ring-terra">Sale</button>
                         </div>
                         
-                        <!-- Search uses oninput to capture pasting and autofill -->
                         <div class="relative w-full lg:w-72">
                             <input type="text" id="search-input" aria-label="Search products" oninput="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-4 text-sm text-navy focus:outline-none focus:border-terra focus:ring-1 focus:ring-terra transition-colors">
                             <svg class="w-4 h-4 absolute left-4 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -107,7 +102,6 @@
                     </div>
                 </div>
                 
-                <!-- Loading State -->
                 <div id="loading-state" class="text-center py-20">
                     <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-terra mx-auto mb-4"></div>
                     <p class="text-gray-600 font-light tracking-widest uppercase text-sm">Loading Catalog...</p>
@@ -124,7 +118,7 @@
     </main>
 
     <!-- Detailed Product Modal -->
-    <div id="product-modal" role="dialog" aria-modal="true" class="fixed inset-0 z-[100] hidden bg-navy bg-opacity-90 flex justify-center items-center p-4 md:p-10 fade-in">
+    <div id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[100] hidden bg-navy bg-opacity-90 flex justify-center items-center p-4 md:p-10 fade-in">
         <div class="bg-white w-full max-w-6xl max-h-full overflow-y-auto flex flex-col relative shadow-2xl">
             <button onclick="closeModal()" aria-label="Close product details" class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-500 hover:text-terra z-10 bg-white p-3 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-terra">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -160,11 +154,11 @@
     </div>
 
     <!-- CART SIDE DRAWER -->
-    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-navy bg-opacity-50 z-[110] hidden fade-in"></div>
+    <div id="cart-overlay" onclick="toggleCart(false)" class="fixed inset-0 bg-navy bg-opacity-50 z-[110] hidden fade-in"></div>
     <div id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white z-[120] shadow-2xl transition-transform duration-300 ease-in-out cart-closed flex flex-col">
         <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-light">
             <h2 class="text-xl font-serif text-navy">Your Cart</h2>
-            <button onclick="toggleCart()" aria-label="Close cart" class="text-gray-500 hover:text-terra p-2 focus:outline-none focus:ring-2 focus:ring-terra rounded-full">
+            <button onclick="toggleCart(false)" aria-label="Close cart" class="text-gray-500 hover:text-terra p-2 focus:outline-none focus:ring-2 focus:ring-terra rounded-full">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
@@ -191,9 +185,8 @@
             </div>
             <div class="flex flex-col items-center md:items-start">
                 <h3 class="text-white tracking-widest text-sm uppercase font-semibold mb-4">Contact Us</h3>
-                <!-- Fixed actionable links -->
-                <a href="tel:+254748649103" class="text-sm font-light mb-2 hover:text-terra transition-colors focus:outline-none focus:ring-1 focus:ring-terra">📞 07 48 649 103</a>
-                <a href="mailto:artprimeinteriorsltd@gmail.com" class="text-sm font-light hover:text-terra transition-colors focus:outline-none focus:ring-1 focus:ring-terra">✉️ artprimeinteriorsltd@gmail.com</a>
+                <a href="tel:+254748649103" class="text-sm font-light mb-2 hover:text-gray-300 transition-colors focus:outline-none focus:ring-1 focus:ring-terra">📞 07 48 649 103</a>
+                <a href="mailto:artprimeinteriorsltd@gmail.com" class="text-sm font-light hover:text-gray-300 transition-colors focus:outline-none focus:ring-1 focus:ring-terra">✉️ artprimeinteriorsltd@gmail.com</a>
             </div>
             <div class="flex flex-col items-center md:items-start">
                 <h3 class="text-white tracking-widest text-sm uppercase font-semibold mb-4">Visit Us</h3>
@@ -208,19 +201,34 @@
         let allProducts = [];
         let currentProduct = null;
         let selectedQty = 1;
-        // Initialize cart from localStorage so it survives page refreshes
-        let cart = JSON.parse(localStorage.getItem('artPrimeCart')) || [];
+        let cart = [];
         let activeCategory = 'All';
 
+        // Protected Cart Loading
+        try {
+            const savedCart = localStorage.getItem('artPrimeCart');
+            if (savedCart) {
+                const parsed = JSON.parse(savedCart);
+                if (Array.isArray(parsed)) {
+                    cart = parsed.filter(item => item && item.id && item.qty > 0);
+                }
+            }
+        } catch (e) {
+            console.error('Failed to parse cart storage:', e);
+            localStorage.removeItem('artPrimeCart');
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
-            // Update cart UI on initial load to handle empty states and restored items
             updateCartUI();
 
             const sheetId = '1A7pErif9dQMJ8Q-yclWOFDSgKzUNg4qLFbm6u-_Be5k';
             const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
 
             fetch(url)
-                .then(res => res.text())
+                .then(res => {
+                    if (!res.ok) throw new Error("Network response was not OK");
+                    return res.text();
+                })
                 .then(text => {
                     const jsonStr = text.substring(47).slice(0, -2);
                     const json = JSON.parse(jsonStr);
@@ -240,16 +248,34 @@
                         };
                     }).filter(p => typeof p.id === 'number');
 
+                    // Data Reconciliation: Update saved cart with live pricing and availability
+                    cart = cart.map(cartItem => {
+                        const liveProduct = allProducts.find(p => p.id === cartItem.id);
+                        if (liveProduct && !liveProduct.isSoldOut) {
+                            return {
+                                ...cartItem,
+                                price: liveProduct.isOnSale ? liveProduct.salePrice : liveProduct.originalPrice,
+                                name: liveProduct.name,
+                                image: liveProduct.image
+                            };
+                        }
+                        return null; 
+                    }).filter(item => item !== null);
+
+                    updateCartUI();
                     document.getElementById('loading-state').classList.add('hidden');
                     renderProducts('All');
                 })
                 .catch(error => {
                     console.error('Error reading Google Sheet:', error);
-                    document.getElementById('loading-state').innerHTML = '<p class="text-red-500">Failed to load catalog. Please refresh the page.</p>';
+                    document.getElementById('loading-state').innerHTML = `
+                        <div class="text-center">
+                            <p class="text-red-500 mb-4">Failed to load catalog.</p>
+                            <button onclick="location.reload()" class="bg-navy text-white px-6 py-2 uppercase tracking-widest text-sm hover:bg-terra transition-colors">Retry Connection</button>
+                        </div>`;
                 });
         });
 
-        // Global Escape Key Listener for Accessibility
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 if (!document.getElementById('product-modal').classList.contains('hidden')) {
@@ -310,7 +336,7 @@
             } else {
                 emptyState.classList.add('hidden');
                 filtered.forEach(product => {
-                    const priceHTML = product.isOnSale ? `<span class="line-through text-gray-400 text-sm mr-2">KES ${product.originalPrice.toLocaleString()}</span> KES ${product.salePrice.toLocaleString()}` : `KES ${product.originalPrice.toLocaleString()}`;
+                    const priceHTML = product.isOnSale ? `<span class="line-through text-gray-500 text-sm mr-2">KES ${product.originalPrice.toLocaleString()}</span> KES ${product.salePrice.toLocaleString()}` : `KES ${product.originalPrice.toLocaleString()}`;
                     const badgeHTML = product.isOnSale && !product.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
                     const soldOutBadge = product.isSoldOut ? `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-5 py-2 uppercase tracking-widest text-sm font-semibold shadow-md border border-white">Sold Out</span></div>` : '';
 
@@ -336,7 +362,7 @@
             document.getElementById('modal-desc').innerText = currentProduct.description;
             document.getElementById('modal-image').src = currentProduct.image;
             document.getElementById('modal-image').alt = currentProduct.name;
-            document.getElementById('modal-price').innerHTML = currentProduct.isOnSale ? `<span class="line-through text-gray-400 text-lg mr-2">KES ${currentProduct.originalPrice.toLocaleString()}</span> KES ${currentProduct.salePrice.toLocaleString()}` : `KES ${currentProduct.originalPrice.toLocaleString()}`;
+            document.getElementById('modal-price').innerHTML = currentProduct.isOnSale ? `<span class="line-through text-gray-500 text-lg mr-2">KES ${currentProduct.originalPrice.toLocaleString()}</span> KES ${currentProduct.salePrice.toLocaleString()}` : `KES ${currentProduct.originalPrice.toLocaleString()}`;
             document.getElementById('modal-sale-badge').innerHTML = currentProduct.isOnSale && !currentProduct.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
             
             const btn = document.getElementById('add-to-cart-btn');
@@ -360,7 +386,8 @@
             renderRecommendations(id);
             document.getElementById('product-modal').classList.remove('hidden');
             document.body.classList.add('modal-open');
-            document.getElementById('add-to-cart-btn').focus();
+            
+            setTimeout(() => document.getElementById('add-to-cart-btn').focus(), 100);
         }
 
         function closeModal() {
@@ -411,16 +438,16 @@
             toggleCart(true); 
         }
 
-        function toggleCart(forceOpen = false) {
+        // Updated explicitly for the N01 Cart Entry Bug
+        function toggleCart(forceOpen = null) {
             const drawer = document.getElementById('cart-drawer');
             const overlay = document.getElementById('cart-overlay');
+            const shouldOpen = forceOpen ?? drawer.classList.contains('cart-closed');
             
-            if (drawer.classList.contains('cart-closed') || forceOpen === true) {
-                if (forceOpen !== false) {
-                    drawer.classList.remove('cart-closed'); drawer.classList.add('cart-open');
-                    overlay.classList.remove('hidden'); document.body.classList.add('modal-open');
-                    document.getElementById('checkout-btn').focus();
-                }
+            if (shouldOpen) {
+                drawer.classList.remove('cart-closed'); drawer.classList.add('cart-open');
+                overlay.classList.remove('hidden'); document.body.classList.add('modal-open');
+                setTimeout(() => document.getElementById('checkout-btn')?.focus(), 100);
             } else {
                 drawer.classList.add('cart-closed'); drawer.classList.remove('cart-open');
                 overlay.classList.add('hidden');
@@ -440,8 +467,11 @@
         }
 
         function updateCartUI() {
-            // Save to localStorage every time the cart updates
-            localStorage.setItem('artPrimeCart', JSON.stringify(cart));
+            try {
+                localStorage.setItem('artPrimeCart', JSON.stringify(cart));
+            } catch(e) {
+                console.error('Failed to save cart to storage', e);
+            }
             
             const cartItemsContainer = document.getElementById('cart-items');
             const checkoutBtn = document.getElementById('checkout-btn');
@@ -453,7 +483,7 @@
                     <div class="flex flex-col items-center justify-center h-full text-gray-500">
                         <svg class="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                         <p class="font-light">Your cart is empty.</p>
-                        <button onclick="toggleCart()" class="mt-6 border-b border-terra text-terra hover:text-navy transition-colors">Continue Shopping</button>
+                        <button onclick="toggleCart(false)" class="mt-6 border-b border-terra text-terra hover:text-navy transition-colors">Continue Shopping</button>
                     </div>`;
                 checkoutBtn.disabled = true;
                 checkoutBtn.classList.replace('bg-terra', 'bg-gray-300');
@@ -480,7 +510,8 @@
                                     <button onclick="changeCartQty(${index}, 1)" aria-label="Increase quantity" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition focus:outline-none focus:ring-1 focus:ring-terra">+</button>
                                 </div>
                             </div>
-                            <button onclick="removeFromCart(${index})" aria-label="Remove ${item.name} from cart" class="text-gray-300 hover:text-red-500 transition ml-2 p-2 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full">
+                            <!-- Fixed Contrast on Cart Remove Button (N03) -->
+                            <button onclick="removeFromCart(${index})" aria-label="Remove ${item.name} from cart" class="text-gray-500 hover:text-red-600 transition ml-2 p-2 focus:outline-none focus:ring-2 focus:ring-red-600 rounded-full">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                             </button>
                         </div>
