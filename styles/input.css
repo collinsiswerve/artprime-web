@@ -15,10 +15,13 @@
 @layer components {
     .site-header { height: var(--header-height); }
     .brand-logo { width: 144px; height: auto; }
-    .hero { min-height: 32rem; min-height: clamp(32rem, 78svh, 56rem); }
+    .hero {
+        min-height: calc(100vh - var(--header-height));
+        min-height: calc(100svh - var(--header-height));
+    }
     .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .hero-overlay {
-        background: linear-gradient(90deg, rgb(18 28 38 / 72%), rgb(18 28 38 / 80%) 50%, rgb(18 28 38 / 72%));
+        background: linear-gradient(90deg, rgb(18 28 38 / 64%), rgb(18 28 38 / 68%) 50%, rgb(18 28 38 / 64%));
     }
     .hero-title { font-size: clamp(2.75rem, 5.5vw, 4.75rem); line-height: 1.14; text-wrap: balance; }
     .fade-in { animation: fadeIn 0.3s ease-in-out; }

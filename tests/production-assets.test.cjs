@@ -25,7 +25,7 @@ test('compiled CSS includes dynamic cart states, dialogs, card ratios and respon
     assert.ok(Buffer.byteLength(css) < 40000, 'Ship a small stylesheet instead of the compiler');
 });
 
-test('hero heading contrast remains readable over the brightest possible photo background', () => {
+test('hero text remains readable with the lighter overlay over the brightest possible photo background', () => {
     const config = require('../tailwind.config.cjs');
     const source = fs.readFileSync(path.join(root, 'styles/input.css'), 'utf8');
     const overlays = [...source.matchAll(/rgb\((\d+) (\d+) (\d+) \/ (\d+)%\)/g)];
@@ -41,7 +41,10 @@ test('hero heading contrast remains readable over the brightest possible photo b
     for (const match of overlays) {
         const alpha = Number(match[4]) / 100;
         const background = match.slice(1, 4).map(channel => Number(channel) * alpha + 255 * (1 - alpha));
-        const contrast = (luminance(sand) + 0.05) / (luminance(background) + 0.05);
-        assert.ok(contrast >= 4.5, `Hero contrast is ${contrast.toFixed(2)}:1`);
+        const headingContrast = (luminance(sand) + 0.05) / (luminance(background) + 0.05);
+        const paragraphContrast = (luminance([243, 244, 246]) + 0.05) / (luminance(background) + 0.05);
+        // The heading is at least 2.75rem (large text); the paragraph uses text-gray-100.
+        assert.ok(headingContrast >= 3, `Large hero heading contrast is ${headingContrast.toFixed(2)}:1`);
+        assert.ok(paragraphContrast >= 4.5, `Hero paragraph contrast is ${paragraphContrast.toFixed(2)}:1`);
     }
 });
