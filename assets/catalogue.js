@@ -35,6 +35,29 @@
         return new URL('assets/product-placeholder.svg', base).href;
     }
 
+    function imageVariants(value, widths, base = DEFAULT_BASE) {
+        const source = imageURL(value, base);
+        const url = new URL(source);
+        // Transform only known image CDNs. Other hosts and signed addresses stay intact.
+        const signed = [...url.searchParams.keys()].some(key => /^(sig|signature|token|expires|x-amz-.+|x-goog-.+)$/i.test(key));
+        if (!['images.unsplash.com', 'images.pexels.com'].includes(url.hostname) || signed) {
+            return { src: source, srcset: '' };
+        }
+        const sizes = [...new Set(widths)].filter(width => Number.isSafeInteger(width) && width > 0).sort((a, b) => a - b);
+        if (!sizes.length) return { src: source, srcset: '' };
+        const originalWidth = Number(url.searchParams.get('w'));
+        const originalHeight = Number(url.searchParams.get('h'));
+        function variant(width) {
+            const image = new URL(url);
+            image.searchParams.set('w', width);
+            if (originalWidth > 0 && originalHeight > 0) image.searchParams.set('h', Math.round(originalHeight * width / originalWidth));
+            image.searchParams.set('auto', 'format');
+            image.searchParams.set('q', '78');
+            return image.href;
+        }
+        return { src: variant(sizes[Math.min(1, sizes.length - 1)]), srcset: sizes.map(width => `${variant(width)} ${width}w`).join(', ') };
+    }
+
     function productsFromRows(rows, base = DEFAULT_BASE) {
         if (!Array.isArray(rows)) throw new Error('Missing catalogue rows');
         const products = [];
@@ -191,6 +214,6 @@
         return `https://wa.me/254748649103?text=${encodeURIComponent(message)}`;
     }
 
-    return { normalize, flag, money, imageURL, productsFromRows, parseSheetResponse, priceOf, formatMoney,
+    return { normalize, flag, money, imageURL, imageVariants, productsFromRows, parseSheetResponse, priceOf, formatMoney,
         savedCart, reconcileCart, searchProducts, productURL, orderURL, validQuantity, idOf };
 });

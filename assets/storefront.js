@@ -31,20 +31,36 @@
         return node;
     }
 
-    function setImage(image, source, name) {
+    function setImage(image, source, name, widths = [640, 960, 1280, 1600], sizes = '(min-width: 1280px) 496px, (min-width: 768px) calc((100vw - 240px) / 2), calc(100vw - 80px)') {
         image.alt = name;
         image.onerror = () => {
             image.onerror = null;
+            image.removeAttribute('srcset');
+            image.removeAttribute('sizes');
             image.src = placeholder;
         };
-        image.src = catalogue.imageURL(source, document.baseURI);
+        const variants = catalogue.imageVariants(source, widths, document.baseURI);
+        if (variants.srcset) {
+            image.sizes = sizes;
+            image.srcset = variants.srcset;
+        } else {
+            image.removeAttribute('srcset');
+            image.removeAttribute('sizes');
+        }
+        image.src = variants.src;
     }
 
-    function productImage(product, classes) {
+    function productImage(product, classes, kind = 'catalogue') {
         const image = element('img', classes);
         image.loading = 'lazy';
         image.decoding = 'async';
-        setImage(image, product.image, product.name);
+        const cartImage = kind === 'cart';
+        image.width = cartImage ? 80 : 600;
+        image.height = cartImage ? 80 : kind === 'recommendation' ? 600 : 800;
+        const sizes = cartImage ? '80px' : kind === 'recommendation'
+            ? '(min-width: 1280px) 336px, (min-width: 768px) calc((100vw - 224px) / 3), (min-width: 640px) calc((100vw - 144px) / 3), calc(100vw - 96px)'
+            : '(min-width: 1280px) 296px, (min-width: 1024px) calc((100vw - 144px) / 4), (min-width: 640px) calc((100vw - 80px) / 2), calc(100vw - 48px)';
+        setImage(image, product.image, product.name, cartImage ? [80, 160, 240] : [320, 480, 640, 960], sizes);
         return image;
     }
 
@@ -74,7 +90,7 @@
             : 'relative w-full overflow-hidden mb-4 bg-gray-100 aspect-[3/4]');
         if (product.isSoldOut) picture.append(soldOutBadge(compact));
         else if (product.isOnSale) picture.append(element('div', 'absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10', 'Sale'));
-        picture.append(productImage(product, 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'));
+        picture.append(productImage(product, 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700', compact ? 'recommendation' : 'catalogue'));
         const price = element('p', compact ? 'text-sm text-gray-600 mt-1' : 'text-gray-600 mt-1');
         price.append(priceContent(product));
         card.append(picture, element(compact ? 'h4' : 'h3', 'font-serif text-lg text-navy', product.name), price);
@@ -187,7 +203,7 @@
         const dialog = activeDialog();
         if (dialog) focusDialog(dialog);
         else if (opener?.isConnected && opener !== document.body && !opener.closest('[inert]')) opener.focus({ preventScroll: true });
-        else document.querySelector('button[aria-label="Open cart"]')?.focus({ preventScroll: true });
+        else byId('nav-cart-button').focus({ preventScroll: true });
     }
 
     function updateAddButton() {
@@ -373,14 +389,15 @@
                 element('span', 'px-3 text-xs font-semibold text-navy', item.qty),
                 cartAction(item, 'increase', 'Increase quantity for', '+', () => changeCartQty(item.id, 1)));
             details.append(quantity);
-            row.append(productImage(item, 'w-20 h-20 object-cover bg-gray-100'), details,
+            row.append(productImage(item, 'w-20 h-20 object-cover bg-gray-100 shrink-0', 'cart'), details,
                 cartAction(item, 'remove', 'Remove from cart:', '×', () => removeFromCart(item.id)));
             fragment.append(row);
         }
         byId('cart-items').replaceChildren(fragment);
         const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
         const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-        byId('nav-cart-count').textContent = `CART (${totalItems})`;
+        byId('nav-cart-count').textContent = `(${totalItems > 99 ? '99+' : totalItems})`;
+        byId('nav-cart-button').setAttribute('aria-label', `Open cart, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`);
         byId('cart-subtotal').textContent = cart.length && catalogueState !== 'ready' ? 'Confirming…' : catalogue.formatMoney(subtotal);
         const checkout = byId('checkout-btn');
         checkout.disabled = !catalogue.orderURL(cart, catalogueState === 'ready');

@@ -13,60 +13,49 @@
     <meta property="og:url" content="https://collinsiswerve.github.io/artprime-web/">
     <meta property="og:title" content="Art Prime Interiors | Premium Furniture & Decor">
     <meta property="og:description" content="Discover our curated collection of premium interior pieces designed to elevate your space.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="https://collinsiswerve.github.io/artprime-web/assets/hero-1280.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="675">
+    <meta property="og:image:alt" content="A contemporary living room with warm natural finishes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Art Prime Interiors | Premium Furniture & Decor">
+    <meta name="twitter:description" content="Discover our curated collection of premium interior pieces designed to elevate your space.">
+    <meta name="twitter:image" content="https://collinsiswerve.github.io/artprime-web/assets/hero-1280.jpg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { navy: '#121C26', terra: '#A65B45', light: '#F8F9FA' },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-        .fade-in { animation: fadeIn 0.3s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        body.modal-open { overflow: hidden; }
-        .cart-open { transform: translateX(0%); }
-        .cart-closed { transform: translateX(100%); visibility: hidden; }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-        }
-    </style>
+    <link rel="canonical" href="https://collinsiswerve.github.io/artprime-web/">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen pt-20 md:pt-24">
+<body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
     <!-- Sticky Navigation Bar -->
-    <nav class="fixed w-full top-0 z-50 py-4 px-6 md:px-12 text-white bg-navy bg-opacity-90 backdrop-blur-md shadow-xl transition-all">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
-            <a href="#" aria-label="Home" class="flex items-center">
+    <nav class="site-header fixed w-full top-0 z-50 px-4 md:px-12 text-white bg-navy shadow-xl">
+        <div class="max-w-7xl h-full mx-auto flex justify-between items-center gap-3">
+            <a href="#" aria-label="Art Prime Interiors home" class="flex items-center shrink-0 rounded focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2 focus:ring-offset-navy">
                 <picture>
                     <source srcset="assets/artprime-logo.webp" type="image/webp">
-                    <img src="assets/artprime-logo.png" width="400" height="234" alt="Art Prime Interiors Logo" loading="eager" decoding="async" fetchpriority="high" class="h-14 md:h-16 w-auto object-contain bg-white bg-opacity-90 p-2 rounded shadow-sm">
+                    <img src="assets/artprime-logo.png" width="400" height="234" alt="Art Prime Interiors Logo" loading="eager" decoding="async" fetchpriority="high" class="brand-logo object-contain bg-white rounded shadow-sm">
                 </picture>
             </a>
             
-            <div class="hidden md:flex space-x-10 text-xs md:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
+            <div class="hidden md:flex space-x-6 lg:space-x-10 text-xs lg:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
                 <a href="#collections" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Collections</a>
                 <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Studio</a>
                 <a href="#footer" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Contact</a>
             </div>
 
-            <div class="flex items-center gap-4">
-                <button onclick="toggleCart()" class="flex items-center hover:text-gray-300 transition-colors duration-300 drop-shadow-md bg-white bg-opacity-10 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
+            <div class="flex items-center gap-2 md:gap-4 shrink-0">
+                <button id="nav-cart-button" onclick="toggleCart()" class="flex items-center gap-1.5 md:gap-2 hover:text-gray-300 transition-colors duration-300 bg-white bg-opacity-10 px-2.5 md:px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
-                    <span id="nav-cart-count" class="ml-2 font-semibold text-xs tracking-widest">CART (0)</span>
+                    <span aria-hidden="true" class="hidden md:inline font-semibold text-xs tracking-widest">CART</span>
+                    <span id="nav-cart-count" aria-hidden="true" class="font-semibold text-xs">(0)</span>
                 </button>
                 
-                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-gray-300 focus:outline-none p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-terra rounded p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
@@ -80,10 +69,15 @@
     </nav>
 
     <main>
-        <section class="relative h-[85vh] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center mt-[-100px]" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-            <div class="absolute inset-0 bg-navy bg-opacity-50"></div>
-            <div class="relative z-10 flex flex-col items-center">
-                <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide drop-shadow-lg mt-10">Your Space <span class="text-terra italic">Our Expertise</span></h1>
+        <section class="hero relative flex flex-col items-center justify-center text-center px-6 py-16 bg-navy overflow-hidden" aria-labelledby="hero-title">
+            <picture aria-hidden="true">
+                <source media="(max-width: 767px)" type="image/webp" srcset="assets/hero-mobile-640.webp 640w, assets/hero-mobile-960.webp 960w" sizes="100vw">
+                <source type="image/webp" srcset="assets/hero-1280.webp 1280w, assets/hero-1920.webp 1920w" sizes="100vw">
+                <img src="assets/hero-1280.jpg" width="1280" height="675" alt="" loading="eager" fetchpriority="high" decoding="async" class="hero-image">
+            </picture>
+            <div class="hero-overlay absolute inset-0"></div>
+            <div class="relative z-10 flex flex-col items-center max-w-4xl">
+                <h1 id="hero-title" class="hero-title font-serif text-white mb-6 tracking-wide drop-shadow-lg">Your Space <span class="block text-sand italic">Our Expertise</span></h1>
                 <p class="max-w-2xl text-gray-100 text-lg md:text-xl mb-10 font-light drop-shadow-md">Discover our curated collection of premium interior pieces designed to elevate your living and working environments.</p>
                 <a href="#collections" class="bg-terra text-white px-10 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-white hover:text-navy transition-all duration-300 shadow-xl focus:outline-none focus:ring-4 focus:ring-white">View Collection</a>
             </div>
@@ -103,7 +97,7 @@
                         </div>
                         
                         <div class="relative w-full lg:w-72">
-                            <input type="text" id="search-input" aria-label="Search products" aria-describedby="search-status" autocomplete="off" oninput="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-12 text-sm text-navy focus:outline-none focus:border-terra focus:ring-1 focus:ring-terra transition-colors">
+                            <input type="text" id="search-input" maxlength="160" aria-label="Search products" aria-describedby="search-status" autocomplete="off" oninput="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-12 text-sm text-navy focus:outline-none focus:border-terra focus:ring-1 focus:ring-terra transition-colors">
                             <button id="clear-search" type="button" onclick="clearSearch()" aria-label="Clear search" class="hidden absolute right-2 top-1.5 px-3 py-1.5 text-gray-600 hover:text-navy focus:outline-none focus:ring-2 focus:ring-terra">×</button>
                             <svg aria-hidden="true" class="w-4 h-4 absolute left-4 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                         </div>
