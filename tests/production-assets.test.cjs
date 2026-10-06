@@ -7,7 +7,7 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const css = fs.readFileSync(path.join(root, 'assets/styles.css'), 'utf8');
 
 test('production pages load local styles and all local image sources exist', () => {
-    assert.match(html, /rel="stylesheet" href="assets\/styles\.css"/);
+    assert.match(html, /rel="stylesheet" href="assets\/styles\.css(?:\?[^"\s]*)?"/);
     assert.doesNotMatch(html, /cdn\.tailwindcss\.com|tailwind\.config/);
     const images = [...html.matchAll(/(?:src|srcset)="(assets\/[^"\n]+)"/g)]
         .flatMap(match => match[1].split(', ').map(source => source.split(' ')[0]));
