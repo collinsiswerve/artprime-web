@@ -1,0 +1,15 @@
+{
+  "name": "artprime-web",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.cjs -i styles/input.css -o assets/styles.css --minify",
+    "dev:css": "tailwindcss -c tailwind.config.cjs -i styles/input.css -o assets/styles.css --watch",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

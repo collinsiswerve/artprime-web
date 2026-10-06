@@ -13,56 +13,49 @@
     <meta property="og:url" content="https://collinsiswerve.github.io/artprime-web/">
     <meta property="og:title" content="Art Prime Interiors | Premium Furniture & Decor">
     <meta property="og:description" content="Discover our curated collection of premium interior pieces designed to elevate your space.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="https://collinsiswerve.github.io/artprime-web/assets/hero-1280.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="675">
+    <meta property="og:image:alt" content="A contemporary living room with warm natural finishes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Art Prime Interiors | Premium Furniture & Decor">
+    <meta name="twitter:description" content="Discover our curated collection of premium interior pieces designed to elevate your space.">
+    <meta name="twitter:image" content="https://collinsiswerve.github.io/artprime-web/assets/hero-1280.jpg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { navy: '#121C26', terra: '#A65B45', light: '#F8F9FA' },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-        .fade-in { animation: fadeIn 0.3s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        body.modal-open { overflow: hidden; }
-        .cart-open { transform: translateX(0%); }
-        .cart-closed { transform: translateX(100%); }
-    </style>
+    <link rel="canonical" href="https://collinsiswerve.github.io/artprime-web/">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen pt-20 md:pt-24">
+<body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
     <!-- Sticky Navigation Bar -->
-    <nav class="fixed w-full top-0 z-50 py-4 px-6 md:px-12 text-white bg-navy bg-opacity-90 backdrop-blur-md shadow-xl transition-all">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
-            <a href="#" aria-label="Home" class="flex items-center">
+    <nav class="site-header fixed w-full top-0 z-50 px-4 md:px-12 text-white bg-navy shadow-xl">
+        <div class="max-w-7xl h-full mx-auto flex justify-between items-center gap-3">
+            <a href="#" aria-label="Art Prime Interiors home" class="flex items-center shrink-0 rounded focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2 focus:ring-offset-navy">
                 <picture>
                     <source srcset="assets/artprime-logo.webp" type="image/webp">
-                    <img src="assets/artprime-logo.png" width="400" height="234" alt="Art Prime Interiors Logo" loading="eager" decoding="async" fetchpriority="high" class="h-14 md:h-16 w-auto object-contain bg-white bg-opacity-90 p-2 rounded shadow-sm">
+                    <img src="assets/artprime-logo.png" width="400" height="234" alt="Art Prime Interiors Logo" loading="eager" decoding="async" fetchpriority="high" class="brand-logo object-contain bg-white rounded shadow-sm">
                 </picture>
             </a>
             
-            <div class="hidden md:flex space-x-10 text-xs md:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
+            <div class="hidden md:flex space-x-6 lg:space-x-10 text-xs lg:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
                 <a href="#collections" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Collections</a>
                 <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Studio</a>
                 <a href="#footer" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Contact</a>
             </div>
 
-            <div class="flex items-center gap-4">
-                <button onclick="toggleCart()" class="flex items-center hover:text-gray-300 transition-colors duration-300 drop-shadow-md bg-white bg-opacity-10 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
+            <div class="flex items-center gap-2 md:gap-4 shrink-0">
+                <button id="nav-cart-button" onclick="toggleCart()" class="flex items-center gap-1.5 md:gap-2 hover:text-gray-300 transition-colors duration-300 bg-white bg-opacity-10 px-2.5 md:px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
-                    <span id="nav-cart-count" class="ml-2 font-semibold text-xs tracking-widest">CART (0)</span>
+                    <span aria-hidden="true" class="hidden md:inline font-semibold text-xs tracking-widest">CART</span>
+                    <span id="nav-cart-count" aria-hidden="true" class="font-semibold text-xs">(0)</span>
                 </button>
                 
-                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-gray-300 focus:outline-none p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-terra rounded p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
@@ -76,10 +69,15 @@
     </nav>
 
     <main>
-        <section class="relative h-[85vh] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center mt-[-100px]" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-            <div class="absolute inset-0 bg-navy bg-opacity-50"></div>
-            <div class="relative z-10 flex flex-col items-center">
-                <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide drop-shadow-lg mt-10">Your Space <span class="text-terra italic">Our Expertise</span></h1>
+        <section class="hero relative flex flex-col items-center justify-center text-center px-6 py-16 bg-navy overflow-hidden" aria-labelledby="hero-title">
+            <picture aria-hidden="true">
+                <source media="(max-width: 767px)" type="image/webp" srcset="assets/hero-mobile-640.webp 640w, assets/hero-mobile-960.webp 960w" sizes="100vw">
+                <source type="image/webp" srcset="assets/hero-1280.webp 1280w, assets/hero-1920.webp 1920w" sizes="100vw">
+                <img src="assets/hero-1280.jpg" width="1280" height="675" alt="" loading="eager" fetchpriority="high" decoding="async" class="hero-image">
+            </picture>
+            <div class="hero-overlay absolute inset-0"></div>
+            <div class="relative z-10 flex flex-col items-center max-w-4xl">
+                <h1 id="hero-title" class="hero-title font-serif text-white mb-6 tracking-wide drop-shadow-lg">Your Space <span class="block text-sand italic">Our Expertise</span></h1>
                 <p class="max-w-2xl text-gray-100 text-lg md:text-xl mb-10 font-light drop-shadow-md">Discover our curated collection of premium interior pieces designed to elevate your living and working environments.</p>
                 <a href="#collections" class="bg-terra text-white px-10 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-white hover:text-navy transition-all duration-300 shadow-xl focus:outline-none focus:ring-4 focus:ring-white">View Collection</a>
             </div>
@@ -99,18 +97,25 @@
                         </div>
                         
                         <div class="relative w-full lg:w-72">
-                            <input type="text" id="search-input" aria-label="Search products" oninput="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-4 text-sm text-navy focus:outline-none focus:border-terra focus:ring-1 focus:ring-terra transition-colors">
-                            <svg class="w-4 h-4 absolute left-4 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            <input type="text" id="search-input" maxlength="160" aria-label="Search products" aria-describedby="search-status" autocomplete="off" oninput="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-12 text-sm text-navy focus:outline-none focus:border-terra focus:ring-1 focus:ring-terra transition-colors">
+                            <button id="clear-search" type="button" onclick="clearSearch()" aria-label="Clear search" class="hidden absolute right-2 top-1.5 px-3 py-1.5 text-gray-600 hover:text-navy focus:outline-none focus:ring-2 focus:ring-terra">×</button>
+                            <svg aria-hidden="true" class="w-4 h-4 absolute left-4 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                         </div>
                     </div>
                 </div>
                 
-                <div id="loading-state" class="text-center py-20">
+                <p id="search-status" role="status" aria-live="polite" class="text-sm text-gray-600 mb-6"></p>
+                <p id="product-notice" role="status" class="text-center text-gray-600 mb-6"></p>
+                <div id="catalogue-error" class="hidden text-center py-20" role="alert">
+                    <p class="text-gray-700 mb-4">We couldn't load the collection. Please try again.</p>
+                    <button type="button" onclick="loadCatalogue()" class="bg-navy text-white px-6 py-3 uppercase tracking-widest text-sm hover:bg-terra focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2">Retry loading</button>
+                </div>
+                <div id="loading-state" class="text-center py-20" role="status">
                     <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-terra mx-auto mb-4"></div>
                     <p class="text-gray-600 font-light tracking-widest uppercase text-sm">Loading Catalog...</p>
                 </div>
 
-                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"></div>
+                <div id="product-grid" aria-busy="true" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"></div>
                 
                 <div id="empty-state" class="hidden text-center py-20 text-gray-500 font-light">
                     <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -121,15 +126,15 @@
     </main>
 
     <!-- Detailed Product Modal -->
-    <div id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[100] hidden bg-navy bg-opacity-90 flex justify-center items-center p-4 md:p-10 fade-in">
-        <div class="bg-white w-full max-w-6xl max-h-full overflow-y-auto flex flex-col relative shadow-2xl">
+    <div id="product-modal" inert aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[100] hidden bg-navy bg-opacity-90 flex justify-center items-center p-4 md:p-10 fade-in">
+        <div id="product-modal-content" class="bg-white w-full max-w-6xl max-h-full overflow-y-auto flex flex-col relative shadow-2xl">
             <button onclick="closeModal()" aria-label="Close product details" class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-500 hover:text-terra z-10 bg-white p-3 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-terra">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 bg-gray-100 min-h-[40vh] md:min-h-[60vh] relative">
                     <div id="modal-sale-badge"></div>
-                    <img id="modal-image" src="" alt="Product details" class="absolute inset-0 w-full h-full object-contain p-6 md:p-10">
+                    <img id="modal-image" src="assets/product-placeholder.svg" decoding="async" alt="Product details" class="absolute inset-0 w-full h-full object-contain p-6 md:p-10">
                     <div id="modal-sold-out-overlay"></div>
                 </div>
                 <div class="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
@@ -147,9 +152,15 @@
                             Add to Cart
                         </button>
                     </div>
+                    <button id="share-product-btn" type="button" onclick="shareProduct()" class="self-start border-b border-terra text-navy py-2 text-sm font-semibold hover:text-terra focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2">Share product</button>
+                    <p id="share-status" role="status" aria-live="polite" class="text-sm text-gray-600 mt-3"></p>
+                    <div id="share-link-fallback" class="hidden mt-3">
+                        <label for="product-link" class="block text-sm text-gray-600 mb-2">Product link</label>
+                        <input id="product-link" type="text" readonly class="w-full border border-gray-300 p-3 text-sm text-navy focus:outline-none focus:ring-2 focus:ring-terra">
+                    </div>
                 </div>
             </div>
-            <div class="p-8 md:p-12 bg-gray-50 border-t border-gray-200">
+            <div id="recommendations" class="p-8 md:p-12 bg-gray-50 border-t border-gray-200">
                 <h3 class="text-xl font-serif text-navy mb-8 text-center md:text-left">You Might Also Like</h3>
                 <div id="recommends-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
             </div>
@@ -158,7 +169,7 @@
 
     <!-- CART SIDE DRAWER -->
     <div id="cart-overlay" onclick="toggleCart(false)" class="fixed inset-0 bg-navy bg-opacity-50 z-[110] hidden fade-in"></div>
-    <div id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white z-[120] shadow-2xl transition-transform duration-300 ease-in-out cart-closed flex flex-col">
+    <div id="cart-drawer" inert aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping Cart" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white z-[120] shadow-2xl transition-transform duration-300 ease-in-out cart-closed flex flex-col">
         <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-light">
             <h2 class="text-xl font-serif text-navy">Your Cart</h2>
             <button onclick="toggleCart(false)" aria-label="Close cart" class="text-gray-500 hover:text-terra p-2 focus:outline-none focus:ring-2 focus:ring-terra rounded-full">
@@ -171,10 +182,12 @@
                 <span>Subtotal:</span>
                 <span id="cart-subtotal">KES 0</span>
             </div>
-            <button id="checkout-btn" onclick="checkoutWhatsApp()" class="w-full bg-terra text-white py-4 uppercase tracking-widest text-sm font-semibold hover:bg-navy transition-colors flex items-center justify-center gap-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">
+            <button id="checkout-btn" disabled aria-describedby="cart-status" onclick="checkoutWhatsApp()" class="w-full bg-terra text-white py-4 uppercase tracking-widest text-sm font-semibold hover:bg-navy transition-colors flex items-center justify-center gap-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.646.843 5.116 2.378 7.214l-1.579 5.768 5.897-1.547a11.96 11.96 0 0 0 5.335 1.258h.005c6.645 0 12.03-5.385 12.03-12.03S18.676 0 12.031 0zm0 22.185h-.004a9.92 9.92 0 0 1-5.068-1.39l-.363-.215-3.766.988 1.006-3.673-.236-.376A9.92 9.92 0 0 1 2.046 12.03c0-5.503 4.478-9.981 9.985-9.981 2.668 0 5.174 1.04 7.059 2.926A9.95 9.95 0 0 1 22.016 12.03c0 5.503-4.478 9.98-9.985 9.98zm5.474-7.48c-.3-.15-1.775-.876-2.05-.976-.275-.1-.476-.15-.676.15-.2.3-.776.976-.951 1.176-.175.2-.35.226-.65.076-1.503-.76-2.583-1.326-3.568-2.65-.2-.275.051-.25.326-.775.125-.25.075-.476-.05-.726-.176-.35-.676-1.626-.926-2.226-.25-.6-.501-.525-.676-.525h-.576c-.2 0-.526.075-.8.375-.275.3-1.05 1.026-1.05 2.502 0 1.476 1.075 2.902 1.226 3.102.15.2 2.1 3.203 5.078 4.478.71.304 1.264.486 1.696.622.713.225 1.363.193 1.876.117.575-.084 1.775-.726 2.025-1.426.25-.7.25-1.302.175-1.426-.075-.125-.275-.2-.575-.35z"/></svg>
                 Order via WhatsApp
             </button>
+            <p id="cart-status" role="status" aria-live="polite" class="text-sm text-gray-600 text-center mt-3"></p>
+            <button id="cart-retry" type="button" onclick="loadCatalogue()" class="hidden block mx-auto mt-3 border-b border-terra text-sm text-navy py-2 focus:outline-none focus:ring-2 focus:ring-terra">Retry loading the collection</button>
             <p class="text-xs text-gray-500 text-center mt-3 font-light">Payment and delivery will be finalized via WhatsApp.</p>
         </div>
     </div>
@@ -199,348 +212,8 @@
         </div>
     </footer>
 
-    <!-- GOOGLE SHEETS & LOGIC ENGINE -->
-    <script>
-        let allProducts = [];
-        let currentProduct = null;
-        let selectedQty = 1;
-        let cart = [];
-        let activeCategory = 'All';
-
-        // Protected Cart Loading
-        try {
-            const savedCart = localStorage.getItem('artPrimeCart');
-            if (savedCart) {
-                const parsed = JSON.parse(savedCart);
-                if (Array.isArray(parsed)) {
-                    cart = parsed.filter(item => item && item.id && item.qty > 0);
-                }
-            }
-        } catch (e) {
-            console.error('Failed to parse cart storage:', e);
-            localStorage.removeItem('artPrimeCart');
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            updateCartUI();
-
-            const sheetId = '1A7pErif9dQMJ8Q-yclWOFDSgKzUNg4qLFbm6u-_Be5k';
-            const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
-
-            fetch(url)
-                .then(res => {
-                    if (!res.ok) throw new Error("Network response was not OK");
-                    return res.text();
-                })
-                .then(text => {
-                    const jsonStr = text.substring(47).slice(0, -2);
-                    const json = JSON.parse(jsonStr);
-                    
-                    allProducts = json.table.rows.map(row => {
-                        return {
-                            id: row.c[0] && row.c[0].v !== null ? row.c[0].v : null,
-                            name: row.c[1] ? row.c[1].v : '',
-                            image: row.c[2] ? row.c[2].v : '',
-                            originalPrice: row.c[3] ? Number(row.c[3].v) : 0,
-                            salePrice: row.c[4] ? Number(row.c[4].v) : 0,
-                            isNewArrival: row.c[5] ? Boolean(row.c[5].v) : false,
-                            isBestSeller: row.c[6] ? Boolean(row.c[6].v) : false,
-                            isOnSale: row.c[7] ? Boolean(row.c[7].v) : false,
-                            description: row.c[8] ? row.c[8].v : '',
-                            isSoldOut: row.c[9] ? Boolean(row.c[9].v) : false
-                        };
-                    }).filter(p => typeof p.id === 'number');
-
-                    // Data Reconciliation: Update saved cart with live pricing and availability
-                    cart = cart.map(cartItem => {
-                        const liveProduct = allProducts.find(p => p.id === cartItem.id);
-                        if (liveProduct && !liveProduct.isSoldOut) {
-                            return {
-                                ...cartItem,
-                                price: liveProduct.isOnSale ? liveProduct.salePrice : liveProduct.originalPrice,
-                                name: liveProduct.name,
-                                image: liveProduct.image
-                            };
-                        }
-                        return null; 
-                    }).filter(item => item !== null);
-
-                    updateCartUI();
-                    document.getElementById('loading-state').classList.add('hidden');
-                    renderProducts('All');
-                })
-                .catch(error => {
-                    console.error('Error reading Google Sheet:', error);
-                    document.getElementById('loading-state').innerHTML = `
-                        <div class="text-center">
-                            <p class="text-red-500 mb-4">Failed to load catalog.</p>
-                            <button onclick="location.reload()" class="bg-navy text-white px-6 py-2 uppercase tracking-widest text-sm hover:bg-terra transition-colors">Retry Connection</button>
-                        </div>`;
-                });
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (!document.getElementById('product-modal').classList.contains('hidden')) {
-                    closeModal();
-                }
-                if (!document.getElementById('cart-drawer').classList.contains('cart-closed')) {
-                    toggleCart(false);
-                }
-            }
-        });
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const btn = document.querySelector('button[aria-controls="mobile-menu"]');
-            if(menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                btn.setAttribute('aria-expanded', 'true');
-            } else {
-                menu.classList.add('hidden');
-                btn.setAttribute('aria-expanded', 'false');
-            }
-        }
-
-        function handleSearch() {
-            renderProducts(activeCategory);
-        }
-
-        function renderProducts(category) {
-            activeCategory = category;
-            const grid = document.getElementById('product-grid');
-            const emptyState = document.getElementById('empty-state');
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
-            
-            grid.innerHTML = '';
-            
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                if(btn.innerText.includes(category) || (category === 'All' && btn.innerText.includes('All'))) {
-                    btn.classList.add('text-navy', 'border-terra'); btn.classList.remove('border-transparent');
-                } else {
-                    btn.classList.remove('text-navy', 'border-terra'); btn.classList.add('border-transparent');
-                }
-            });
-
-            let filtered = allProducts;
-            if (category === 'New Arrivals') filtered = allProducts.filter(p => p.isNewArrival);
-            if (category === 'Best Sellers') filtered = allProducts.filter(p => p.isBestSeller);
-            if (category === 'Sale') filtered = allProducts.filter(p => p.isOnSale);
-
-            if (searchTerm !== "") {
-                filtered = filtered.filter(p => 
-                    p.name.toLowerCase().includes(searchTerm) || 
-                    p.description.toLowerCase().includes(searchTerm)
-                );
-            }
-
-            if (filtered.length === 0) {
-                emptyState.classList.remove('hidden');
-            } else {
-                emptyState.classList.add('hidden');
-                filtered.forEach(product => {
-                    const priceHTML = product.isOnSale ? `<span class="line-through text-gray-500 text-sm mr-2">KES ${product.originalPrice.toLocaleString()}</span> KES ${product.salePrice.toLocaleString()}` : `KES ${product.originalPrice.toLocaleString()}`;
-                    const badgeHTML = product.isOnSale && !product.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
-                    const soldOutBadge = product.isSoldOut ? `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-5 py-2 uppercase tracking-widest text-sm font-semibold shadow-md border border-white">Sold Out</span></div>` : '';
-
-                    grid.innerHTML += `
-                        <button onclick="openModal(${product.id})" class="text-left w-full group cursor-pointer flex flex-col focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2 rounded" aria-label="View details for ${product.name}">
-                            <div class="relative w-full overflow-hidden mb-4 bg-gray-100 aspect-[3/4]">
-                                ${soldOutBadge}
-                                ${badgeHTML}
-                                <img src="${product.image}" alt="${product.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            </div>
-                            <h3 class="font-serif text-lg text-navy">${product.name}</h3>
-                            <p class="text-gray-600 mt-1">${priceHTML}</p>
-                        </button>`;
-                });
-            }
-        }
-
-        function openModal(id) {
-            currentProduct = allProducts.find(p => p.id === id);
-            selectedQty = 1;
-            document.getElementById('modal-qty').innerText = selectedQty;
-            document.getElementById('modal-title').innerText = currentProduct.name;
-            document.getElementById('modal-desc').innerText = currentProduct.description;
-            document.getElementById('modal-image').src = currentProduct.image;
-            document.getElementById('modal-image').alt = currentProduct.name;
-            document.getElementById('modal-price').innerHTML = currentProduct.isOnSale ? `<span class="line-through text-gray-500 text-lg mr-2">KES ${currentProduct.originalPrice.toLocaleString()}</span> KES ${currentProduct.salePrice.toLocaleString()}` : `KES ${currentProduct.originalPrice.toLocaleString()}`;
-            document.getElementById('modal-sale-badge').innerHTML = currentProduct.isOnSale && !currentProduct.isSoldOut ? `<div class="absolute top-4 left-4 bg-terra text-white text-xs px-3 py-1 uppercase tracking-widest font-semibold z-10">Sale</div>` : '';
-            
-            const btn = document.getElementById('add-to-cart-btn');
-            const overlay = document.getElementById('modal-sold-out-overlay');
-            if (currentProduct.isSoldOut) {
-                btn.innerText = "Sold Out";
-                btn.disabled = true;
-                btn.classList.replace('bg-navy', 'bg-gray-400');
-                btn.classList.remove('hover:bg-terra');
-                btn.classList.add('cursor-not-allowed');
-                overlay.innerHTML = `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-6 py-3 uppercase tracking-widest text-lg font-semibold shadow-md border border-white">Sold Out</span></div>`;
-            } else {
-                btn.innerText = "Add to Cart";
-                btn.disabled = false;
-                btn.classList.replace('bg-gray-400', 'bg-navy');
-                btn.classList.add('hover:bg-terra');
-                btn.classList.remove('cursor-not-allowed');
-                overlay.innerHTML = '';
-            }
-
-            renderRecommendations(id);
-            document.getElementById('product-modal').classList.remove('hidden');
-            document.body.classList.add('modal-open');
-            
-            setTimeout(() => document.getElementById('add-to-cart-btn').focus(), 100);
-        }
-
-        function closeModal() {
-            document.getElementById('product-modal').classList.add('hidden');
-            if (document.getElementById('cart-drawer').classList.contains('cart-closed')) {
-                document.body.classList.remove('modal-open');
-            }
-        }
-
-        function updateQty(change) {
-            selectedQty += change;
-            if (selectedQty < 1) selectedQty = 1;
-            document.getElementById('modal-qty').innerText = selectedQty;
-        }
-
-        function renderRecommendations(excludeId) {
-            const recGrid = document.getElementById('recommends-grid');
-            recGrid.innerHTML = '';
-            let others = allProducts.filter(p => p.id !== excludeId).sort(() => 0.5 - Math.random()).slice(0, 3);
-            others.forEach(p => {
-                const price = p.isOnSale ? p.salePrice : p.originalPrice;
-                const soldOutRecBadge = p.isSoldOut ? `<div class="absolute inset-0 bg-white bg-opacity-60 z-10 flex items-center justify-center"><span class="bg-navy text-white px-3 py-1 uppercase tracking-widest text-[10px] font-semibold shadow-md border border-white">Sold Out</span></div>` : '';
-                recGrid.innerHTML += `
-                    <button onclick="openModal(${p.id})" class="text-left w-full group cursor-pointer focus:outline-none focus:ring-2 focus:ring-terra rounded" aria-label="View ${p.name}">
-                        <div class="relative overflow-hidden mb-3 bg-gray-100 aspect-square w-full">
-                            ${soldOutRecBadge}
-                            <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition">
-                        </div>
-                        <h4 class="font-serif text-navy">${p.name}</h4>
-                        <p class="text-sm text-gray-500">KES ${price.toLocaleString()}</p>
-                    </button>`;
-            });
-        }
-
-        function addToCart() {
-            if (currentProduct.isSoldOut) return;
-            const finalPrice = currentProduct.isOnSale ? currentProduct.salePrice : currentProduct.originalPrice;
-            
-            const existingItem = cart.find(item => item.id === currentProduct.id);
-            if (existingItem) {
-                existingItem.qty += selectedQty;
-            } else {
-                cart.push({ id: currentProduct.id, name: currentProduct.name, price: finalPrice, qty: selectedQty, image: currentProduct.image });
-            }
-            
-            updateCartUI();
-            closeModal();
-            toggleCart(true); 
-        }
-
-        // Updated explicitly for the N01 Cart Entry Bug
-        function toggleCart(forceOpen = null) {
-            const drawer = document.getElementById('cart-drawer');
-            const overlay = document.getElementById('cart-overlay');
-            const shouldOpen = forceOpen ?? drawer.classList.contains('cart-closed');
-            
-            if (shouldOpen) {
-                drawer.classList.remove('cart-closed'); drawer.classList.add('cart-open');
-                overlay.classList.remove('hidden'); document.body.classList.add('modal-open');
-                setTimeout(() => document.getElementById('checkout-btn')?.focus(), 100);
-            } else {
-                drawer.classList.add('cart-closed'); drawer.classList.remove('cart-open');
-                overlay.classList.add('hidden');
-                if(document.getElementById('product-modal').classList.contains('hidden')){
-                    document.body.classList.remove('modal-open');
-                }
-            }
-        }
-
-        function changeCartQty(index, amount) {
-            cart[index].qty += amount;
-            if (cart[index].qty <= 0) {
-                removeFromCart(index);
-            } else {
-                updateCartUI();
-            }
-        }
-
-        function updateCartUI() {
-            try {
-                localStorage.setItem('artPrimeCart', JSON.stringify(cart));
-            } catch(e) {
-                console.error('Failed to save cart to storage', e);
-            }
-            
-            const cartItemsContainer = document.getElementById('cart-items');
-            const checkoutBtn = document.getElementById('checkout-btn');
-            cartItemsContainer.innerHTML = '';
-            let totalItems = 0; let subtotal = 0;
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-full text-gray-500">
-                        <svg class="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                        <p class="font-light">Your cart is empty.</p>
-                        <button onclick="toggleCart(false)" class="mt-6 border-b border-terra text-terra hover:text-navy transition-colors">Continue Shopping</button>
-                    </div>`;
-                checkoutBtn.disabled = true;
-                checkoutBtn.classList.replace('bg-terra', 'bg-gray-300');
-                checkoutBtn.classList.remove('hover:bg-navy');
-                checkoutBtn.classList.add('cursor-not-allowed');
-            } else {
-                checkoutBtn.disabled = false;
-                checkoutBtn.classList.replace('bg-gray-300', 'bg-terra');
-                checkoutBtn.classList.add('hover:bg-navy');
-                checkoutBtn.classList.remove('cursor-not-allowed');
-
-                cart.forEach((item, index) => {
-                    totalItems += item.qty; subtotal += item.price * item.qty;
-                    cartItemsContainer.innerHTML += `
-                        <div class="flex items-center gap-4 border-b border-gray-100 pb-4">
-                            <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover bg-gray-100">
-                            <div class="flex-1">
-                                <h4 class="font-serif text-navy text-sm leading-tight">${item.name}</h4>
-                                <p class="text-terra font-semibold text-sm mt-1">KES ${(item.price * item.qty).toLocaleString()}</p>
-                                
-                                <div class="flex items-center mt-3 border border-gray-200 w-fit rounded">
-                                    <button onclick="changeCartQty(${index}, -1)" aria-label="Decrease quantity" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition focus:outline-none focus:ring-1 focus:ring-terra">-</button>
-                                    <span class="px-3 text-xs font-semibold text-navy">${item.qty}</span>
-                                    <button onclick="changeCartQty(${index}, 1)" aria-label="Increase quantity" class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition focus:outline-none focus:ring-1 focus:ring-terra">+</button>
-                                </div>
-                            </div>
-                            <!-- Fixed Contrast on Cart Remove Button (N03) -->
-                            <button onclick="removeFromCart(${index})" aria-label="Remove ${item.name} from cart" class="text-gray-500 hover:text-red-600 transition ml-2 p-2 focus:outline-none focus:ring-2 focus:ring-red-600 rounded-full">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                            </button>
-                        </div>
-                    `;
-                });
-            }
-            document.getElementById('nav-cart-count').innerText = `CART (${totalItems})`;
-            document.getElementById('cart-subtotal').innerText = `KES ${subtotal.toLocaleString()}`;
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function checkoutWhatsApp() {
-            if (cart.length === 0) return;
-            let message = "Hello Art Prime, I would like to place an order:\n\n";
-            let subtotal = 0;
-            cart.forEach(item => {
-                message += `${item.qty}x ${item.name} - KES ${(item.price * item.qty).toLocaleString()}\n`;
-                subtotal += item.price * item.qty;
-            });
-            message += `\n*Total: KES ${subtotal.toLocaleString()}*\n\nPlease let me know the payment and delivery details.`;
-            window.open(`https://wa.me/254748649103?text=${encodeURIComponent(message)}`, '_blank');
-        }
-    </script>
+    <!-- Static storefront; catalogue and orders are handled in the browser. -->
+    <script src="assets/catalogue.js" defer></script>
+    <script src="assets/storefront.js" defer></script>
 </body>
 </html>
