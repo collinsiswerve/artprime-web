@@ -2,6 +2,12 @@
 
 A static catalogue on GitHub Pages, with catalogue management in Google Sheets and order enquiries sent to WhatsApp. No server, customer accounts or online payment gateway is required.
 
+## Studio and visual design
+
+`studio.html` adds a full-screen interior portfolio, a filterable project index, accessible photo galleries, shareable project links and WhatsApp project enquiries. The shop keeps its existing search, marketing filters, saved cart, product links and WhatsApp ordering, with a compact shared navigation and warmer editorial styling. Studio photographs use a saved static catalogue, so browsing the portfolio does not depend on a live spreadsheet request.
+
+See [the Studio content guide](docs/STUDIO_CONTENT.md) for the two Google Sheets tabs, image hosting and the **Publish website** workflow. The initial projects are explicitly labelled illustrative interior studies, ready to replace with your real project photography. `npm run build:site` prepares both pages in `dist/`; `npm run sync:studio` validates and imports the public project sheets. Cloudinary image URLs now receive responsive delivery sizes and automatic format/quality, while signed URLs remain unchanged.
+
 ## Catalogue management
 
 Keep the current spreadsheet columns in this order:
@@ -39,7 +45,7 @@ The published site uses the checked-in, minified `assets/styles.css`. Tailwind i
 
 The header and page spacing share one height setting, and the logo grows at the desktop breakpoint. The hero uses local WebP files with separate phone crops and desktop sizes, plus a JPEG fallback. Its lighter heading and dark overlay improve text contrast. Google Fonts connections start early, and the fonts still use `display=swap`.
 
-Product images stay managed in the spreadsheet. Unsplash and Pexels image URLs receive responsive sizes for cards, recommendations, the cart and the product view. Addresses from other hosts, including signed URLs, remain intact. For final catalogue photos, use sharp source images and a host that supports resizing; uploading a large original to a host without that feature still requires preparing a smaller image yourself.
+Product images stay managed in the spreadsheet. Unsplash, Pexels and Cloudinary image URLs receive responsive sizes for cards, recommendations, the cart and the product view. Signed URLs and addresses from other hosts remain intact. For final catalogue photos, use sharp source images and a host that supports resizing; uploading a large original to a host without that feature still requires preparing a smaller image yourself.
 
 The hero files are optimized versions of the existing photograph: https://images.unsplash.com/photo-1618221195710-dd6b41faaea6. The JPEG fallback also supplies the site's social preview image.
 

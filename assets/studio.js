@@ -1,0 +1,336 @@
+(function () {
+    'use strict';
+    const byId = id => document.getElementById(id);
+    const dialog = byId('project-dialog');
+    let projects = [];
+    let featured = [];
+    let stageIndex = 0;
+    let stageRequest = 0;
+    let currentProject = null;
+    let photoIndex = 0;
+    let activeFilter = 'All spaces';
+    let returnFocus = null;
+    let loading = false;
+
+    function node(tag, classes, text) {
+        const result = document.createElement(tag);
+        if (classes) result.className = classes;
+        if (text !== undefined) result.textContent = text;
+        return result;
+    }
+
+    function makeButton(label, classes, action) {
+        const result = node('button', classes, label);
+        result.type = 'button';
+        result.addEventListener('click', action);
+        return result;
+    }
+
+    function setImage(image, source, alt, kind = 'card') {
+        const widths = kind === 'thumbnail' ? [160, 320] : kind === 'stage' ? [640, 960, 1600, 1920] : [640, 960, 1600];
+        const variants = window.ArtPrimeCatalogue.imageVariants(source, widths, document.baseURI);
+        image.alt = alt;
+        image.classList.add('image-loading');
+        image.onload = () => image.classList.remove('image-loading');
+        image.onerror = () => {
+            image.onerror = null;
+            image.removeAttribute('srcset');
+            image.src = new URL('assets/product-placeholder.svg', document.baseURI).href;
+            image.alt = `${alt} — photograph unavailable`;
+            image.classList.remove('image-loading');
+        };
+        image.sizes = kind === 'stage' ? '100vw' : kind === 'thumbnail' ? '68px' : '(min-width: 768px) 48vw, 88vw';
+        if (/^assets\/studio\/[a-z-]+-1600\.webp$/.test(source)) {
+            image.srcset = `${source.replace('-1600.webp', '-640.webp')} 640w, ${source} 1600w`;
+            image.src = kind === 'thumbnail' ? source.replace('-1600.webp', '-640.webp') : source;
+        } else {
+            if (variants.srcset) image.srcset = variants.srcset;
+            else image.removeAttribute('srcset');
+            image.src = variants.src;
+        }
+        if (image.complete && image.naturalWidth) image.classList.remove('image-loading');
+    }
+
+    async function showStage(index) {
+        if (!featured.length) return;
+        const request = ++stageRequest;
+        stageIndex = (index + featured.length) % featured.length;
+        const project = featured[stageIndex];
+        // Keep the current photograph visible while the chosen photograph decodes.
+        const incoming = new Image();
+        setImage(incoming, project.coverImage, project.coverAlt, 'stage');
+        try { await incoming.decode(); } catch (_) { /* The visible image has the same error fallback. */ }
+        if (request !== stageRequest) return;
+        setImage(byId('stage-image'), project.coverImage, project.coverAlt, 'stage');
+        byId('stage-title').replaceChildren(document.createTextNode(project.title), node('span', 'title-period', '.'));
+        byId('stage-meta').textContent = [project.location, project.category].filter(Boolean).join(' / ').toUpperCase();
+        byId('stage-count').textContent = `${String(stageIndex + 1).padStart(2, '0')} / ${String(featured.length).padStart(2, '0')}`;
+        byId('stage-dots').querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === stageIndex)));
+    }
+
+    function renderStage() {
+        const selected = projects.filter(project => project.featured);
+        featured = selected.length ? selected : projects;
+        byId('stage-open').disabled = !featured.length;
+        byId('stage-open').hidden = !featured.length;
+        byId('stage-prev').disabled = featured.length < 2;
+        byId('stage-next').disabled = featured.length < 2;
+        byId('stage-prev').hidden = featured.length < 2;
+        byId('stage-next').hidden = featured.length < 2;
+        const fragment = document.createDocumentFragment();
+        featured.forEach((project, index) => {
+            const button = makeButton(undefined, 'stage-dot', () => showStage(index));
+            button.setAttribute('aria-label', `Show ${project.title}`);
+            button.setAttribute('aria-pressed', String(index === 0));
+            fragment.append(button);
+        });
+        byId('stage-dots').replaceChildren(fragment);
+        if (featured.length) showStage(0);
+        else {
+            byId('stage-title').textContent = 'Interiors, considered.';
+            byId('stage-meta').textContent = 'ART PRIME STUDIO / NAIROBI';
+            byId('stage-count').textContent = '';
+            byId('stage-open').hidden = true;
+        }
+    }
+
+    function renderFilters() {
+        const categories = ['All spaces', ...new Set(projects.map(project => project.category))];
+        const fragment = document.createDocumentFragment();
+        categories.forEach(category => {
+            const button = makeButton(category, 'project-filter', () => {
+                activeFilter = category;
+                renderGrid();
+                byId('project-filters').querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item.textContent === category)));
+            });
+            button.setAttribute('aria-pressed', String(category === activeFilter));
+            fragment.append(button);
+        });
+        byId('project-filters').replaceChildren(fragment);
+    }
+
+    function renderGrid() {
+        const filtered = projects.filter(project => activeFilter === 'All spaces' || project.category === activeFilter);
+        const fragment = document.createDocumentFragment();
+        filtered.forEach(project => {
+            const button = makeButton(undefined, 'project-tile', () => openProject(project.id));
+            button.setAttribute('aria-label', `Explore ${project.title}`);
+            const picture = node('span', 'tile-image-wrap');
+            const image = node('img');
+            image.width = 800;
+            image.height = 1000;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            setImage(image, project.coverImage, project.coverAlt);
+            picture.append(image);
+            const caption = node('span', 'tile-caption');
+            const details = node('span');
+            details.append(node('h3', '', project.title), node('p', '', [project.location, project.category].filter(Boolean).join(' / ')));
+            const arrow = node('span', '', '↗');
+            arrow.setAttribute('aria-hidden', 'true');
+            caption.append(details, arrow);
+            button.append(picture, caption);
+            fragment.append(button);
+        });
+        byId('project-grid').replaceChildren(fragment);
+        byId('studio-status').textContent = filtered.length ? '' : 'Our next chapter is taking shape. Speak to us about your space while we prepare the portfolio.';
+        byId('project-grid').setAttribute('aria-label', `${filtered.length} ${filtered.length === 1 ? 'interior' : 'interiors'}`);
+    }
+
+    function photoAt(index) {
+        if (!currentProject) return;
+        photoIndex = (index + currentProject.images.length) % currentProject.images.length;
+        const image = currentProject.images[photoIndex];
+        setImage(byId('gallery-image'), image.url, image.alt, 'gallery');
+        byId('gallery-caption').textContent = image.caption || '';
+        byId('gallery-count').textContent = `${String(photoIndex + 1).padStart(2, '0')} / ${String(currentProject.images.length).padStart(2, '0')}`;
+        byId('gallery-thumbs').querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === photoIndex)));
+    }
+
+    function projectLink(id) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('project', id);
+        url.hash = '';
+        return url.href;
+    }
+
+    function openProject(id, { syncRoute = true } = {}) {
+        const project = projects.find(item => item.id === id);
+        if (!project) return;
+        const alreadyOpen = dialog.open;
+        if (!alreadyOpen) returnFocus = document.activeElement;
+        currentProject = project;
+        byId('project-title').textContent = project.title;
+        byId('project-category').textContent = project.category;
+        byId('project-description').textContent = project.description;
+        byId('dialog-project-index').textContent = `THE STUDIO / ${String(projects.indexOf(project) + 1).padStart(2, '0')}`;
+        const facts = document.createDocumentFragment();
+        for (const [label, value] of [['Location', project.location], ['Year', project.year]]) {
+            if (!value) continue;
+            const fact = node('div');
+            fact.append(node('dt', '', label), node('dd', '', value));
+            facts.append(fact);
+        }
+        byId('project-facts').replaceChildren(facts);
+        const enquiry = `Hello Art Prime, I'd like to discuss an interior design project. I was looking at ${project.title} in your Studio: ${projectLink(project.id)}`;
+        byId('project-inquire').href = `https://wa.me/254748649103?text=${encodeURIComponent(enquiry)}`;
+        byId('project-share-status').textContent = '';
+        byId('project-share-fallback').hidden = true;
+        byId('studio-project-link').value = projectLink(project.id);
+        const fragment = document.createDocumentFragment();
+        project.images.forEach((image, index) => {
+            const button = makeButton(undefined, 'gallery-thumb', () => photoAt(index));
+            button.setAttribute('aria-label', `View photo ${index + 1}: ${image.alt}`);
+            button.setAttribute('aria-pressed', String(index === 0));
+            const thumbnail = node('img');
+            thumbnail.width = 68;
+            thumbnail.height = 56;
+            thumbnail.loading = 'lazy';
+            thumbnail.decoding = 'async';
+            setImage(thumbnail, image.url, '', 'thumbnail');
+            button.append(thumbnail);
+            fragment.append(button);
+        });
+        byId('gallery-thumbs').replaceChildren(fragment);
+        const multiplePhotos = project.images.length > 1;
+        byId('gallery-prev').hidden = !multiplePhotos;
+        byId('gallery-next').hidden = !multiplePhotos;
+        byId('gallery-thumbs').hidden = !multiplePhotos;
+        const next = projects[(projects.indexOf(project) + 1) % projects.length];
+        byId('next-project-title').textContent = next.title;
+        byId('next-project').hidden = projects.length < 2;
+        photoAt(0);
+        if (!alreadyOpen) dialog.showModal();
+        dialog.scrollTop = 0;
+        byId('project-close').focus({ preventScroll: true });
+        if (syncRoute) {
+            const url = projectLink(id);
+            if (new URL(window.location.href).searchParams.has('project')) window.history.replaceState(window.history.state, '', url);
+            else window.history.pushState({ ...window.history.state, artPrimeStudio: true }, '', url);
+        }
+    }
+
+    function closeProject({ syncRoute = true } = {}) {
+        if (dialog.open) dialog.close();
+        if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
+        if (syncRoute && new URL(window.location.href).searchParams.has('project')) {
+            if (window.history.state?.artPrimeStudio) window.history.back();
+            else {
+                const url = new URL(window.location.href);
+                url.searchParams.delete('project');
+                window.history.replaceState(window.history.state, '', url);
+            }
+        }
+    }
+
+    function handleRoute() {
+        const id = new URL(window.location.href).searchParams.get('project');
+        if (id && projects.some(project => project.id === id)) openProject(id, { syncRoute: false });
+        else {
+            if (dialog.open) closeProject({ syncRoute: false });
+            if (id) byId('studio-status').textContent = 'This project is no longer available. Explore the spaces below or contact the studio.';
+        }
+    }
+
+    async function copyProjectLink() {
+        if (!currentProject) return;
+        try {
+            await navigator.clipboard.writeText(projectLink(currentProject.id));
+            byId('project-share-status').textContent = 'Project link copied.';
+        } catch (_) {
+            byId('project-share-fallback').hidden = false;
+            byId('studio-project-link').focus();
+            byId('studio-project-link').select();
+            byId('project-share-status').textContent = 'Copy the selected project link.';
+        }
+    }
+
+    async function loadProjects() {
+        if (loading) return;
+        loading = true;
+        byId('studio-retry').hidden = true;
+        byId('project-grid').setAttribute('aria-busy', 'true');
+        try {
+            const response = await fetch('assets/studio-projects.json', { cache: 'no-cache', signal: AbortSignal.timeout(12000) });
+            if (!response.ok) throw new Error('Portfolio unavailable');
+            const snapshot = window.ArtPrimeStudio.validateSnapshot(await response.json());
+            projects = snapshot.projects;
+            activeFilter = 'All spaces';
+            byId('example-notice').hidden = !snapshot.isExample;
+            byId('work-label').textContent = snapshot.isExample ? 'EXPLORE THE INTERIOR STUDIES' : 'SELECTED PROJECTS';
+            renderStage();
+            renderFilters();
+            renderGrid();
+            handleRoute();
+        } catch (error) {
+            byId('studio-status').textContent = 'The portfolio could not load. Please try again, or contact us to discuss your space.';
+            byId('studio-retry').hidden = false;
+            console.error('Unable to load Studio:', error);
+        } finally {
+            loading = false;
+            byId('project-grid').setAttribute('aria-busy', 'false');
+        }
+    }
+
+    function init() {
+        const header = document.querySelector('.studio-nav');
+        const toggle = document.querySelector('.atelier-menu-toggle');
+        const menu = byId('studio-mobile-menu');
+        function closeMenu() {
+            menu.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+            header.classList.remove('menu-is-open');
+        }
+        toggle.addEventListener('click', () => {
+            const open = menu.hidden;
+            menu.hidden = !open;
+            toggle.setAttribute('aria-expanded', String(open));
+            header.classList.toggle('menu-is-open', open);
+        });
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 70), { passive: true });
+        header.classList.toggle('is-scrolled', window.scrollY > 70);
+        byId('stage-prev').addEventListener('click', () => showStage(stageIndex - 1));
+        byId('stage-next').addEventListener('click', () => showStage(stageIndex + 1));
+        byId('stage-open').addEventListener('click', () => { if (featured[stageIndex]) openProject(featured[stageIndex].id); });
+        byId('project-close').addEventListener('click', () => closeProject());
+        dialog.addEventListener('cancel', event => { event.preventDefault(); closeProject(); });
+        byId('gallery-prev').addEventListener('click', () => photoAt(photoIndex - 1));
+        byId('gallery-next').addEventListener('click', () => photoAt(photoIndex + 1));
+        byId('next-project').addEventListener('click', () => {
+            if (currentProject) openProject(projects[(projects.indexOf(currentProject) + 1) % projects.length].id);
+        });
+        byId('project-share').addEventListener('click', copyProjectLink);
+        byId('studio-retry').addEventListener('click', loadProjects);
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && !dialog.open) closeMenu();
+            if (event.target.closest('input,textarea,select')) return;
+            if (dialog.open && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+                event.preventDefault();
+                photoAt(photoIndex + (event.key === 'ArrowRight' ? 1 : -1));
+            } else if (event.target.closest('.studio-stage') && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+                event.preventDefault();
+                showStage(stageIndex + (event.key === 'ArrowRight' ? 1 : -1));
+            }
+        });
+        let touchStart = null;
+        const stage = document.querySelector('.studio-stage');
+        stage.addEventListener('touchstart', event => {
+            if (!event.target.closest('a,button') && event.touches.length === 1) touchStart = [event.touches[0].clientX, event.touches[0].clientY];
+            else touchStart = null;
+        }, { passive: true });
+        stage.addEventListener('touchend', event => {
+            if (!touchStart) return;
+            const deltaX = event.changedTouches[0].clientX - touchStart[0];
+            const deltaY = event.changedTouches[0].clientY - touchStart[1];
+            if (Math.abs(deltaX) > 55 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) showStage(stageIndex + (deltaX < 0 ? 1 : -1));
+            touchStart = null;
+        }, { passive: true });
+        window.addEventListener('popstate', handleRoute);
+        byId('footer-year').textContent = String(new Date().getFullYear());
+        loadProjects();
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+    else init();
+})();

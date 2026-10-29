@@ -39,8 +39,10 @@
         const source = imageURL(value, base);
         const url = new URL(source);
         // Transform only known image CDNs. Other hosts and signed addresses stay intact.
-        const signed = [...url.searchParams.keys()].some(key => /^(sig|signature|token|expires|x-amz-.+|x-goog-.+)$/i.test(key));
-        if (!['images.unsplash.com', 'images.pexels.com'].includes(url.hostname) || signed) {
+        const signed = [...url.searchParams.keys()].some(key => /^(sig|signature|token|__cld_token__|expires|x-amz-.+|x-goog-.+)$/i.test(key));
+        const cloudinary = url.hostname === 'res.cloudinary.com' && /^\/[^/]+\/image\/upload\//.test(url.pathname);
+        const cloudinarySignature = cloudinary && /\/s--[^/]+--\//.test(url.pathname);
+        if ((!['images.unsplash.com', 'images.pexels.com'].includes(url.hostname) && !cloudinary) || signed || cloudinarySignature) {
             return { src: source, srcset: '' };
         }
         const sizes = [...new Set(widths)].filter(width => Number.isSafeInteger(width) && width > 0).sort((a, b) => a - b);
@@ -49,6 +51,18 @@
         const originalHeight = Number(url.searchParams.get('h'));
         function variant(width) {
             const image = new URL(url);
+            if (cloudinary) {
+                const segments = image.pathname.split('/');
+                // Keep any existing edits, then limit the delivered size before the version/public ID.
+                let insertAt = segments.findIndex((segment, index) => index >= 4 && /^v\d+$/.test(segment));
+                if (insertAt < 0) {
+                    insertAt = 4;
+                    while (insertAt < segments.length - 1 && /^(?:c|w|h|q|f|ar|dpr|g|e|a|b|bo|r|l|u|fl|d|t|if)_/.test(segments[insertAt])) insertAt++;
+                }
+                segments.splice(insertAt, 0, `c_limit,w_${width},f_auto,q_auto`);
+                image.pathname = segments.join('/');
+                return image.href;
+            }
             image.searchParams.set('w', width);
             if (originalWidth > 0 && originalHeight > 0) image.searchParams.set('h', Math.round(originalHeight * width / originalWidth));
             image.searchParams.set('auto', 'format');

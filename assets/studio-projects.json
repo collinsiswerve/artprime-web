@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "isExample": true,
+  "updatedAt": "2026-10-29T00:00:00.000Z",
+  "projects": [
+    {
+      "id": "quiet-living",
+      "title": "Quiet living",
+      "location": "Interior study 01",
+      "category": "Residential",
+      "year": "",
+      "description": "A study in warmth, natural light and the pleasure of everyday living. Soft textures and considered objects create a space that feels personal, unhurried and at ease. These illustrative photographs demonstrate the portfolio layout; they are not Art Prime project photographs.",
+      "coverImage": "assets/studio/living-1600.webp",
+      "coverAlt": "Sunlit living room with warm leather seating, natural timber and indoor plants",
+      "sortOrder": 1,
+      "featured": true,
+      "images": [
+        { "url": "assets/studio/living-1600.webp", "alt": "Warm living room with a picture wall, leather sofa and natural daylight", "caption": "Illustrative imagery · Light, texture and a lived-in warmth." },
+        { "url": "assets/studio/bedroom-1600.webp", "alt": "Light filled lounge with a cream sectional sofa and layered natural accessories", "caption": "Illustrative imagery · A softer palette for everyday life." }
+      ]
+    },
+    {
+      "id": "material-dialogue",
+      "title": "Material dialogue",
+      "location": "Interior study 02",
+      "category": "Residential",
+      "year": "",
+      "description": "Timber, stone and a quiet palette bring definition to open spaces. This interior study explores the balance between architectural clarity and the softer details that make a room feel welcoming. These photographs are illustrative, not completed Art Prime work.",
+      "coverImage": "assets/studio/warm-1600.webp",
+      "coverAlt": "Contemporary open plan interior with warm timber walls and a pale sofa",
+      "sortOrder": 2,
+      "featured": true,
+      "images": [
+        { "url": "assets/studio/warm-1600.webp", "alt": "Open plan living space with timber cladding, a grey sofa and black architectural accents", "caption": "Illustrative imagery · A conversation between texture and form." },
+        { "url": "assets/studio/details-1600.webp", "alt": "Minimal dining space with a dark table, stone wall and timber screen", "caption": "Illustrative imagery · Natural materials, considered details." },
+        { "url": "assets/studio/kitchen-1600.webp", "alt": "Calm grey bathroom with a freestanding bath and a long horizontal window", "caption": "Illustrative imagery · A moment of quiet." }
+      ]
+    },
+    {
+      "id": "gathered-spaces",
+      "title": "Gathered spaces",
+      "location": "Interior study 03",
+      "category": "Styling",
+      "year": "",
+      "description": "Rooms are made to be lived in. This study brings together generous seating, familiar materials and a few expressive pieces to explore the art of gathering. The images are examples used to preview the portfolio experience, not Art Prime project photographs.",
+      "coverImage": "assets/studio/dining-1600.webp",
+      "coverAlt": "Airy contemporary sitting room with blue sofas, timber furnishings and a floating staircase",
+      "sortOrder": 3,
+      "featured": true,
+      "images": [
+        { "url": "assets/studio/dining-1600.webp", "alt": "Light filled double height living room with blue seating and an open timber staircase", "caption": "Illustrative imagery · Space to come together." },
+        { "url": "assets/studio/details-1600.webp", "alt": "Contemporary dining table with sculptural chairs and an open plan backdrop", "caption": "Illustrative imagery · Objects that belong together." }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,9 @@
   "scripts": {
     "build": "tailwindcss -c tailwind.config.cjs -i styles/input.css -o assets/styles.css --minify",
     "dev:css": "tailwindcss -c tailwind.config.cjs -i styles/input.css -o assets/styles.css --watch",
-    "test": "node --test"
+    "test": "node --test",
+    "sync:studio": "node scripts/sync-studio.cjs",
+    "build:site": "npm run build && node scripts/prepare-site.cjs"
   },
   "engines": {
     "node": ">=18"
