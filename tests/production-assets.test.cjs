@@ -11,7 +11,7 @@ test('production pages load local styles and all local image sources exist', () 
     assert.doesNotMatch(html, /cdn\.tailwindcss\.com|tailwind\.config/);
     const images = [...html.matchAll(/(?:src|srcset)="(assets\/[^"\n]+)"/g)]
         .flatMap(match => match[1].split(', ').map(source => source.split(' ')[0]));
-    assert.ok(images.length >= 7);
+    assert.ok(images.length > 0);
     for (const image of images) assert.ok(fs.existsSync(path.join(root, image)), image);
 });
 

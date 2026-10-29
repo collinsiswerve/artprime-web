@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Art Prime Interiors | Premium Furniture & Decor in Nairobi</title>
     <meta name="title" content="Art Prime Interiors | Premium Furniture & Decor in Nairobi">
     <meta name="description" content="Discover our curated collection of premium interior pieces, furniture, and decor designed to elevate your living and working environments in Kenya.">
     <meta name="keywords" content="interior design Nairobi, premium furniture Kenya, home decor, office furniture, Art Prime, interior pieces">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://collinsiswerve.github.io/artprime-web/">
     <meta property="og:title" content="Art Prime Interiors | Premium Furniture & Decor">
@@ -24,48 +24,31 @@
 
     <link rel="canonical" href="https://collinsiswerve.github.io/artprime-web/">
     <link rel="icon" type="image/png" href="assets/artprime-logo.png">
-    <link rel="stylesheet" href="assets/styles.css?v=20261006-hero-dialog">
+    <link rel="stylesheet" href="assets/styles.css?v=studio-1">
+    <link rel="stylesheet" href="assets/atelier.css?v=studio-1">
+    <meta name="theme-color" content="#f5f3ee">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+<body class="shop-page bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+    <a class="skip-link" href="#collections">Skip to the collection</a>
 
-    <!-- Sticky Navigation Bar -->
-    <nav class="site-header fixed w-full top-0 z-50 px-4 md:px-12 text-white bg-navy shadow-xl">
-        <div class="max-w-7xl h-full mx-auto flex justify-between items-center gap-3">
-            <a href="#" aria-label="Art Prime Interiors home" class="flex items-center shrink-0 rounded focus:outline-none focus:ring-2 focus:ring-terra focus:ring-offset-2 focus:ring-offset-navy">
-                <picture>
-                    <source srcset="assets/artprime-logo.webp" type="image/webp">
-                    <img src="assets/artprime-logo.png" width="400" height="234" alt="Art Prime Interiors Logo" loading="eager" decoding="async" fetchpriority="high" class="brand-logo object-contain bg-white rounded shadow-sm">
-                </picture>
-            </a>
-            
-            <div class="hidden md:flex space-x-6 lg:space-x-10 text-xs lg:text-sm tracking-widest uppercase text-gray-200 font-semibold drop-shadow-md">
-                <a href="#collections" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Collections</a>
-                <a href="#" onclick="alert('Studio is coming soon. We are preparing something extraordinary.'); return false;" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Studio</a>
-                <a href="#footer" class="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-terra">Contact</a>
-            </div>
-
-            <div class="flex items-center gap-2 md:gap-4 shrink-0">
-                <button id="nav-cart-button" onclick="toggleCart()" class="flex items-center gap-1.5 md:gap-2 hover:text-gray-300 transition-colors duration-300 bg-white bg-opacity-10 px-2.5 md:px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-terra" aria-label="Open cart">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span aria-hidden="true" class="hidden md:inline font-semibold text-xs tracking-widest">CART</span>
-                    <span id="nav-cart-count" aria-hidden="true" class="font-semibold text-xs">(0)</span>
-                </button>
-                
-                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-terra rounded p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
+    <nav class="atelier-nav" aria-label="Main navigation">
+        <div class="nav-links nav-left"><a href="#collections" aria-current="page">Shop</a><a href="studio.html">Studio</a></div>
+        <a class="atelier-wordmark" href="index.html" aria-label="Art Prime Interiors home">art prime<span class="wordmark-dot">.</span><span class="wordmark-subtitle">INTERIORS</span></a>
+        <div class="nav-links nav-right">
+            <a href="#footer">Contact ↗</a>
+            <button id="nav-cart-button" class="atelier-cart" onclick="toggleCart()" aria-label="Open cart">
+                <svg viewBox="0 0 24 26" aria-hidden="true"><path d="M4 7h16l1 17H3L4 7Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>
+                <span id="nav-cart-count" aria-hidden="true">(0)</span>
+            </button>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-navy border-t border-gray-700 flex flex-col shadow-xl z-50">
-            <a href="#collections" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-gray-300 uppercase tracking-widest text-sm border-b border-gray-800">Collections</a>
-            <a href="#" onclick="alert('Studio is coming soon.'); toggleMobileMenu(); return false;" class="px-6 py-4 text-white hover:text-gray-300 uppercase tracking-widest text-sm border-b border-gray-800">Studio</a>
-            <a href="#footer" onclick="toggleMobileMenu()" class="px-6 py-4 text-white hover:text-gray-300 uppercase tracking-widest text-sm">Contact</a>
+        <button onclick="toggleMobileMenu()" class="atelier-menu-toggle" aria-label="Toggle mobile navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+        <div id="mobile-menu" class="atelier-mobile-menu hidden">
+            <a href="#collections" onclick="toggleMobileMenu()">Shop the collection</a>
+            <a href="studio.html">The studio</a>
+            <a href="#footer" onclick="toggleMobileMenu()">Contact Art Prime ↗</a>
         </div>
     </nav>
 
@@ -78,25 +61,26 @@
             </picture>
             <div class="hero-overlay absolute inset-0"></div>
             <div class="relative z-10 flex flex-col items-center max-w-4xl">
-                <h1 id="hero-title" class="hero-title font-serif text-white mb-6 tracking-wide drop-shadow-lg">Your Space <span class="block text-sand italic">Our Expertise</span></h1>
-                <p class="max-w-2xl text-gray-100 text-lg md:text-xl mb-10 font-light drop-shadow-md">Discover our curated collection of premium interior pieces designed to elevate your living and working environments.</p>
-                <a href="#collections" class="bg-terra text-white px-10 py-4 uppercase tracking-widest text-sm font-semibold hover:bg-white hover:text-navy transition-all duration-300 shadow-xl focus:outline-none focus:ring-4 focus:ring-white">View Collection</a>
+                <p class="hero-eyebrow">INTERIORS &amp; CONSIDERED OBJECTS</p>
+                <h1 id="hero-title" class="hero-title font-serif text-white mb-6 tracking-wide drop-shadow-lg">Your space.<span class="block text-sand italic">Our expertise.</span></h1>
+                <p class="max-w-2xl text-gray-100 text-lg md:text-xl mb-10 font-light drop-shadow-md">Thoughtful furniture, lighting and objects. Find the pieces that make a space your own.</p>
+                <div class="hero-actions"><a href="#collections" class="hero-shop-button">Shop the collection ↗</a><a href="studio.html" class="hero-studio-button">Discover the studio <span aria-hidden="true">↗</span></a></div>
             </div>
         </section>
 
         <section id="collections" class="py-20 bg-white px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-serif text-navy mb-10">Curated Collections</h2>
-                    
-                    <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-10 border-b border-gray-200 pb-6">
+                <div class="mb-8">
+                    <div class="collection-header"><div><p class="eyebrow">THE COLLECTION</p><h2>Objects to live with.</h2></div><p>Considered pieces for everyday living.<br>Find your next favourite.</p></div>
+
+                    <div class="flex flex-col lg:flex-row justify-between items-center gap-6 mb-6 border-b border-gray-200 pb-5">
                         <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-sm tracking-widest uppercase font-semibold text-gray-600" id="category-tabs">
                             <button onclick="renderProducts('All')" class="tab-btn hover:text-terra text-navy border-b-2 border-terra transition-colors pb-1 focus:outline-none focus:ring-2 focus:ring-terra">All</button>
                             <button onclick="renderProducts('New Arrivals')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent focus:outline-none focus:ring-2 focus:ring-terra">New Arrivals</button>
                             <button onclick="renderProducts('Best Sellers')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent focus:outline-none focus:ring-2 focus:ring-terra">Best Sellers</button>
                             <button onclick="renderProducts('Sale')" class="tab-btn hover:text-terra transition-colors pb-1 border-b-2 border-transparent focus:outline-none focus:ring-2 focus:ring-terra">Sale</button>
                         </div>
-                        
+
                         <div class="relative w-full lg:w-72">
                             <input type="text" id="search-input" maxlength="160" aria-label="Search products" aria-describedby="search-status" autocomplete="off" oninput="handleSearch()" placeholder="Search mirrors, lights, chairs..." class="w-full bg-gray-50 border border-gray-200 py-3 pl-10 pr-12 text-sm text-navy focus:outline-none focus:border-terra focus:ring-1 focus:ring-terra transition-colors">
                             <button id="clear-search" type="button" onclick="clearSearch()" aria-label="Clear search" class="hidden absolute right-2 top-1.5 px-3 py-1.5 text-gray-600 hover:text-navy focus:outline-none focus:ring-2 focus:ring-terra">×</button>
@@ -104,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <p id="search-status" role="status" aria-live="polite" class="text-sm text-gray-600 mb-6"></p>
                 <p id="product-notice" role="status" class="text-center text-gray-600 mb-6"></p>
                 <div id="catalogue-error" class="hidden text-center py-20" role="alert">
@@ -116,14 +100,15 @@
                     <p class="text-gray-600 font-light tracking-widest uppercase text-sm">Loading Catalog...</p>
                 </div>
 
-                <div id="product-grid" aria-busy="true" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"></div>
-                
+                <div id="product-grid" aria-busy="true" class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"></div>
+
                 <div id="empty-state" class="hidden text-center py-20 text-gray-500 font-light">
                     <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <p>No products found matching your search.</p>
                 </div>
             </div>
         </section>
+        <section class="shop-studio-invitation" aria-labelledby="studio-invitation-title"><div><p class="eyebrow">BEYOND THE OBJECTS</p><h2 id="studio-invitation-title">A space that feels<br><em>like you.</em></h2></div><div><p>Discover the Art Prime Studio. A considered approach to interiors, from the room as a whole to the objects that bring it to life.</p><a class="text-link" href="studio.html">Step inside the studio <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
     <!-- Detailed Product Modal -->
@@ -195,24 +180,9 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer" class="bg-navy text-gray-300 py-16 px-6 mt-auto border-t-4 border-terra">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-            <div class="flex flex-col items-center md:items-start">
-                <span class="text-2xl font-serif tracking-widest uppercase text-white mb-4">ART PRIME.</span>
-                <p class="text-sm font-light leading-relaxed max-w-xs">Premium interior design and curated decor pieces to transform your residential and commercial spaces.</p>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <h3 class="text-white tracking-widest text-sm uppercase font-semibold mb-4">Contact Us</h3>
-                <a href="tel:+254748649103" class="text-sm font-light mb-2 hover:text-gray-300 transition-colors focus:outline-none focus:ring-1 focus:ring-terra">📞 07 48 649 103</a>
-                <a href="mailto:artprimeinteriorsltd@gmail.com" class="text-sm font-light hover:text-gray-300 transition-colors focus:outline-none focus:ring-1 focus:ring-terra">✉️ artprimeinteriorsltd@gmail.com</a>
-            </div>
-            <div class="flex flex-col items-center md:items-start">
-                <h3 class="text-white tracking-widest text-sm uppercase font-semibold mb-4">Visit Us</h3>
-                <p class="text-sm font-light mb-2">Spur Mall, Thika Road</p>
-                <p class="text-sm font-light">Nairobi, Kenya</p>
-            </div>
-        </div>
+    <footer id="footer">
+        <div class="shop-footer-top section-wrap"><div><p class="eyebrow">LET'S MAKE YOUR SPACE YOUR OWN</p><a class="footer-wordmark" href="studio.html">art prime.</a></div><div><p class="eyebrow">CONTACT</p><a href="tel:+254748649103">+254 748 649 103</a><a href="mailto:artprimeinteriorsltd@gmail.com">artprimeinteriorsltd@gmail.com</a></div><div><p class="eyebrow">VISIT US</p><p>Spur Mall, Thika Road<br>Nairobi, Kenya</p></div></div>
+        <div class="atelier-footer"><p>INTERIORS &amp; CONSIDERED OBJECTS</p><a href="studio.html">Discover the studio ↗</a><span>© 2026 Art Prime Interiors</span></div>
     </footer>
 
     <!-- Static storefront; catalogue and orders are handled in the browser. -->

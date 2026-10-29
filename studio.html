@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio | Interior Design in Nairobi | Art Prime Interiors</title>
+    <meta name="description" content="Explore the Art Prime Studio. Considered interiors, warm materials and spaces with a sense of belonging. Discuss your residential or commercial interior with us.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Art Prime Studio | Interiors with intention">
+    <meta property="og:description" content="A considered approach to interiors, styling and the way we live.">
+    <meta property="og:image" content="https://collinsiswerve.github.io/artprime-web/assets/studio/living-1600.webp">
+    <meta name="theme-color" content="#efede7">
+    <link rel="canonical" href="https://collinsiswerve.github.io/artprime-web/studio.html">
+    <link rel="icon" type="image/png" href="assets/artprime-logo.png">
+    <link rel="stylesheet" href="assets/styles.css?v=studio-1">
+    <link rel="stylesheet" href="assets/atelier.css?v=studio-1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="studio-page">
+    <a class="skip-link" href="#studio-main">Skip to content</a>
+    <nav class="atelier-nav studio-nav" aria-label="Main navigation">
+        <div class="nav-links nav-left">
+            <a href="index.html#collections">Shop</a>
+            <a href="studio.html" aria-current="page">Studio</a>
+        </div>
+        <a class="atelier-wordmark" href="index.html" aria-label="Art Prime Interiors home">art prime<span class="wordmark-dot">.</span><span class="wordmark-subtitle">INTERIORS</span></a>
+        <div class="nav-links nav-right">
+            <a href="#studio-contact">Inquire <span aria-hidden="true">↗</span></a>
+            <a class="shop-link" href="index.html#collections">The collection <span aria-hidden="true">↗</span></a>
+        </div>
+        <button class="atelier-menu-toggle" type="button" aria-expanded="false" aria-controls="studio-mobile-menu" aria-label="Open navigation"><span></span><span></span></button>
+        <div id="studio-mobile-menu" class="atelier-mobile-menu" hidden>
+            <a href="index.html#collections">Shop the collection</a>
+            <a href="studio.html" aria-current="page">The studio</a>
+            <a href="#selected-projects">Explore the spaces</a>
+            <a href="#studio-contact">Start a conversation ↗</a>
+        </div>
+    </nav>
+
+    <main id="studio-main">
+        <section class="studio-stage" aria-roledescription="carousel" aria-label="Featured interiors">
+            <img id="stage-image" class="stage-image" src="assets/studio/living-1600.webp" srcset="assets/studio/living-640.webp 640w, assets/studio/living-1600.webp 1600w" sizes="100vw" alt="Sunlit living room with warm leather seating, timber furnishings and indoor plants" width="1600" height="1067" fetchpriority="high" decoding="async">
+            <div class="stage-shade"></div>
+            <div class="stage-intro"><span>THE STUDIO</span><span>NAIROBI, KENYA</span></div>
+            <div class="stage-copy">
+                <p id="stage-kicker" class="eyebrow">A CONSIDERED WAY OF LIVING</p>
+                <h1 id="stage-title">Quiet living<span class="title-period">.</span></h1>
+                <button id="stage-open" class="stage-project-link" type="button" disabled>Explore the space <span aria-hidden="true">↗</span></button>
+            </div>
+            <div id="stage-dots" class="stage-dots" aria-label="Choose a featured interior"></div>
+            <div class="stage-bottom">
+                <a class="stage-scroll" href="#selected-projects">Discover our world <span aria-hidden="true">↓</span></a>
+                <p id="stage-meta">INTERIOR STUDY 01 / RESIDENTIAL</p>
+                <div class="stage-controls">
+                    <span id="stage-count" aria-live="polite" aria-atomic="true">01 / 03</span>
+                    <button id="stage-prev" class="round-arrow" type="button" aria-label="Previous featured interior" disabled>←</button>
+                    <button id="stage-next" class="round-arrow" type="button" aria-label="Next featured interior" disabled>→</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="selected-projects" class="studio-work section-wrap" aria-labelledby="work-title">
+            <div id="example-notice" class="example-notice" hidden><span class="notice-dot"></span>PORTFOLIO PREVIEW <span class="notice-detail">Illustrative photographs, ready for your own projects.</span></div>
+            <div class="work-intro">
+                <div><p class="eyebrow">THE ART PRIME PERSPECTIVE</p><h2 id="work-title">Spaces with soul.<br><em>Details with meaning.</em></h2></div>
+                <p class="intro-body">We believe a space should feel as good as it looks. Considered materials, quiet contrasts and objects with character come together to create a feeling of belonging.</p>
+            </div>
+            <div class="work-heading"><p id="work-label" class="eyebrow">EXPLORE THE SPACES</p><div id="project-filters" class="project-filters" role="group" aria-label="Filter interiors"></div></div>
+            <p id="studio-status" class="studio-status" role="status">Loading the studio…</p>
+            <div id="project-grid" class="studio-grid" aria-live="polite" aria-busy="true"></div>
+            <button id="studio-retry" class="text-link" type="button" hidden>Try loading again <span aria-hidden="true">↗</span></button>
+            <noscript><p>Explore our interior design services and discuss your space with Art Prime. Please enable JavaScript to browse the project galleries.</p></noscript>
+        </section>
+
+        <section class="studio-philosophy section-wrap" aria-labelledby="philosophy-title">
+            <p class="eyebrow">MORE THAN A BEAUTIFUL ROOM</p>
+            <div class="philosophy-content"><h2 id="philosophy-title">Designed around<br><em>the way you live.</em></h2><div><p>From a room's first impression to the smallest finishing touch, we bring a thoughtful eye to interiors. A balance of function and feeling. Spaces to settle into, gather in and make your own.</p><ul class="studio-services"><li>Residential interiors <span>01</span></li><li>Commercial spaces <span>02</span></li><li>Styling &amp; furnishings <span>03</span></li></ul><a class="text-link" href="index.html#collections">Find the finishing touches <span aria-hidden="true">↗</span></a></div></div>
+        </section>
+
+        <section id="studio-contact" class="studio-contact section-wrap" aria-labelledby="contact-title">
+            <p class="eyebrow">SOMETHING BEAUTIFUL STARTS WITH A CONVERSATION</p>
+            <h2 id="contact-title">Your space.<br><em>Our next conversation.</em></h2>
+            <a class="contact-circle" href="https://wa.me/254748649103?text=Hello%20Art%20Prime%2C%20I%27d%20like%20to%20discuss%20an%20interior%20design%20project." target="_blank" rel="noopener noreferrer" aria-label="Discuss your interior design project with Art Prime on WhatsApp"><span aria-hidden="true">↗</span></a>
+            <div class="contact-details"><a href="mailto:artprimeinteriorsltd@gmail.com">artprimeinteriorsltd@gmail.com</a><a href="tel:+254748649103">+254 748 649 103</a><span>Spur Mall, Thika Road · Nairobi</span></div>
+        </section>
+    </main>
+
+    <footer class="atelier-footer"><a class="footer-wordmark" href="index.html">art prime.</a><p>INTERIORS &amp; CONSIDERED OBJECTS</p><a href="index.html#collections">Shop the collection ↗</a><span>© <span id="footer-year">2026</span> Art Prime Interiors</span></footer>
+
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-title">
+        <div class="project-dialog-top"><a href="studio.html" class="dialog-wordmark" aria-label="Art Prime Studio">art prime.</a><span id="dialog-project-index"></span><button id="project-close" class="dialog-close" type="button" aria-label="Close project gallery">Close <span aria-hidden="true">×</span></button></div>
+        <div class="project-dialog-body">
+            <div class="gallery-main"><img id="gallery-image" alt="" width="1600" height="1067" decoding="async"><div class="gallery-bar"><button id="gallery-prev" type="button" class="round-arrow" aria-label="Previous project photo">←</button><p id="gallery-caption"></p><span id="gallery-count" aria-live="polite" aria-atomic="true"></span><button id="gallery-next" type="button" class="round-arrow" aria-label="Next project photo">→</button></div><div id="gallery-thumbs" class="gallery-thumbs" role="group" aria-label="Choose a project photo"></div></div>
+            <div class="project-information"><p id="project-category" class="eyebrow"></p><h2 id="project-title"></h2><dl id="project-facts"></dl><p id="project-description"></p><a id="project-inquire" class="text-link" href="https://wa.me/254748649103" target="_blank" rel="noopener noreferrer">Discuss a space like this <span aria-hidden="true">↗</span></a><button id="project-share" class="text-link" type="button">Copy project link <span aria-hidden="true">↗</span></button><p id="project-share-status" class="share-status" role="status"></p><div id="project-share-fallback" hidden><label for="studio-project-link">Project link</label><input id="studio-project-link" readonly type="text"></div><button id="next-project" class="next-project" type="button"><span>CONTINUE EXPLORING</span><span id="next-project-title"></span><span aria-hidden="true">↗</span></button></div>
+        </div>
+    </dialog>
+    <script src="assets/catalogue.js" defer></script>
+    <script src="assets/studio-model.js" defer></script>
+    <script src="assets/studio.js" defer></script>
+</body>
+</html>
