@@ -142,6 +142,16 @@ Contact details: **+254 748 649 103**, **artprimeinteriorsltd@gmail.com**, **Spu
 
 ## Running and maintaining the code
 
+### Typography and motion
+
+The visual direction follows [Studio Nato’s Studio page](https://www.studionato.com/studio): Rauschen A typography, warm paper backgrounds, fine rules and generous spacing. The same typeface runs through the shop, cart, Studio, galleries and policy pages. The Studio process rows expand with a plus-to-minus transition.
+
+`assets/site-motion.js` controls the 900ms linear fades, the navigation that moves away while scrolling down and returns while scrolling up, and the phone menu. It also registers cards after a catalogue search or portfolio filter. Keyboard focus reveals content immediately, and reduced-motion preferences turn off the transitions. The page remains readable when JavaScript or animation support is unavailable.
+
+The font source is defined in `assets/typography.css`. It currently uses the public Squarespace font URL used by the reference site, so its availability depends on that external source. For independent hosting, I need my own licensed Rauschen A webfont and can replace that URL with the licensed hosting location. This repository contains the font declaration rather than a copy of the font file. If the source changes, the pages fall back to Arial. The font preload in each HTML page must match the URL in `typography.css`.
+
+### Local checks
+
 Use Node 18 or newer; the publishing workflow uses Node 24. Install the pinned dependencies before rebuilding:
 
 ```sh
@@ -160,6 +170,8 @@ Serve the repository or `dist/` with a static HTTP server to test it; opening HT
 | `studio.html` | Featured interiors, project index and gallery |
 | `privacy.html`, `terms.html` | Public policy pages |
 | `assets/atelier.css` | Shared visual styling and policy layouts |
+| `assets/typography.css` | Rauschen A webfont declaration and fallback |
+| `assets/site-motion.js` | Scroll fades, shared navigation and phone menu |
 | `styles/input.css`, `tailwind.config.cjs`, `assets/styles.css` | Tailwind source, scanned pages and compiled output |
 | `assets/catalogue.js` | Product parsing, search, cart, image and sharing helpers |
 | `assets/storefront.js` | Shop interactions and live catalogue loading |
@@ -172,7 +184,7 @@ Serve the repository or `dist/` with a static HTTP server to test it; opening HT
 | `tests/` | Catalogue, image, production-asset and portfolio checks |
 | `docs/STUDIO_CONTENT.md` | Detailed Studio workflow and image credits |
 
-GitHub Pages uses **Settings → Pages → Source: GitHub Actions**. No private API key or paid database is needed for the current public catalogue. Google Sheets, Google Fonts and externally hosted photographs still depend on their respective services.
+GitHub Pages uses **Settings → Pages → Source: GitHub Actions**. No private API key or paid database is needed for the current public catalogue. Google Sheets, the external Squarespace font source and externally hosted photographs still depend on their respective services.
 
 Before merging website changes, I check desktop and phone layouts, policy and social links, search, product details, product and project deep links, keyboard navigation, cart refresh and the WhatsApp message. A successful build is followed by a check of the deployed pages.
 

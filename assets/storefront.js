@@ -425,6 +425,11 @@
     }
 
     function toggleMobileMenu(forceOpen) {
+        if (window.ArtPrimeMotion) {
+            const open = forceOpen ?? document.querySelector('button[aria-controls="mobile-menu"]').getAttribute('aria-expanded') !== 'true';
+            window.ArtPrimeMotion.setMenu(open);
+            return;
+        }
         const menu = byId('mobile-menu');
         const open = forceOpen ?? menu.classList.contains('hidden');
         menu.classList.toggle('hidden', !open);

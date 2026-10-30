@@ -61,7 +61,22 @@
         setImage(incoming, project.coverImage, project.coverAlt, 'stage');
         try { await incoming.decode(); } catch (_) { /* The visible image has the same error fallback. */ }
         if (request !== stageRequest) return;
-        setImage(byId('stage-image'), project.coverImage, project.coverAlt, 'stage');
+        const visible = byId('stage-image');
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.querySelectorAll('.stage-crossfade').forEach(image => image.remove());
+        const crossfade = !reduced && !document.hidden && incoming.naturalWidth
+            && visible.currentSrc !== incoming.currentSrc;
+        if (crossfade) {
+            incoming.className = 'stage-image stage-crossfade';
+            incoming.alt = '';
+            incoming.setAttribute('aria-hidden', 'true');
+            visible.parentElement.append(incoming);
+            const animation = incoming.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 900, easing: 'linear', fill: 'forwards' });
+            animation.finished.then(() => {
+                if (request === stageRequest) setImage(visible, project.coverImage, project.coverAlt, 'stage');
+                incoming.remove();
+            }).catch(() => incoming.remove());
+        } else setImage(visible, project.coverImage, project.coverAlt, 'stage');
         byId('stage-title').replaceChildren(document.createTextNode(project.title), node('span', 'title-period', '.'));
         byId('stage-meta').textContent = [project.location, project.category].filter(Boolean).join(' / ').toUpperCase();
         byId('stage-count').textContent = `${String(stageIndex + 1).padStart(2, '0')} / ${String(featured.length).padStart(2, '0')}`;
@@ -273,23 +288,6 @@
     }
 
     function init() {
-        const header = document.querySelector('.studio-nav');
-        const toggle = document.querySelector('.atelier-menu-toggle');
-        const menu = byId('studio-mobile-menu');
-        function closeMenu() {
-            menu.hidden = true;
-            toggle.setAttribute('aria-expanded', 'false');
-            header.classList.remove('menu-is-open');
-        }
-        toggle.addEventListener('click', () => {
-            const open = menu.hidden;
-            menu.hidden = !open;
-            toggle.setAttribute('aria-expanded', String(open));
-            header.classList.toggle('menu-is-open', open);
-        });
-        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-        window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 70), { passive: true });
-        header.classList.toggle('is-scrolled', window.scrollY > 70);
         byId('stage-prev').addEventListener('click', () => showStage(stageIndex - 1));
         byId('stage-next').addEventListener('click', () => showStage(stageIndex + 1));
         byId('stage-open').addEventListener('click', () => { if (featured[stageIndex]) openProject(featured[stageIndex].id); });
@@ -303,7 +301,6 @@
         byId('project-share').addEventListener('click', copyProjectLink);
         byId('studio-retry').addEventListener('click', loadProjects);
         document.addEventListener('keydown', event => {
-            if (event.key === 'Escape' && !dialog.open) closeMenu();
             if (event.target.closest('input,textarea,select')) return;
             if (dialog.open && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
                 event.preventDefault();

@@ -1,0 +1,12 @@
+/* Rauschen A: the typeface used on the Studio Nato reference.
+ * Keep the source here so it can be replaced with our own licensed webfont.
+ * No third-party font binary is distributed in this repository.
+ */
+@font-face {
+    font-family: 'Rauschen A';
+    src: local('Rauschen A Regular'), local('Rauschen A'),
+        url('https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/6a39885587a69a0a2379b8e2/assets/b573e57d-8ab9-4860-8930-d5e5e2fe5127/font.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}

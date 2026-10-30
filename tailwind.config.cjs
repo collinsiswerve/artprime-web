@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             colors: { navy: '#121C26', terra: '#A65B45', light: '#F8F9FA', sand: '#F3D2BF' },
-            fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Cormorant Garamond', 'serif'] }
+            fontFamily: { sans: ['Rauschen A', 'Arial', 'sans-serif'], serif: ['Rauschen A', 'Arial', 'sans-serif'] }
         }
     },
     plugins: []

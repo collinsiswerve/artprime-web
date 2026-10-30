@@ -9,18 +9,18 @@
     <meta property="og:title" content="Art Prime Studio | Interiors with intention">
     <meta property="og:description" content="A considered approach to interiors, styling and the way we live.">
     <meta property="og:image" content="https://collinsiswerve.github.io/artprime-web/assets/studio/living-1600.webp">
-    <meta name="theme-color" content="#efede7">
+    <meta name="theme-color" content="#f2efe8">
     <link rel="canonical" href="https://collinsiswerve.github.io/artprime-web/studio.html">
     <link rel="icon" type="image/png" href="assets/artprime-logo.png">
-    <link rel="stylesheet" href="assets/styles.css?v=studio-1">
-    <link rel="stylesheet" href="assets/atelier.css?v=policies-1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css?v=rauschen-1">
+    <link rel="stylesheet" href="assets/atelier.css?v=rauschen-1">
+    <link rel="preconnect" href="https://file.squarespace-cdn.com" crossorigin>
+    <link rel="preload" href="https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/6a39885587a69a0a2379b8e2/assets/b573e57d-8ab9-4860-8930-d5e5e2fe5127/font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/typography.css?v=rauschen-1">
 </head>
 <body class="studio-page">
     <a class="skip-link" href="#studio-main">Skip to content</a>
-    <nav class="atelier-nav studio-nav" aria-label="Main navigation">
+    <nav class="atelier-nav studio-nav overlay-nav" aria-label="Main navigation">
         <div class="nav-links nav-left">
             <a href="index.html#collections">Shop</a>
             <a href="studio.html" aria-current="page">Studio</a>
@@ -51,7 +51,7 @@
             </div>
             <div id="stage-dots" class="stage-dots" aria-label="Choose a featured interior"></div>
             <div class="stage-bottom">
-                <a class="stage-scroll" href="#selected-projects">Discover our world <span aria-hidden="true">↓</span></a>
+                <a class="stage-scroll" href="#studio-method">Discover our approach <span aria-hidden="true">↓</span></a>
                 <p id="stage-meta">INTERIOR STUDY 01 / RESIDENTIAL</p>
                 <div class="stage-controls">
                     <span id="stage-count" aria-live="polite" aria-atomic="true">01 / 03</span>
@@ -61,13 +61,40 @@
             </div>
         </section>
 
+        <section id="studio-method" class="studio-method section-wrap" aria-labelledby="method-title">
+            <div class="method-introduction">
+                <p class="eyebrow">ART PRIME STUDIO</p>
+                <h2 id="method-title">Spaces with soul.<br>Details with meaning.</h2>
+                <p>We believe a space should feel as good as it looks. Considered materials, quiet contrasts and objects with character come together to create a feeling of belonging.</p>
+                <p>From the first conversation to the finishing touches, we bring a thoughtful eye to the way you live, work and gather.</p>
+            </div>
+            <div class="method-process">
+                <p class="eyebrow">OUR PROCESS</p>
+                <div class="process-accordion">
+                    <details class="process-step">
+                        <summary>Envisioning <span class="process-icon" aria-hidden="true"></span></summary>
+                        <div class="process-answer"><p>We begin with your space, your priorities and your budget. Understanding how you want a room to feel and function gives every design decision a clear starting point.</p></div>
+                    </details>
+                    <details class="process-step">
+                        <summary>Designing <span class="process-icon" aria-hidden="true"></span></summary>
+                        <div class="process-answer"><p>Layouts, materials, lighting and furnishings come together into a considered direction. We work through the details with you so the proposal feels practical, personal and complete.</p></div>
+                    </details>
+                    <details class="process-step">
+                        <summary>Coordination <span class="process-icon" aria-hidden="true"></span></summary>
+                        <div class="process-answer"><p>Once the design and scope are agreed, we coordinate the selections and finishing details. Clear communication helps carry the intended character of the space through to the work on site.</p></div>
+                    </details>
+                    <details class="process-step">
+                        <summary>Styling &amp; finishing <span class="process-icon" aria-hidden="true"></span></summary>
+                        <div class="process-answer"><p>The final layer brings everything into balance: furniture, lighting, textiles and the objects you love. Thoughtful placement turns a finished room into a space that feels like yours.</p></div>
+                    </details>
+                </div>
+                <a class="process-inquire" href="#studio-contact">Inquire <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+
         <section id="selected-projects" class="studio-work section-wrap" aria-labelledby="work-title">
             <div id="example-notice" class="example-notice" hidden><span class="notice-dot"></span>PORTFOLIO PREVIEW <span class="notice-detail">Illustrative photographs, ready for your own projects.</span></div>
-            <div class="work-intro">
-                <div><p class="eyebrow">THE ART PRIME PERSPECTIVE</p><h2 id="work-title">Spaces with soul.<br><em>Details with meaning.</em></h2></div>
-                <p class="intro-body">We believe a space should feel as good as it looks. Considered materials, quiet contrasts and objects with character come together to create a feeling of belonging.</p>
-            </div>
-            <div class="work-heading"><p id="work-label" class="eyebrow">EXPLORE THE SPACES</p><div id="project-filters" class="project-filters" role="group" aria-label="Filter interiors"></div></div>
+            <div class="work-heading"><div><p id="work-label" class="eyebrow">EXPLORE THE SPACES</p><h2 id="work-title">Interiors, considered.</h2></div><div id="project-filters" class="project-filters" role="group" aria-label="Filter interiors"></div></div>
             <p id="studio-status" class="studio-status" role="status">Loading the studio…</p>
             <div id="project-grid" class="studio-grid" aria-live="polite" aria-busy="true"></div>
             <button id="studio-retry" class="text-link" type="button" hidden>Try loading again <span aria-hidden="true">↗</span></button>
@@ -107,6 +134,7 @@
             <div class="project-information"><p id="project-category" class="eyebrow"></p><h2 id="project-title"></h2><dl id="project-facts"></dl><p id="project-description"></p><a id="project-inquire" class="text-link" href="https://wa.me/254748649103" target="_blank" rel="noopener noreferrer">Discuss a space like this <span aria-hidden="true">↗</span></a><button id="project-share" class="text-link" type="button">Copy project link <span aria-hidden="true">↗</span></button><p id="project-share-status" class="share-status" role="status"></p><div id="project-share-fallback" hidden><label for="studio-project-link">Project link</label><input id="studio-project-link" readonly type="text"></div><button id="next-project" class="next-project" type="button"><span>CONTINUE EXPLORING</span><span id="next-project-title"></span><span aria-hidden="true">↗</span></button></div>
         </div>
     </dialog>
+    <script src="assets/site-motion.js" defer></script>
     <script src="assets/catalogue.js" defer></script>
     <script src="assets/studio-model.js" defer></script>
     <script src="assets/studio.js" defer></script>

@@ -24,17 +24,17 @@
 
     <link rel="canonical" href="https://collinsiswerve.github.io/artprime-web/">
     <link rel="icon" type="image/png" href="assets/artprime-logo.png">
-    <link rel="stylesheet" href="assets/styles.css?v=studio-1">
-    <link rel="stylesheet" href="assets/atelier.css?v=policies-1">
-    <meta name="theme-color" content="#f5f3ee">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css?v=rauschen-1">
+    <link rel="stylesheet" href="assets/atelier.css?v=rauschen-1">
+    <meta name="theme-color" content="#f2efe8">
+    <link rel="preconnect" href="https://file.squarespace-cdn.com" crossorigin>
+    <link rel="preload" href="https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/6a39885587a69a0a2379b8e2/assets/b573e57d-8ab9-4860-8930-d5e5e2fe5127/font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/typography.css?v=rauschen-1">
 </head>
 <body class="shop-page bg-light text-gray-800 font-sans antialiased flex flex-col min-h-screen">
     <a class="skip-link" href="#collections">Skip to the collection</a>
 
-    <nav class="atelier-nav" aria-label="Main navigation">
+    <nav class="atelier-nav overlay-nav" aria-label="Main navigation">
         <div class="nav-links nav-left"><a href="#collections" aria-current="page">Shop</a><a href="studio.html">Studio</a></div>
         <a class="atelier-wordmark" href="index.html" aria-label="Art Prime Interiors home">art prime<span class="wordmark-dot">.</span><span class="wordmark-subtitle">INTERIORS</span></a>
         <div class="nav-links nav-right">
@@ -44,11 +44,11 @@
                 <span id="nav-cart-count" aria-hidden="true">(0)</span>
             </button>
         </div>
-        <button onclick="toggleMobileMenu()" class="atelier-menu-toggle" aria-label="Toggle mobile navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+        <button class="atelier-menu-toggle" aria-label="Toggle mobile navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
         <div id="mobile-menu" class="atelier-mobile-menu hidden">
-            <a href="#collections" onclick="toggleMobileMenu()">Shop the collection</a>
+            <a href="#collections">Shop the collection</a>
             <a href="studio.html">The studio</a>
-            <a href="#footer" onclick="toggleMobileMenu()">Contact Art Prime ↗</a>
+            <a href="#footer">Contact Art Prime ↗</a>
         </div>
     </nav>
 
@@ -197,6 +197,7 @@
     </footer>
 
     <!-- Static storefront; catalogue and orders are handled in the browser. -->
+    <script src="assets/site-motion.js" defer></script>
     <script src="assets/catalogue.js" defer></script>
     <script src="assets/storefront.js" defer></script>
 </body>
