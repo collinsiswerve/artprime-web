@@ -10,9 +10,9 @@ The [Art Prime Admin workbook](https://docs.google.com/spreadsheets/d/1A7pErif9d
 
 Keep **Sheet1** first because the shop reads the workbook's default tab. Keep the exact Studio tab names and row 1 headings. The workbook is publicly readable, so I put only public portfolio content here. Unpublished rows are still readable in the workbook and are not private storage for client details.
 
-After entering the first projects, open **Actions → Publish website → Run workflow**, choose `main`, keep **Import the latest Projects and ProjectImages tabs before publishing** checked, and run it. A failed import explains what needs correcting and leaves the previous live website available. GitHub Pages uses **Settings → Pages → Source: GitHub Actions** and publishes the shop, Studio and both policy pages together.
+After entering the first projects, open **Actions → Publish website → Run workflow**, choose `main`, keep **Import the latest Projects and ProjectImages tabs before publishing** checked, leave the empty-portfolio option unchecked for a normal update, and run it. A failed import explains what needs correcting and leaves the previous live website available. GitHub Pages uses **Settings → Pages → Source: GitHub Actions** and publishes the shop, Studio and both policy pages together.
 
-An import with no published projects replaces the illustrative studies with an empty portfolio. I leave the import until the real project rows are ready. A normal push to `main` publishes the saved snapshot without importing the sheet.
+An import with no published projects is blocked by default, keeping the illustrative studies or saved portfolio in place. To intentionally clear every project, I must select the separate empty-portfolio option. A normal push to `main` publishes the saved snapshot without importing the sheet.
 
 The workbook ID and tab names are in `assets/studio-config.json`. No API keys, database subscription or server are needed for this public portfolio workflow. Product updates continue to use the existing product sheet as before.
 
@@ -34,7 +34,7 @@ id	title	location	category	year	description	coverImage	coverAlt	sortOrder	publis
 | F | description | A concise account of the brief, materials and design decisions. Plain text, not HTML. |
 | G | coverImage | The direct HTTPS URL of the project's main photograph. Choose a strong landscape view that also crops well on a phone. |
 | H | coverAlt | A short, useful description of what is visible in the cover photograph. Required. |
-| I | sortOrder | `1`, `2`, `3`… Controls the portfolio order. |
+| I | sortOrder | `1`, `2`, `3`… Positive whole numbers control the portfolio order; blanks follow numbered entries. |
 | J | published | `TRUE` to show the project; `FALSE` to keep it out of the public portfolio. |
 | K | featured | `TRUE` to include the project in the full-screen opening portfolio. If none are featured, all published projects are used. |
 
@@ -50,7 +50,7 @@ projectId	imageUrl	alt	caption	sortOrder
 | B | imageUrl | A direct HTTPS photo URL. |
 | C | alt | A brief description of this view. Required. |
 | D | caption | An optional short caption. |
-| E | sortOrder | The photo sequence: `1`, `2`, `3`… |
+| E | sortOrder | The photo sequence: `1`, `2`, `3`… Positive whole numbers, with blanks last. |
 
 Add as many image rows as the project needs. Start with a complete room view, then complementary angles, materials and details. About 6–12 carefully selected photos is usually more effective than a large set of near-duplicates. If a published project has no gallery rows, its cover image is used.
 
@@ -99,3 +99,13 @@ The bundled illustrative photographs are downloaded, responsive WebP versions of
 | kitchen | https://images.unsplash.com/photo-1600566752355-35792bedcfea |
 
 The file stems are stable asset identifiers; use the descriptive alt text to identify each photograph's actual contents.
+
+## Import checks and recovery
+
+The importer requires at least one published project by default. Empty tabs and all-draft rows cannot replace the saved portfolio. For a normal publication, keep the workflow’s “Deliberately replace the Studio portfolio with no published projects” option unchecked. Tick it only to intentionally clear the portfolio.
+
+I can run `npm run check:studio` to validate the live tabs without changing the snapshot. For a blank-workbook connection check, `npm run check:studio -- --allow-empty` remains read-only. Normal imports use `npm run sync:studio`; adding `--allow-empty` permits an intentional empty import.
+
+All IDs, including draft IDs, must be unique. Publication and featured flags must be checkbox values. Ordering is a positive whole number or blank; blanks follow numbered entries. Gallery rows need a matching ID, a direct HTTPS photo URL and alt text. Known sharing pages and spreadsheet image formulas are rejected. Use a plain URL in the cell rather than Insert Image or IMAGE/HYPERLINK formulas.
+
+Temporary Google request failures are retried. A failed read or validation leaves the saved snapshot unchanged. Valid output is written to a temporary file and renamed only after validation. A failed photo request in a visitor’s browser uses the local placeholder; keeping the original image host available remains part of maintaining the photographs.

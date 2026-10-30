@@ -65,7 +65,7 @@ The `Projects` and `ProjectImages` tabs are already set up. Add content from row
 
 | Column | Header | What I enter |
 | --- | --- | --- |
-| A | `id` | A unique ID such as `nairobi-residence`; lowercase letters, numbers and hyphens, up to 64 characters. |
+| A | `id` | A permanent ID such as `nairobi-residence`; lowercase letters, numbers and hyphens, up to 64 characters. Every ID must be unique, including drafts. |
 | B | `title` | The public project title. |
 | C | `location` | A general public location, such as `Nairobi`. Optional. |
 | D | `category` | A consistent category such as `Residential`, `Commercial` or `Styling`. |
@@ -73,11 +73,11 @@ The `Projects` and `ProjectImages` tabs are already set up. Add content from row
 | F | `description` | The brief, materials and design decisions. |
 | G | `coverImage` | A direct HTTPS URL for the main photograph. |
 | H | `coverAlt` | A useful description of what is visible in the photograph. Required. |
-| I | `sortOrder` | `1`, `2`, `3`… Lower numbers appear first. |
+| I | `sortOrder` | `1`, `2`, `3`… Positive whole numbers; lower numbers appear first. Blank values come last. |
 | J | `published` | Tick when ready to show it on the Studio page. |
-| K | `featured` | Tick to include it in the opening slideshow. |
+| K | `featured` | Tick to include it in the full-screen portfolio. |
 
-Only published projects appear on the website. If none of them is marked featured, all published projects are used in the opening slideshow. Categories create the portfolio filters automatically, so I keep their spelling consistent.
+Only published projects appear on the website. If none of them is marked featured, all published projects are used in the full-screen portfolio. Categories create the portfolio filters automatically, so I keep their spelling consistent.
 
 ### ProjectImages: one row per photograph
 
@@ -87,11 +87,11 @@ Only published projects appear on the website. If none of them is marked feature
 | B | `imageUrl` | A direct HTTPS image URL. |
 | C | `alt` | A brief description of this particular view. Required. |
 | D | `caption` | An optional caption. |
-| E | `sortOrder` | The photograph's position within the gallery: `1`, `2`, `3`… |
+| E | `sortOrder` | The photograph's position within the gallery: `1`, `2`, `3`… Positive whole numbers; blanks come last. |
 
 About 6–12 well-chosen photographs is a useful starting point. If a project has no gallery rows, its cover becomes its gallery image. Rows for unpublished projects are left out of the snapshot. A photo pointing to an unknown project ID stops the import and needs correcting.
 
-The prepared input rules cover Projects rows 2–201 and ProjectImages rows 2–1001. If I need more space, I copy a blank prepared row's formatting and validation into the added rows and extend any validation references and filter ranges as needed.
+The prepared input rules cover Projects rows 2–201 and ProjectImages rows 2–1001. If I need more space, I copy a blank prepared row's formatting and validation into the added rows and extend the filter ranges as needed. The project-ID rules already look through the full Projects ID column.
 
 ### Publishing project changes
 
@@ -99,11 +99,12 @@ The prepared input rules cover Projects rows 2–201 and ProjectImages rows 2–
 2. Tick `published` for the projects that are ready. Tick `featured` for the opening selection.
 3. Open [Actions → Publish website](https://github.com/collinsiswerve/artprime-web/actions/workflows/publish-site.yml) and choose **Run workflow**.
 4. Select **main** and leave **Import the latest Projects and ProjectImages tabs before publishing** checked.
-5. Run it, wait for a successful deployment, then reload the Studio and check the covers, galleries and shared links.
+5. Leave **Deliberately replace the Studio portfolio with no published projects** unchecked for a normal update.
+6. Run it, wait for a successful deployment, then reload the Studio. Scroll through the full-screen covers, open each gallery and check the photo sequence and shared links.
 
-The workflow reads both public tabs, validates them, runs the tests, builds the site, saves the portfolio snapshot and deploys it. If reading or validation fails, the previous live site remains available. Read the failed step's message, correct the sheet and run it again.
+The workflow reads both public tabs, validates them, runs the tests, builds the site, saves the portfolio snapshot and deploys it. Temporary Google request failures are retried up to three times. Missing headings, duplicate IDs (including drafts), incomplete published projects, unknown gallery IDs, missing photo descriptions, invalid checkbox values and invalid ordering stop the import. A sharing-page link is rejected instead of being treated as a photograph. Validation finishes before the snapshot is replaced. If it fails, the previous portfolio file and live site remain available. Read the failed step's message, correct the sheet and run it again.
 
-**Do not import the blank Studio tabs until the real content is ready.** An import with no published projects creates an empty portfolio and replaces the illustrative studies. The current bundled studies are labelled as illustrative; they are not presented as completed Art Prime commissions. Importing real content replaces them.
+**Blank or all-draft Studio tabs are blocked by default.** An import needs at least one project with `published` ticked. This protects the saved portfolio while I prepare new content. To deliberately clear every project, I must tick the separate empty-portfolio option in the workflow. The bundled studies remain labelled as illustrative until real content is imported.
 
 To replace a photograph, update its URL and publish again. To hide a project, untick `published` and publish again. To change its position, edit `sortOrder` and publish. Keep published IDs stable so existing links keep working.
 
@@ -111,11 +112,11 @@ A normal push to `main` publishes the snapshot already in the repository; it doe
 
 ## Preparing images
 
-Postimages still works. I use the **direct image link**, usually beginning `https://i.postimg.cc/`, rather than a `postimg.cc` page containing the image. The link should open the photograph itself in a private browser window without signing in. Paste only the URL, without Markdown, HTML or quotation marks.
+Postimages still works. I use the **direct image link**, usually beginning `https://i.postimg.cc/`, rather than a `postimg.cc` page containing the image. The link should open the photograph itself in a private browser window without signing in. Paste only the URL, without Markdown, HTML or quotation marks. For Studio images, do not use **Insert → Image**, `IMAGE(...)` or a `HYPERLINK(...)` formula: those do not give the public importer a plain image URL.
 
 For Postimages, prepare a sharp WebP or JPEG before uploading because this site leaves its URLs intact. Aim for roughly 1,200–1,600 pixels on the long edge for product photos and around 1,600–2,000 for large portfolio views. Adjust compression to the photograph; a few hundred KB is a useful target where the detail allows it. Keep the original files separately. Replacing a photo with a new URL helps avoid stale browser caches.
 
-Cloudinary is an optional alternative when I want automatic resizing. Public delivery URLs receive responsive widths and automatic format and quality. Unsplash and Pexels delivery URLs also receive responsive sizes. Signed URLs are preserved. A shared Google Drive page is not a direct image URL.
+Cloudinary is an optional alternative when I want automatic resizing. Public delivery URLs receive responsive widths and automatic format and quality. Unsplash and Pexels delivery URLs also receive responsive sizes. Signed URLs are preserved. A shared Google Drive page is not a direct image URL. The importer checks URL format and known sharing pages; it cannot keep an external photo host online. If a photo later fails to load, the website uses its local placeholder so browsing and enquiries keep working.
 
 Local optimized images can also live in `assets/studio/`; use their full public website URLs in the sheet. The bundled Studio studies have 640px and 1600px WebP versions. Cards load lazily, the opening image is prioritised and the gallery loads views as needed. No autoplay, embedded social feeds or animation framework is required.
 
@@ -166,7 +167,9 @@ npm run build:site
 
 `npm run build` compiles the minified Tailwind stylesheet into `assets/styles.css`. `npm run dev:css` watches style changes. Commit the generated stylesheet when it changes. `npm run build:site` also copies the four HTML pages and assets into `dist/`, the GitHub Pages deployment folder. Visitors download CSS, not the Tailwind compiler.
 
-Serve the repository or `dist/` with a static HTTP server to test it; opening HTML directly from the filesystem does not reproduce fetch and sharing behaviour. `npm run sync:studio` imports the live sheet into the local snapshot, so I run it only when I intend to publish those rows.
+Serve the repository or `dist/` with a static HTTP server to test it; opening HTML directly from the filesystem does not reproduce fetch and sharing behaviour. `npm run check:studio` reads and validates the live Studio tabs without writing a file. It applies the same publication checks as the importer. To inspect an empty workbook without changing anything, use `npm run check:studio -- --allow-empty`.
+
+`npm run sync:studio` imports valid live rows into the local snapshot, so I run it only when I intend to publish them. It blocks zero published projects by default. `npm run sync:studio -- --allow-empty` is the explicit command for deliberately clearing the portfolio. Unchanged imported content keeps its existing snapshot and timestamp.
 
 | File or folder | Purpose |
 | --- | --- |
@@ -183,7 +186,7 @@ Serve the repository or `dist/` with a static HTTP server to test it; opening HT
 | `assets/studio-model.js`, `assets/studio.js` | Portfolio validation and page interactions |
 | `assets/studio-config.json` | Public workbook ID and Studio tab names |
 | `assets/studio-projects.json` | Validated portfolio snapshot served to visitors |
-| `scripts/sync-studio.cjs` | Reads and validates the Studio tabs before replacing the snapshot |
+| `scripts/sync-studio.cjs` | Live validation, dry-run checks, safe import and empty-portfolio protection |
 | `scripts/prepare-site.cjs` | Copies the website into `dist/` |
 | `.github/workflows/publish-site.yml` | Import, tests, build and GitHub Pages deployment |
 | `tests/` | Catalogue, image, production-asset and portfolio checks |
@@ -202,6 +205,8 @@ Before merging website changes, I check desktop and phone layouts, policy and so
 | The shop will not load | Check `Sheet1` is first, the public endpoint is still readable, the A–J column order is intact and product IDs are unique. Retry loading. |
 | A Studio edit is missing | Check `published`, then run the workflow with import checked and confirm deployment succeeded. |
 | A Studio import fails | Read its error. Check exact tab names, headers, unique IDs, gallery IDs, direct HTTPS URLs and required alt descriptions. |
+| “No published Studio projects” appears | Add a complete project and tick `published`. Use the separate empty-portfolio option only when deliberately removing all projects. |
+| An image URL is rejected | Copy the direct file address, such as `https://i.postimg.cc/.../photo.jpg`. Sharing pages, spreadsheet image cells and image formulas are not photo URLs. |
 | A photo is cropped unexpectedly | Choose a cover with room around the subject and check both phone and desktop crops. Use a gallery view for the full composition. |
 | Old styling or a previous image remains | Reload without cache. Use a new photo URL or update the stylesheet version when appropriate. |
 

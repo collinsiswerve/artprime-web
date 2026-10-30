@@ -55,6 +55,24 @@ test('an intentionally empty published portfolio is valid and has no sample proj
     assert.deepEqual(model.validateSnapshot(snapshot).projects, []);
 });
 
+test('publication flags cannot silently turn a ready project into a draft', () => {
+    assert.throws(() => model.snapshotFromTables(projects([project({ published: 'TURE' })]), images([])), /published must be TRUE or FALSE/);
+    assert.throws(() => model.snapshotFromTables(projects([project({ featured: 'sometimes' })]), images([])), /featured must be TRUE or FALSE/);
+});
+
+test('blank ordering comes after numbered entries, and invalid order values fail clearly', () => {
+    const ordered = model.snapshotFromTables(projects([project({ id: 'blank' }), project({ id: 'numbered', sortorder: 1 })]), images([]));
+    assert.deepEqual(ordered.projects.map(item => item.id), ['numbered', 'blank']);
+    for (const sortorder of [-1, 0, 1.5, 'first']) assert.throws(() => model.snapshotFromTables(projects([project({ sortorder })]), images([])), /sortOrder/);
+});
+
+test('image sharing pages and spreadsheet image formulas are rejected while direct images remain valid', () => {
+    for (const url of ['https://postimg.cc/abc', 'https://www.imgur.com/a/abc', 'https://drive.google.com/file/d/abc/view', '=IMAGE("https://example.com/a.jpg")']) {
+        assert.throws(() => model.imageURL(url), /direct HTTPS image URL/);
+    }
+    assert.equal(model.imageURL('https://i.postimg.cc/abc/photo.jpg'), 'https://i.postimg.cc/abc/photo.jpg');
+});
+
 test('Cloudinary cards and gallery images use automatic format, quality and responsive limits', () => {
     const source = 'https://res.cloudinary.com/artprime/image/upload/v123/projects/home.jpg';
     const resized = catalogue.imageVariants(source, [320, 640, 1600]);

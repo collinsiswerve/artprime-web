@@ -9,6 +9,10 @@ on:
         description: Import the latest Projects and ProjectImages tabs before publishing
         type: boolean
         default: true
+      allow_empty_projects:
+        description: Deliberately replace the Studio portfolio with no published projects
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -33,7 +37,14 @@ jobs:
       - run: npm ci
       - name: Refresh Studio from Google Sheets
         if: github.event_name == 'workflow_dispatch' && inputs.refresh_projects
-        run: npm run sync:studio
+        env:
+          ALLOW_EMPTY_PROJECTS: ${{ inputs.allow_empty_projects }}
+        run: |
+          if [ "$ALLOW_EMPTY_PROJECTS" = "true" ]; then
+            npm run sync:studio -- --allow-empty
+          else
+            npm run sync:studio
+          fi
       - run: npm test
       - run: npm run build:site
       - name: Save the validated portfolio snapshot

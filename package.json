@@ -6,6 +6,7 @@
     "dev:css": "tailwindcss -c tailwind.config.cjs -i styles/input.css -o assets/styles.css --watch",
     "test": "node --test",
     "sync:studio": "node scripts/sync-studio.cjs",
+    "check:studio": "node scripts/sync-studio.cjs --dry-run",
     "build:site": "npm run build && node scripts/prepare-site.cjs"
   },
   "engines": {
