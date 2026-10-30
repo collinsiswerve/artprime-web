@@ -36,7 +36,7 @@ id	title	location	category	year	description	coverImage	coverAlt	sortOrder	publis
 | H | coverAlt | A short, useful description of what is visible in the cover photograph. Required. |
 | I | sortOrder | `1`, `2`, `3`… Controls the portfolio order. |
 | J | published | `TRUE` to show the project; `FALSE` to keep it out of the public portfolio. |
-| K | featured | `TRUE` to include the project in the full-screen opening slideshow. If none are featured, all published projects are used. |
+| K | featured | `TRUE` to include the project in the full-screen opening portfolio. If none are featured, all published projects are used. |
 
 ## ProjectImages tab — one row per photograph
 
@@ -70,7 +70,7 @@ I can keep using **Postimages**. I copy its direct image URL, usually beginning 
 
 The image code also optimizes Unsplash and Pexels delivery URLs. Other HTTPS hosts work, but their URLs are kept intact: prepare appropriately sized files if the host has no resizing service. A shared Google Drive page or a web page containing a photo is not a direct photo URL.
 
-Keep the full-resolution originals separately. With a resizing host, the website can deliver a smaller version for each screen. Avoid text or logos baked into the photographs. Portfolio cards are lazy-loaded; the opening photo is prioritized; galleries load photos as visitors browse. There is no automatic slideshow, heavy animation framework or forced scrolling. Before sharing client work, I confirm permission to publish the images and check that private or identifying details are removed.
+Keep the full-resolution originals separately. With a resizing host, the website can deliver a smaller version for each screen. Avoid text or logos baked into the photographs. Portfolio cards are lazy-loaded; the opening photo is prioritized; galleries load photos as visitors browse. The opening portfolio uses native vertical scroll snapping, with side dots and arrow controls. It loops through the featured selection, and the “All projects” and “The studio” links lead to the content below. The title or photograph opens the current project gallery. There is no automatic slideshow or animation framework. Before sharing client work, I confirm permission to publish the images and check that private or identifying details are removed.
 
 An alternative with no additional image service is to optimize WebP files and upload them under `assets/studio/` in this repository, then use their full public website URLs in the sheet. That approach requires preparing and uploading the sizes yourself.
 

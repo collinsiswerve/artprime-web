@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" href="assets/artprime-logo.png">
     <link rel="stylesheet" href="assets/styles.css?v=rauschen-1">
     <link rel="stylesheet" href="assets/atelier.css?v=rauschen-1">
+    <link rel="stylesheet" href="assets/studio-stage.css?v=fullscreen-2">
     <link rel="preconnect" href="https://file.squarespace-cdn.com" crossorigin>
     <link rel="preload" href="https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/6a39885587a69a0a2379b8e2/assets/b573e57d-8ab9-4860-8930-d5e5e2fe5127/font.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/typography.css?v=rauschen-1">
@@ -41,22 +42,24 @@
 
     <main id="studio-main">
         <section class="studio-stage" aria-roledescription="carousel" aria-label="Featured interiors">
-            <img id="stage-image" class="stage-image" src="assets/studio/living-1600.webp" srcset="assets/studio/living-640.webp 640w, assets/studio/living-1600.webp 1600w" sizes="100vw" alt="Sunlit living room with warm leather seating, timber furnishings and indoor plants" width="1600" height="1067" fetchpriority="high" decoding="async">
+            <p id="stage-help" class="stage-help">Scroll or swipe vertically to browse. Use the arrow keys, project dots or previous and next buttons. Open a project to view its gallery. The links at the bottom lead to all projects and the studio approach.</p>
+            <div id="stage-viewport" class="stage-viewport" tabindex="0" role="group" aria-label="Browse featured interiors" aria-describedby="stage-help">
+                <div id="stage-track" class="stage-track">
+                    <div class="stage-slide"><img id="stage-image" class="stage-image" src="assets/studio/living-1600.webp" srcset="assets/studio/living-640.webp 640w, assets/studio/living-1600.webp 1600w" sizes="100vw" alt="Sunlit living room with warm leather seating, timber furnishings and indoor plants" width="1600" height="1067" fetchpriority="high" decoding="async"></div>
+                </div>
+            </div>
             <div class="stage-shade"></div>
-            <div class="stage-intro"><span>THE STUDIO</span><span>NAIROBI, KENYA</span></div>
             <div class="stage-copy">
-                <p id="stage-kicker" class="eyebrow">A CONSIDERED WAY OF LIVING</p>
-                <h1 id="stage-title">Quiet living<span class="title-period">.</span></h1>
-                <button id="stage-open" class="stage-project-link" type="button" disabled>Explore the space <span aria-hidden="true">↗</span></button>
+                <h1 id="stage-title">Quiet living</h1>
             </div>
             <div id="stage-dots" class="stage-dots" aria-label="Choose a featured interior"></div>
             <div class="stage-bottom">
-                <a class="stage-scroll" href="#studio-method">Discover our approach <span aria-hidden="true">↓</span></a>
+                <div class="stage-browse-links"><a href="#selected-projects">All projects <span aria-hidden="true">↗</span></a><a class="stage-scroll" href="#studio-method">The studio <span aria-hidden="true">↓</span></a></div>
                 <p id="stage-meta">INTERIOR STUDY 01 / RESIDENTIAL</p>
                 <div class="stage-controls">
                     <span id="stage-count" aria-live="polite" aria-atomic="true">01 / 03</span>
-                    <button id="stage-prev" class="round-arrow" type="button" aria-label="Previous featured interior" disabled>←</button>
-                    <button id="stage-next" class="round-arrow" type="button" aria-label="Next featured interior" disabled>→</button>
+                    <button id="stage-prev" class="round-arrow" type="button" aria-label="Previous featured interior" disabled>↑</button>
+                    <button id="stage-next" class="round-arrow" type="button" aria-label="Next featured interior" disabled>↓</button>
                 </div>
             </div>
         </section>
@@ -134,9 +137,10 @@
             <div class="project-information"><p id="project-category" class="eyebrow"></p><h2 id="project-title"></h2><dl id="project-facts"></dl><p id="project-description"></p><a id="project-inquire" class="text-link" href="https://wa.me/254748649103" target="_blank" rel="noopener noreferrer">Discuss a space like this <span aria-hidden="true">↗</span></a><button id="project-share" class="text-link" type="button">Copy project link <span aria-hidden="true">↗</span></button><p id="project-share-status" class="share-status" role="status"></p><div id="project-share-fallback" hidden><label for="studio-project-link">Project link</label><input id="studio-project-link" readonly type="text"></div><button id="next-project" class="next-project" type="button"><span>CONTINUE EXPLORING</span><span id="next-project-title"></span><span aria-hidden="true">↗</span></button></div>
         </div>
     </dialog>
-    <script src="assets/site-motion.js" defer></script>
+    <script src="assets/site-motion.js?v=fullscreen-2" defer></script>
     <script src="assets/catalogue.js" defer></script>
     <script src="assets/studio-model.js" defer></script>
-    <script src="assets/studio.js" defer></script>
+    <script src="assets/studio-stage.js?v=fullscreen-2" defer></script>
+    <script src="assets/studio.js?v=fullscreen-2" defer></script>
 </body>
 </html>

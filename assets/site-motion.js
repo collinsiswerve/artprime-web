@@ -86,7 +86,7 @@
 
     function init() {
         register(document.querySelectorAll(
-            '.nav-links, .atelier-wordmark, .hero > .relative, .stage-image, .stage-intro, .stage-copy, .stage-bottom, '
+            '.nav-links, .atelier-wordmark, .hero > .relative, .stage-copy, .stage-bottom, '
             + '.studio-method > div, .work-heading, .example-notice, .collection-header, '
             + '.philosophy-content > *, .studio-philosophy > .eyebrow, .studio-contact > *, '
             + '.shop-studio-invitation > *, .shop-footer-top > *, .atelier-footer > *, '

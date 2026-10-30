@@ -146,6 +146,10 @@ Contact details: **+254 748 649 103**, **artprimeinteriorsltd@gmail.com**, **Spu
 
 The visual direction follows [Studio Nato’s Studio page](https://www.studionato.com/studio): Rauschen A typography, warm paper backgrounds, fine rules and generous spacing. The same typeface runs through the shop, cart, Studio, galleries and policy pages. The Studio process rows expand with a plus-to-minus transition.
 
+The Studio opens with a full-viewport portfolio, following the browsing style of [Studio Nato’s Projects page](https://www.studionato.com/projects). Scroll or swipe vertically between photographs, choose a side dot, or use the arrow controls. A small centered title opens the current project gallery, and clicking the photograph does the same. The first and last projects join in a continuous loop. “All projects” and “The studio” lead to the overview and approach below. The height follows the available screen on desktop and phones, including browser-bar and orientation changes.
+
+`assets/studio-stage.js` handles the portfolio selection, native vertical scroll snapping, boundary copies and keyboard controls. `assets/studio-stage.css` keeps these rules on the Studio page. The `featured` checkbox continues to choose the opening selection; when none are featured, all published projects are shown. Reduced-motion preferences make button and dot navigation immediate.
+
 `assets/site-motion.js` controls the 900ms linear fades, the navigation that moves away while scrolling down and returns while scrolling up, and the phone menu. It also registers cards after a catalogue search or portfolio filter. Keyboard focus reveals content immediately, and reduced-motion preferences turn off the transitions. The page remains readable when JavaScript or animation support is unavailable.
 
 The font source is defined in `assets/typography.css`. It currently uses the public Squarespace font URL used by the reference site, so its availability depends on that external source. For independent hosting, I need my own licensed Rauschen A webfont and can replace that URL with the licensed hosting location. This repository contains the font declaration rather than a copy of the font file. If the source changes, the pages fall back to Arial. The font preload in each HTML page must match the URL in `typography.css`.
@@ -172,6 +176,7 @@ Serve the repository or `dist/` with a static HTTP server to test it; opening HT
 | `assets/atelier.css` | Shared visual styling and policy layouts |
 | `assets/typography.css` | Rauschen A webfont declaration and fallback |
 | `assets/site-motion.js` | Scroll fades, shared navigation and phone menu |
+| `assets/studio-stage.js`, `assets/studio-stage.css` | Full-screen Studio portfolio, vertical scrolling and project selection |
 | `styles/input.css`, `tailwind.config.cjs`, `assets/styles.css` | Tailwind source, scanned pages and compiled output |
 | `assets/catalogue.js` | Product parsing, search, cart, image and sharing helpers |
 | `assets/storefront.js` | Shop interactions and live catalogue loading |

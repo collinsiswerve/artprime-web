@@ -4,8 +4,8 @@
     const dialog = byId('project-dialog');
     let projects = [];
     let featured = [];
-    let stageIndex = 0;
-    let stageRequest = 0;
+    let stage = null;
+    let titleAnimation = null;
     let currentProject = null;
     let photoIndex = 0;
     let activeFilter = 'All spaces';
@@ -51,43 +51,25 @@
         if (image.complete && image.naturalWidth) image.classList.remove('image-loading');
     }
 
-    async function showStage(index) {
-        if (!featured.length) return;
-        const request = ++stageRequest;
-        stageIndex = (index + featured.length) % featured.length;
-        const project = featured[stageIndex];
-        // Keep the current photograph visible while the chosen photograph decodes.
-        const incoming = new Image();
-        setImage(incoming, project.coverImage, project.coverAlt, 'stage');
-        try { await incoming.decode(); } catch (_) { /* The visible image has the same error fallback. */ }
-        if (request !== stageRequest) return;
-        const visible = byId('stage-image');
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        document.querySelectorAll('.stage-crossfade').forEach(image => image.remove());
-        const crossfade = !reduced && !document.hidden && incoming.naturalWidth
-            && visible.currentSrc !== incoming.currentSrc;
-        if (crossfade) {
-            incoming.className = 'stage-image stage-crossfade';
-            incoming.alt = '';
-            incoming.setAttribute('aria-hidden', 'true');
-            visible.parentElement.append(incoming);
-            const animation = incoming.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 900, easing: 'linear', fill: 'forwards' });
-            animation.finished.then(() => {
-                if (request === stageRequest) setImage(visible, project.coverImage, project.coverAlt, 'stage');
-                incoming.remove();
-            }).catch(() => incoming.remove());
-        } else setImage(visible, project.coverImage, project.coverAlt, 'stage');
-        byId('stage-title').replaceChildren(document.createTextNode(project.title), node('span', 'title-period', '.'));
+    function updateStage(project, index, initial) {
+        const title = byId('stage-title');
+        titleAnimation?.cancel();
+        title.textContent = project.title;
+        if (!initial && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            titleAnimation = title.animate([{ opacity: 0 }, { opacity: 1 }], {
+                duration: 400, easing: 'cubic-bezier(.22,1,.36,1)'
+            });
+        }
         byId('stage-meta').textContent = [project.location, project.category].filter(Boolean).join(' / ').toUpperCase();
-        byId('stage-count').textContent = `${String(stageIndex + 1).padStart(2, '0')} / ${String(featured.length).padStart(2, '0')}`;
-        byId('stage-dots').querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === stageIndex)));
+        byId('stage-count').textContent = `${String(index + 1).padStart(2, '0')} / ${String(featured.length).padStart(2, '0')}`;
+        byId('stage-dots').querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
     }
+
+    function showStage(index) { stage?.goTo(index); }
 
     function renderStage() {
         const selected = projects.filter(project => project.featured);
         featured = selected.length ? selected : projects;
-        byId('stage-open').disabled = !featured.length;
-        byId('stage-open').hidden = !featured.length;
         byId('stage-prev').disabled = featured.length < 2;
         byId('stage-next').disabled = featured.length < 2;
         byId('stage-prev').hidden = featured.length < 2;
@@ -100,12 +82,11 @@
             fragment.append(button);
         });
         byId('stage-dots').replaceChildren(fragment);
-        if (featured.length) showStage(0);
-        else {
+        stage.setProjects(featured);
+        if (!featured.length) {
             byId('stage-title').textContent = 'Interiors, considered.';
             byId('stage-meta').textContent = 'ART PRIME STUDIO / NAIROBI';
             byId('stage-count').textContent = '';
-            byId('stage-open').hidden = true;
         }
     }
 
@@ -288,9 +269,11 @@
     }
 
     function init() {
-        byId('stage-prev').addEventListener('click', () => showStage(stageIndex - 1));
-        byId('stage-next').addEventListener('click', () => showStage(stageIndex + 1));
-        byId('stage-open').addEventListener('click', () => { if (featured[stageIndex]) openProject(featured[stageIndex].id); });
+        stage = new window.ArtPrimeStage(document.querySelector('.studio-stage'), {
+            setImage, onChange: updateStage, onOpen: id => openProject(id)
+        });
+        byId('stage-prev').addEventListener('click', () => stage.goBy(-1));
+        byId('stage-next').addEventListener('click', () => stage.goBy(1));
         byId('project-close').addEventListener('click', () => closeProject());
         dialog.addEventListener('cancel', event => { event.preventDefault(); closeProject(); });
         byId('gallery-prev').addEventListener('click', () => photoAt(photoIndex - 1));
@@ -305,24 +288,17 @@
             if (dialog.open && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
                 event.preventDefault();
                 photoAt(photoIndex + (event.key === 'ArrowRight' ? 1 : -1));
-            } else if (event.target.closest('.studio-stage') && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
-                event.preventDefault();
-                showStage(stageIndex + (event.key === 'ArrowRight' ? 1 : -1));
+            } else if (event.target.closest('.studio-stage')) {
+                const direction = { ArrowLeft: -1, ArrowUp: -1, PageUp: -1, ArrowRight: 1, ArrowDown: 1, PageDown: 1 }[event.key];
+                if (direction) {
+                    event.preventDefault();
+                    stage.goBy(direction);
+                } else if (event.key === 'Home' || event.key === 'End') {
+                    event.preventDefault();
+                    stage.goTo(event.key === 'Home' ? 0 : featured.length - 1);
+                }
             }
         });
-        let touchStart = null;
-        const stage = document.querySelector('.studio-stage');
-        stage.addEventListener('touchstart', event => {
-            if (!event.target.closest('a,button') && event.touches.length === 1) touchStart = [event.touches[0].clientX, event.touches[0].clientY];
-            else touchStart = null;
-        }, { passive: true });
-        stage.addEventListener('touchend', event => {
-            if (!touchStart) return;
-            const deltaX = event.changedTouches[0].clientX - touchStart[0];
-            const deltaY = event.changedTouches[0].clientY - touchStart[1];
-            if (Math.abs(deltaX) > 55 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) showStage(stageIndex + (deltaX < 0 ? 1 : -1));
-            touchStart = null;
-        }, { passive: true });
         window.addEventListener('popstate', handleRoute);
         byId('footer-year').textContent = String(new Date().getFullYear());
         loadProjects();
