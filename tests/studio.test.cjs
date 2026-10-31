@@ -90,16 +90,46 @@ test('signed Cloudinary URLs are never rewritten', () => {
     }
 });
 
-test('the checked-in preview is valid and every demo photo has both local responsive sizes', () => {
+test('website-hosted Studio renders use the actual small and large files for public Sheet URLs', () => {
+    const base = 'https://collinsiswerve.github.io/artprime-web/';
+    for (const maximum of [1280, 1600, 1920]) {
+        const source = `${base}assets/studio/arc-and-ember-living-01-${maximum}.webp`;
+        const smaller = source.replace(`-${maximum}.webp`, '-640.webp');
+        assert.deepEqual(catalogue.imageVariants(source, [160, 320], base), {
+            src: smaller, srcset: `${smaller} 640w, ${source} ${maximum}w`
+        });
+        assert.deepEqual(catalogue.imageVariants(source, [640, 960, 1920], base), {
+            src: source, srcset: `${smaller} 640w, ${source} ${maximum}w`
+        });
+    }
+    const local = catalogue.imageVariants('assets/studio/living-1600.webp', [640, 1600], 'http://localhost:3000/preview/');
+    assert.equal(local.srcset, 'http://localhost:3000/preview/assets/studio/living-640.webp 640w, http://localhost:3000/preview/assets/studio/living-1600.webp 1600w');
+});
+
+test('Studio variants preserve other hosts, other site paths and signed image addresses', () => {
+    for (const source of [
+        'https://example.com/assets/studio/room-1920.webp',
+        'https://collinsiswerve.github.io/another-site/assets/studio/room-1920.webp',
+        'https://collinsiswerve.github.io/artprime-web/assets/studio/room-1920.webp?token=keep-this'
+    ]) assert.deepEqual(catalogue.imageVariants(source, [160, 640]), { src: source, srcset: '' });
+});
+
+test('the saved portfolio is valid and every website-hosted photo and responsive source exists', () => {
     const fs = require('node:fs');
     const path = require('node:path');
     const root = path.resolve(__dirname, '..');
     const snapshot = model.validateSnapshot(JSON.parse(fs.readFileSync(path.join(root, 'assets/studio-projects.json'), 'utf8')));
-    if (!snapshot.isExample) return;
+    const base = 'https://collinsiswerve.github.io/artprime-web/';
     for (const project of snapshot.projects) {
         for (const source of [project.coverImage, ...project.images.map(item => item.url)]) {
-            assert.ok(fs.existsSync(path.join(root, source)), source);
-            assert.ok(fs.existsSync(path.join(root, source.replace('-1600.webp', '-640.webp'))), `Responsive source for ${source}`);
+            const variants = catalogue.imageVariants(source, [640, 1920], base);
+            const sources = [variants.src, ...variants.srcset.split(', ').filter(Boolean).map(item => item.split(' ')[0])];
+            for (const address of sources) {
+                const url = new URL(address, base);
+                if (!url.href.startsWith(`${base}assets/`)) continue;
+                const local = decodeURIComponent(url.pathname.slice(new URL(base).pathname.length));
+                assert.ok(fs.existsSync(path.join(root, local)), address);
+            }
         }
     }
 });

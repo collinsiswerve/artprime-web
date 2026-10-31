@@ -1,55 +1,332 @@
 {
   "schemaVersion": 1,
-  "isExample": true,
-  "updatedAt": "2026-10-29T00:00:00.000Z",
+  "isExample": false,
+  "updatedAt": "2026-10-30T21:32:48.988Z",
   "projects": [
     {
-      "id": "quiet-living",
-      "title": "Quiet living",
-      "location": "Interior study 01",
+      "id": "arc-and-ember",
+      "title": "Arc & Ember",
+      "location": "",
       "category": "Residential",
       "year": "",
-      "description": "A study in warmth, natural light and the pleasure of everyday living. Soft textures and considered objects create a space that feels personal, unhurried and at ease. These illustrative photographs demonstrate the portfolio layout; they are not Art Prime project photographs.",
-      "coverImage": "assets/studio/living-1600.webp",
-      "coverAlt": "Sunlit living room with warm leather seating, natural timber and indoor plants",
+      "description": "An interior visualisation shaped by generous arches, a double-height living room and layers of timber, stone and soft upholstery. Pale, light-filled family spaces lead into an intimate formal lounge with carved timber screens, richly patterned rugs and a warm timber ceiling. A study in the balance between openness, detail and everyday comfort.",
+      "coverImage": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-living-01-1920.webp",
+      "coverAlt": "Double-height living room with pale sofas, a cascading chandelier and dark timber arches",
       "sortOrder": 1,
       "featured": true,
       "images": [
-        { "url": "assets/studio/living-1600.webp", "alt": "Warm living room with a picture wall, leather sofa and natural daylight", "caption": "Illustrative imagery · Light, texture and a lived-in warmth." },
-        { "url": "assets/studio/bedroom-1600.webp", "alt": "Light filled lounge with a cream sectional sofa and layered natural accessories", "caption": "Illustrative imagery · A softer palette for everyday life." }
-      ]
-    },
-    {
-      "id": "material-dialogue",
-      "title": "Material dialogue",
-      "location": "Interior study 02",
-      "category": "Residential",
-      "year": "",
-      "description": "Timber, stone and a quiet palette bring definition to open spaces. This interior study explores the balance between architectural clarity and the softer details that make a room feel welcoming. These photographs are illustrative, not completed Art Prime work.",
-      "coverImage": "assets/studio/warm-1600.webp",
-      "coverAlt": "Contemporary open plan interior with warm timber walls and a pale sofa",
-      "sortOrder": 2,
-      "featured": true,
-      "images": [
-        { "url": "assets/studio/warm-1600.webp", "alt": "Open plan living space with timber cladding, a grey sofa and black architectural accents", "caption": "Illustrative imagery · A conversation between texture and form." },
-        { "url": "assets/studio/details-1600.webp", "alt": "Minimal dining space with a dark table, stone wall and timber screen", "caption": "Illustrative imagery · Natural materials, considered details." },
-        { "url": "assets/studio/kitchen-1600.webp", "alt": "Calm grey bathroom with a freestanding bath and a long horizontal window", "caption": "Illustrative imagery · A moment of quiet." }
-      ]
-    },
-    {
-      "id": "gathered-spaces",
-      "title": "Gathered spaces",
-      "location": "Interior study 03",
-      "category": "Styling",
-      "year": "",
-      "description": "Rooms are made to be lived in. This study brings together generous seating, familiar materials and a few expressive pieces to explore the art of gathering. The images are examples used to preview the portfolio experience, not Art Prime project photographs.",
-      "coverImage": "assets/studio/dining-1600.webp",
-      "coverAlt": "Airy contemporary sitting room with blue sofas, timber furnishings and a floating staircase",
-      "sortOrder": 3,
-      "featured": true,
-      "images": [
-        { "url": "assets/studio/dining-1600.webp", "alt": "Light filled double height living room with blue seating and an open timber staircase", "caption": "Illustrative imagery · Space to come together." },
-        { "url": "assets/studio/details-1600.webp", "alt": "Contemporary dining table with sculptural chairs and an open plan backdrop", "caption": "Illustrative imagery · Objects that belong together." }
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-living-01-1920.webp",
+          "alt": "Double-height living room with pale sofas, a cascading chandelier and dark timber arches",
+          "caption": "Living room / light and volume",
+          "sortOrder": 1
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-living-02-1920.webp",
+          "alt": "Grey seating and a timber coffee table looking through an arch towards the staircase",
+          "caption": "Living room / a sequence of arches",
+          "sortOrder": 2
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-living-06-1920.webp",
+          "alt": "Sunlit lounge beneath a crystal chandelier beside the timber and wrought-iron staircase",
+          "caption": "Living room / the double-height space",
+          "sortOrder": 3
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-living-05-1920.webp",
+          "alt": "Layered lounge seating framed by dark timber arches and white panelled walls",
+          "caption": "Living room / soft textures and timber",
+          "sortOrder": 4
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-living-04-1280.webp",
+          "alt": "Double-height lounge with tall glazed doors, sheer curtains and a suspended chandelier",
+          "caption": "Living room / garden-facing glazing",
+          "sortOrder": 5
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-living-03-1920.webp",
+          "alt": "Pale sectional sofa beneath wall mouldings with an arched view into the dining room",
+          "caption": "Living room / connected spaces",
+          "sortOrder": 6
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-dining-07-1920.webp",
+          "alt": "Round timber dining table with upholstered chairs beside a tall arched window",
+          "caption": "Dining / a place to gather",
+          "sortOrder": 7
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-dining-09-1920.webp",
+          "alt": "Dining setting beneath a timber arch with the staircase and lounge beyond",
+          "caption": "Dining / views between rooms",
+          "sortOrder": 8
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-dining-10-1920.webp",
+          "alt": "Wide dining-room view looking through an arch towards the double-height living room",
+          "caption": "Dining / looking back to the lounge",
+          "sortOrder": 9
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-dining-08-1920.webp",
+          "alt": "Dining table in natural light with sheer curtains, sculptural lighting and indoor planting",
+          "caption": "Dining / daylight and planting",
+          "sortOrder": 10
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-kitchen-11-1280.webp",
+          "alt": "Timber kitchen cabinetry and pale stone island with upholstered breakfast stools",
+          "caption": "Kitchen / timber and pale stone",
+          "sortOrder": 11
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-kitchen-12-1920.webp",
+          "alt": "Kitchen island in front of illuminated glass display cabinets and warm timber doors",
+          "caption": "Kitchen / the island elevation",
+          "sortOrder": 12
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-kitchen-13-1920.webp",
+          "alt": "Kitchen island and breakfast seating aligned with an arched opening to the dining room",
+          "caption": "Kitchen / an open connection",
+          "sortOrder": 13
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-kitchen-14-1920.webp",
+          "alt": "Breakfast stools at a stone-topped kitchen island with a bright window above the sink",
+          "caption": "Kitchen / everyday gathering",
+          "sortOrder": 14
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-hall-40-1920.webp",
+          "alt": "Entrance console with mirror, timber front door and decorative iron staircase beside the lounge",
+          "caption": "Hall / a welcoming threshold",
+          "sortOrder": 15
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-hall-15-1920.webp",
+          "alt": "Entrance hall with herringbone flooring, decorative iron stair balusters and a console table",
+          "caption": "Hall / the arrival sequence",
+          "sortOrder": 16
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-hall-16-1920.webp",
+          "alt": "Panelled entrance wall and timber herringbone flooring seen from the staircase",
+          "caption": "Hall / detailing at the stair",
+          "sortOrder": 17
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-stair-22-1920.webp",
+          "alt": "Timber stair landing with ornate iron railings and a warm-toned framed artwork",
+          "caption": "Stair / timber and decorative iron",
+          "sortOrder": 18
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-stair-23-1920.webp",
+          "alt": "Upward view of the timber staircase, iron balusters and artworks along the stair wall",
+          "caption": "Stair / a layered ascent",
+          "sortOrder": 19
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-gallery-24-1920.webp",
+          "alt": "Upper hallway with herringbone flooring, white wall mouldings and an open stair balustrade",
+          "caption": "Gallery / circulation and light",
+          "sortOrder": 20
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-upper-lounge-17-1920.webp",
+          "alt": "Upper lounge with grey seating, a dark television wall and large garden-facing windows",
+          "caption": "Upper lounge / a quieter retreat",
+          "sortOrder": 21
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-upper-lounge-18-1920.webp",
+          "alt": "Grey sofa and timber coffee table facing the upper lounge television and reflective wall",
+          "caption": "Upper lounge / a relaxed setting",
+          "sortOrder": 22
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-upper-lounge-19-1920.webp",
+          "alt": "Upper lounge opening to a decorative iron balustrade above the main living room",
+          "caption": "Upper lounge / overlooking the living room",
+          "sortOrder": 23
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-upper-lounge-20-1920.webp",
+          "alt": "Armchair and planting beside the upper-floor iron balustrade and panelled wall",
+          "caption": "Upper lounge / the edge of the gallery",
+          "sortOrder": 24
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-upper-lounge-41-1920.webp",
+          "alt": "Upper lounge with armchairs, grey seating, indoor plants and a dark television feature wall",
+          "caption": "Upper lounge / a wider view",
+          "sortOrder": 25
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-gallery-21-1920.webp",
+          "alt": "View down through the upper gallery to the cascading chandelier and double-height lounge",
+          "caption": "Gallery / a view through the volume",
+          "sortOrder": 26
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bedroom-25-1920.webp",
+          "alt": "Bedroom with blue bedding, a padded headboard, timber slats and sheer white curtains",
+          "caption": "Bedroom / a softer palette",
+          "sortOrder": 27
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bedroom-26-1920.webp",
+          "alt": "Bedroom with blue bedding, a study desk, open shelving and a timber-accented television wall",
+          "caption": "Bedroom / sleeping and study",
+          "sortOrder": 28
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bedroom-29-1920.webp",
+          "alt": "Daylit bedroom with a blue bedcover, a compact desk and illuminated open shelving",
+          "caption": "Bedroom / a place to read and work",
+          "sortOrder": 29
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bedroom-30-1920.webp",
+          "alt": "Wide bedroom view with a bench at the foot of the bed and full-height sheer curtains",
+          "caption": "Bedroom / daylight and calm",
+          "sortOrder": 30
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bedroom-27-1920.webp",
+          "alt": "Bedroom television wall framed by timber slats beside an arched doorway",
+          "caption": "Bedroom / the media wall",
+          "sortOrder": 31
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bedroom-28-1920.webp",
+          "alt": "Side view across the bed towards the pale television panel and dark timber accents",
+          "caption": "Bedroom / layered materials",
+          "sortOrder": 32
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-wardrobe-31-1920.webp",
+          "alt": "Walk-in dressing area with full-height timber wardrobes on either side of a central window",
+          "caption": "Dressing / a timber-lined passage",
+          "sortOrder": 33
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-wardrobe-32-1920.webp",
+          "alt": "Full-height timber wardrobe doors with black handles and sunlight across the floor",
+          "caption": "Dressing / storage elevation",
+          "sortOrder": 34
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-wardrobe-33-1920.webp",
+          "alt": "Timber wardrobes beside an arched opening back into the bedroom",
+          "caption": "Dressing / connected to the bedroom",
+          "sortOrder": 35
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bathroom-34-1920.webp",
+          "alt": "Bathroom with marble-patterned walls, a freestanding bath and a long vanity mirror",
+          "caption": "Bathroom / a complete view",
+          "sortOrder": 36
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bathroom-35-1920.webp",
+          "alt": "Freestanding bath and glass shower beside marble-patterned walls and timber cabinetry",
+          "caption": "Bathroom / stone and timber",
+          "sortOrder": 37
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bathroom-36-1920.webp",
+          "alt": "Bathroom vanity and illuminated mirror beside a tall window and freestanding bath",
+          "caption": "Bathroom / the vanity side",
+          "sortOrder": 38
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bathroom-37-1920.webp",
+          "alt": "Bath and glass shower with recessed shelves, marble-patterned walls and a bright side window",
+          "caption": "Bathroom / the bathing space",
+          "sortOrder": 39
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bathroom-38-1280.webp",
+          "alt": "Freestanding bath beneath a towel rail with a timber doorway and recessed toiletries shelf",
+          "caption": "Bathroom / the bath elevation",
+          "sortOrder": 40
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-bathroom-39-1920.webp",
+          "alt": "Close view of the glass shower enclosure and dark timber-accented bathroom wall",
+          "caption": "Bathroom / shower detail",
+          "sortOrder": 41
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m1-1920.webp",
+          "alt": "Formal lounge with a timber ceiling, carved screens, stone-textured walls and layered seating",
+          "caption": "Formal lounge / warmth and detail",
+          "sortOrder": 42
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m3-1920.webp",
+          "alt": "Wide formal lounge with timber detailing, arched windows and a richly patterned rug",
+          "caption": "Formal lounge / an invitation to gather",
+          "sortOrder": 43
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m7-1920.webp",
+          "alt": "Formal lounge with pale upholstered sofas, timber tables, carved screens and arched windows",
+          "caption": "Formal lounge / layered seating",
+          "sortOrder": 44
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m2-1920.webp",
+          "alt": "Symmetrical formal lounge with grey sofas, arched windows and crystal ceiling lights",
+          "caption": "Formal lounge / the seating elevation",
+          "sortOrder": 45
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m4-1920.webp",
+          "alt": "Formal lounge seating facing a line of arched windows beneath a carved timber ceiling",
+          "caption": "Formal lounge / light through the arches",
+          "sortOrder": 46
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m5-1920.webp",
+          "alt": "Long view through the timber-lined formal lounge across coffee tables and upholstered seating",
+          "caption": "Formal lounge / depth and rhythm",
+          "sortOrder": 47
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m6-1920.webp",
+          "alt": "Television wall with stone texture, timber shelving and carved screens in the formal lounge",
+          "caption": "Formal lounge / the feature wall",
+          "sortOrder": 48
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m8-1920.webp",
+          "alt": "Corner view of the formal lounge with a patterned rug, timber coffee table and crystal chandelier",
+          "caption": "Formal lounge / the room as a whole",
+          "sortOrder": 49
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m9-1920.webp",
+          "alt": "Upholstered timber-frame seating beside carved screens and an arched window",
+          "caption": "Formal lounge / material detail",
+          "sortOrder": 50
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m10-1920.webp",
+          "alt": "Two upholstered armchairs, floral arrangements and a timber table against a stone-textured wall",
+          "caption": "Formal lounge / a quiet conversation",
+          "sortOrder": 51
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/arc-and-ember-formal-lounge-m11-1920.webp",
+          "alt": "Floral centrepiece on a timber coffee table with upholstered seating and carved screens beyond",
+          "caption": "Formal lounge / the finishing touches",
+          "sortOrder": 52
+        }
       ]
     }
   ]

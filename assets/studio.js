@@ -40,14 +40,9 @@
             image.classList.remove('image-loading');
         };
         image.sizes = kind === 'stage' ? '100vw' : kind === 'thumbnail' ? '68px' : '(min-width: 768px) 48vw, 88vw';
-        if (/^assets\/studio\/[a-z-]+-1600\.webp$/.test(source)) {
-            image.srcset = `${source.replace('-1600.webp', '-640.webp')} 640w, ${source} 1600w`;
-            image.src = kind === 'thumbnail' ? source.replace('-1600.webp', '-640.webp') : source;
-        } else {
-            if (variants.srcset) image.srcset = variants.srcset;
-            else image.removeAttribute('srcset');
-            image.src = variants.src;
-        }
+        if (variants.srcset) image.srcset = variants.srcset;
+        else image.removeAttribute('srcset');
+        image.src = variants.src;
         if (image.complete && image.naturalWidth) image.classList.remove('image-loading');
     }
 

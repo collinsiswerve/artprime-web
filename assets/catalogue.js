@@ -38,6 +38,18 @@
     function imageVariants(value, widths, base = DEFAULT_BASE) {
         const source = imageURL(value, base);
         const url = new URL(source);
+        const sizes = [...new Set(widths)].filter(width => Number.isSafeInteger(width) && width > 0).sort((a, b) => a - b);
+        if (!sizes.length) return { src: source, srcset: '' };
+        // Uploaded Studio renders have two real files; full public Sheet URLs use them too.
+        const studioDirectory = new URL('assets/studio/', base);
+        const studioFile = url.pathname.slice(studioDirectory.pathname.length).match(/^[a-z0-9-]+-(1280|1600|1920)\.webp$/i);
+        if (url.origin === studioDirectory.origin && url.pathname.startsWith(studioDirectory.pathname)
+            && !url.search && !url.hash && studioFile) {
+            const maximum = Number(studioFile[1]);
+            const smaller = source.replace(/-(1280|1600|1920)\.webp$/i, '-640.webp');
+            return { src: sizes[sizes.length - 1] <= 640 ? smaller : source,
+                srcset: `${smaller} 640w, ${source} ${maximum}w` };
+        }
         // Transform only known image CDNs. Other hosts and signed addresses stay intact.
         const signed = [...url.searchParams.keys()].some(key => /^(sig|signature|token|__cld_token__|expires|x-amz-.+|x-goog-.+)$/i.test(key));
         const cloudinary = url.hostname === 'res.cloudinary.com' && /^\/[^/]+\/image\/upload\//.test(url.pathname);
@@ -45,8 +57,6 @@
         if ((!['images.unsplash.com', 'images.pexels.com'].includes(url.hostname) && !cloudinary) || signed || cloudinarySignature) {
             return { src: source, srcset: '' };
         }
-        const sizes = [...new Set(widths)].filter(width => Number.isSafeInteger(width) && width > 0).sort((a, b) => a - b);
-        if (!sizes.length) return { src: source, srcset: '' };
         const originalWidth = Number(url.searchParams.get('w'));
         const originalHeight = Number(url.searchParams.get('h'));
         function variant(width) {

@@ -2,7 +2,11 @@
 
 The Studio is a fast, static portfolio. Visitors read `assets/studio-projects.json` from the website, not Google Sheets. The publishing workflow validates the sheet and replaces this snapshot only after the import succeeds. If an import fails, the previously published website stays available.
 
-The included interior studies are clearly marked **illustrative photographs**. They show the portfolio layout and are not completed Art Prime commissions. Publishing the real project rows removes the illustrative notice automatically.
+The published portfolio includes **Arc & Ember**, a residential interior visualisation with all 52 supplied views. The cover is the double-height living room. Its public name is editorial; the project is described as a visualisation. Location and year are left blank until confirmed.
+
+The project occupies `Projects!A2:K2`, with its ordered gallery in `ProjectImages!A2:E53`. Notes on each image-link cell identify the original scene filename. Each render has a 640px WebP version and a larger 1920px version, or 1280px where the source was smaller. All web copies preserve the original composition and aspect ratio. Full public website URLs select these prepared sizes automatically.
+
+The earlier illustrative photographs remain as unused reference assets with their credits below. The published snapshot uses the supplied project renders.
 
 ## The workbook is ready
 
@@ -87,7 +91,7 @@ npm run build:site
 
 ## Preview image credits
 
-The bundled illustrative photographs are downloaded, responsive WebP versions of these Unsplash sources. They are not taken from Studio Nato:
+The retained illustrative photographs are downloaded, responsive WebP versions of these Unsplash sources. They are not displayed in the current portfolio and are not taken from Studio Nato:
 
 | Local file stem | Source |
 | --- | --- |

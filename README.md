@@ -61,6 +61,8 @@ The WhatsApp button prepares an editable message with the selected products, qua
 
 The `Projects` and `ProjectImages` tabs are already set up. Add content from row 2. Each published project needs a permanent ID, title, category, cover image and cover description. Use plain text throughout.
 
+The portfolio includes **Arc & Ember**, a residential interior visualisation with 52 views. Its double-height living room is the full-screen cover. The gallery follows the living and dining spaces, kitchen, circulation, upper lounge, bedroom, dressing and bathroom areas, then the formal lounge. The project is listed in `Projects` row 2 and its views in `ProjectImages` rows 2–53. Source filenames are recorded in the image-link cell notes so I can trace each view back to the original render.
+
 ### Projects: one row per project
 
 | Column | Header | What I enter |
@@ -118,7 +120,9 @@ For Postimages, prepare a sharp WebP or JPEG before uploading because this site 
 
 Cloudinary is an optional alternative when I want automatic resizing. Public delivery URLs receive responsive widths and automatic format and quality. Unsplash and Pexels delivery URLs also receive responsive sizes. Signed URLs are preserved. A shared Google Drive page is not a direct image URL. The importer checks URL format and known sharing pages; it cannot keep an external photo host online. If a photo later fails to load, the website uses its local placeholder so browsing and enquiries keep working.
 
-Local optimized images can also live in `assets/studio/`; use their full public website URLs in the sheet. The bundled Studio studies have 640px and 1600px WebP versions. Cards load lazily, the opening image is prioritised and the gallery loads views as needed. No autoplay, embedded social feeds or animation framework is required.
+Local optimized images can also live in `assets/studio/`; use their full public website URLs in the sheet. Arc & Ember has a 640px WebP copy and a 1920px copy of each view, with 1280px used for the three smaller source renders. The original compositions and proportions are retained. The original PNG archive is kept separately; visitors load the web copies.
+
+Website-hosted files named `NAME-1280.webp`, `NAME-1600.webp` or `NAME-1920.webp` use a matching `NAME-640.webp` file for smaller displays and gallery thumbnails. Keep both files together. This also works when the sheet contains the full public URL. Cards load lazily, the opening image is prioritised and the gallery loads views as needed. No autoplay, embedded social feeds or animation framework is required.
 
 Before publishing client work, I confirm permission to use the photographs and remove identifying details that should stay private. A general location is usually enough for the public portfolio.
 
