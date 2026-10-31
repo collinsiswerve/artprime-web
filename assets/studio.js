@@ -5,9 +5,9 @@
     let projects = [];
     let featured = [];
     let stage = null;
+    let gallery = null;
     let titleAnimation = null;
     let currentProject = null;
-    let photoIndex = 0;
     let activeFilter = 'All spaces';
     let returnFocus = null;
     let loading = false;
@@ -128,16 +128,6 @@
         byId('project-grid').setAttribute('aria-label', `${filtered.length} ${filtered.length === 1 ? 'interior' : 'interiors'}`);
     }
 
-    function photoAt(index) {
-        if (!currentProject) return;
-        photoIndex = (index + currentProject.images.length) % currentProject.images.length;
-        const image = currentProject.images[photoIndex];
-        setImage(byId('gallery-image'), image.url, image.alt, 'gallery');
-        byId('gallery-caption').textContent = image.caption || '';
-        byId('gallery-count').textContent = `${String(photoIndex + 1).padStart(2, '0')} / ${String(currentProject.images.length).padStart(2, '0')}`;
-        byId('gallery-thumbs').querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === photoIndex)));
-    }
-
     function projectLink(id) {
         const url = new URL(window.location.href);
         url.searchParams.set('project', id);
@@ -168,30 +158,11 @@
         byId('project-share-status').textContent = '';
         byId('project-share-fallback').hidden = true;
         byId('studio-project-link').value = projectLink(project.id);
-        const fragment = document.createDocumentFragment();
-        project.images.forEach((image, index) => {
-            const button = makeButton(undefined, 'gallery-thumb', () => photoAt(index));
-            button.setAttribute('aria-label', `View photo ${index + 1}: ${image.alt}`);
-            button.setAttribute('aria-pressed', String(index === 0));
-            const thumbnail = node('img');
-            thumbnail.width = 68;
-            thumbnail.height = 56;
-            thumbnail.loading = 'lazy';
-            thumbnail.decoding = 'async';
-            setImage(thumbnail, image.url, '', 'thumbnail');
-            button.append(thumbnail);
-            fragment.append(button);
-        });
-        byId('gallery-thumbs').replaceChildren(fragment);
-        const multiplePhotos = project.images.length > 1;
-        byId('gallery-prev').hidden = !multiplePhotos;
-        byId('gallery-next').hidden = !multiplePhotos;
-        byId('gallery-thumbs').hidden = !multiplePhotos;
         const next = projects[(projects.indexOf(project) + 1) % projects.length];
         byId('next-project-title').textContent = next.title;
         byId('next-project').hidden = projects.length < 2;
-        photoAt(0);
         if (!alreadyOpen) dialog.showModal();
+        gallery.open(project);
         dialog.scrollTop = 0;
         byId('project-close').focus({ preventScroll: true });
         if (syncRoute) {
@@ -202,6 +173,7 @@
     }
 
     function closeProject({ syncRoute = true } = {}) {
+        gallery.close();
         if (dialog.open) dialog.close();
         if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
         if (syncRoute && new URL(window.location.href).searchParams.has('project')) {
@@ -264,15 +236,15 @@
     }
 
     function init() {
+        gallery = new window.ArtPrimeGallery.Viewer(dialog);
         stage = new window.ArtPrimeStage(document.querySelector('.studio-stage'), {
             setImage, onChange: updateStage, onOpen: id => openProject(id)
         });
         byId('stage-prev').addEventListener('click', () => stage.goBy(-1));
         byId('stage-next').addEventListener('click', () => stage.goBy(1));
         byId('project-close').addEventListener('click', () => closeProject());
-        dialog.addEventListener('cancel', event => { event.preventDefault(); closeProject(); });
-        byId('gallery-prev').addEventListener('click', () => photoAt(photoIndex - 1));
-        byId('gallery-next').addEventListener('click', () => photoAt(photoIndex + 1));
+        dialog.addEventListener('cancel', event => { event.preventDefault(); if (!gallery.closePanel()) closeProject(); });
+        dialog.addEventListener('close', () => gallery.close());
         byId('next-project').addEventListener('click', () => {
             if (currentProject) openProject(projects[(projects.indexOf(currentProject) + 1) % projects.length].id);
         });
@@ -282,7 +254,7 @@
             if (event.target.closest('input,textarea,select')) return;
             if (dialog.open && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
                 event.preventDefault();
-                photoAt(photoIndex + (event.key === 'ArrowRight' ? 1 : -1));
+                gallery.goBy(event.key === 'ArrowRight' ? 1 : -1);
             } else if (event.target.closest('.studio-stage')) {
                 const direction = { ArrowLeft: -1, ArrowUp: -1, PageUp: -1, ArrowRight: 1, ArrowDown: 1, PageDown: 1 }[event.key];
                 if (direction) {

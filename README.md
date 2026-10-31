@@ -129,7 +129,11 @@ Cloudinary is an optional alternative when I want automatic resizing. Public del
 
 Local optimized images can also live in `assets/studio/`; use their full public website URLs in the sheet. Arc & Ember has a 640px WebP copy and a 1920px copy of each view, with 1280px used for its three smaller source renders. Aurelia House also has a 640px copy of every view and larger copies up to 1920px; its one smaller source stays at its native 1272px width. No renders are enlarged. The original compositions and proportions are retained. The original PNG archives are kept separately; visitors load the web copies.
 
-Website-hosted files named `NAME-1280.webp`, `NAME-1600.webp` or `NAME-1920.webp` use a matching `NAME-640.webp` file for smaller displays and gallery thumbnails. Keep both files together. This also works when the sheet contains the full public URL. Cards load lazily, the opening image is prioritised and the gallery loads views as needed. No autoplay, embedded social feeds or animation framework is required.
+Website-hosted files named `NAME-1280.webp`, `NAME-1600.webp` or `NAME-1920.webp` use a matching `NAME-640.webp` file for smaller displays and gallery thumbnails. Keep both files together. This also works when the sheet contains the full public URL. Cards load lazily, the opening image is prioritised and the gallery prepares the next view as I browse. No embedded social feeds or animation framework is required.
+
+Each project opens as a full-screen slideshow. Photographs fill the screen and crossfade every 12 seconds in the order set in `ProjectImages`. **Pause** stops automatic playback; **Play** starts it again. The arrows, left/right keys and horizontal swipes move between photographs. **Fit image** shows the full composition without cropping; **Fill screen** returns to the edge-to-edge view. **Photos** opens the numbered thumbnail selection, and **Project info** opens the description, enquiry, sharing and next-project controls. Escape closes a panel first, then the gallery.
+
+Playback waits for a photograph to load and pauses while a panel is open or the browser tab is hidden. Manual navigation starts a fresh 12-second interval without undoing a visitor's Pause choice. Reduced-motion preferences start the slideshow paused and remove the crossfade; visitors can still choose Play. A single-photo project has no playback or arrow controls. Existing and newly imported projects use the same viewer without extra sheet columns.
 
 Before publishing client work, I confirm permission to use the photographs and remove identifying details that should stay private. A general location is usually enough for the public portfolio.
 
@@ -191,6 +195,7 @@ Serve the repository or `dist/` with a static HTTP server to test it; opening HT
 | `assets/typography.css` | Rauschen A webfont declaration and fallback |
 | `assets/site-motion.js` | Scroll fades, shared navigation and phone menu |
 | `assets/studio-stage.js`, `assets/studio-stage.css` | Full-screen Studio portfolio, vertical scrolling and project selection |
+| `assets/studio-gallery.js`, `assets/studio-gallery.css` | Full-screen project photographs, 12-second playback, crossfades and gallery controls |
 | `styles/input.css`, `tailwind.config.cjs`, `assets/styles.css` | Tailwind source, scanned pages and compiled output |
 | `assets/catalogue.js` | Product parsing, search, cart, image and sharing helpers |
 | `assets/storefront.js` | Shop interactions and live catalogue loading |
@@ -218,7 +223,7 @@ Before merging website changes, I check desktop and phone layouts, policy and so
 | A Studio import fails | Read its error. Check exact tab names, headers, unique IDs, gallery IDs, direct HTTPS URLs and required alt descriptions. |
 | “No published Studio projects” appears | Add a complete project and tick `published`. Use the separate empty-portfolio option only when deliberately removing all projects. |
 | An image URL is rejected | Copy the direct file address, such as `https://i.postimg.cc/.../photo.jpg`. Sharing pages, spreadsheet image cells and image formulas are not photo URLs. |
-| A photo is cropped unexpectedly | Choose a cover with room around the subject and check both phone and desktop crops. Use a gallery view for the full composition. |
+| A photo is cropped unexpectedly | Choose a cover with room around the subject and check both phone and desktop crops. In a project gallery, choose **Fit image** to see the full composition. |
 | Old styling or a previous image remains | Reload without cache. Use a new photo URL or update the stylesheet version when appropriate. |
 
 The home hero is an optimized local version of [this Unsplash photograph](https://images.unsplash.com/photo-1618221195710-dd6b41faaea6), with phone crops, desktop WebP sizes and a JPEG fallback. The Studio photograph sources are recorded in the detailed guide.

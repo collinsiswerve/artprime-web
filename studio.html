@@ -18,6 +18,7 @@
     <link rel="preconnect" href="https://file.squarespace-cdn.com" crossorigin>
     <link rel="preload" href="https://file.squarespace-cdn.com/content/v2/namespaces/fonts/libraries/6a39885587a69a0a2379b8e2/assets/b573e57d-8ab9-4860-8930-d5e5e2fe5127/font.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/typography.css?v=rauschen-1">
+    <link rel="stylesheet" href="assets/studio-gallery.css?v=gallery-1">
 </head>
 <body class="studio-page">
     <a class="skip-link" href="#studio-main">Skip to content</a>
@@ -130,17 +131,25 @@
         </div>
     </footer>
 
-    <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-title">
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="gallery-project-title" aria-describedby="gallery-help">
+        <div id="gallery-scene" class="gallery-scene" role="group" aria-roledescription="slideshow" aria-label="Project photographs" aria-busy="true"><div id="gallery-frames" class="gallery-frames"></div></div>
         <div class="project-dialog-top"><a href="studio.html" class="dialog-wordmark" aria-label="Art Prime Studio">art prime.</a><span id="dialog-project-index"></span><button id="project-close" class="dialog-close" type="button" aria-label="Close project gallery">Close <span aria-hidden="true">×</span></button></div>
-        <div class="project-dialog-body">
-            <div class="gallery-main"><img id="gallery-image" alt="" width="1600" height="1067" decoding="async"><div class="gallery-bar"><button id="gallery-prev" type="button" class="round-arrow" aria-label="Previous project photo">←</button><p id="gallery-caption"></p><span id="gallery-count" aria-live="polite" aria-atomic="true"></span><button id="gallery-next" type="button" class="round-arrow" aria-label="Next project photo">→</button></div><div id="gallery-thumbs" class="gallery-thumbs" role="group" aria-label="Choose a project photo"></div></div>
-            <div class="project-information"><p id="project-category" class="eyebrow"></p><h2 id="project-title"></h2><dl id="project-facts"></dl><p id="project-description"></p><a id="project-inquire" class="text-link" href="https://wa.me/254748649103" target="_blank" rel="noopener noreferrer">Discuss a space like this <span aria-hidden="true">↗</span></a><button id="project-share" class="text-link" type="button">Copy project link <span aria-hidden="true">↗</span></button><p id="project-share-status" class="share-status" role="status"></p><div id="project-share-fallback" hidden><label for="studio-project-link">Project link</label><input id="studio-project-link" readonly type="text"></div><button id="next-project" class="next-project" type="button"><span>CONTINUE EXPLORING</span><span id="next-project-title"></span><span aria-hidden="true">↗</span></button></div>
+        <div class="gallery-heading"><h2 id="gallery-project-title"></h2><p id="gallery-caption"></p></div>
+        <div class="gallery-bottom">
+            <div class="gallery-position"><span id="gallery-count"></span><button id="gallery-prev" type="button" class="round-arrow" aria-label="Previous project photo">←</button><button id="gallery-next" type="button" class="round-arrow" aria-label="Next project photo">→</button></div>
+            <div class="gallery-options"><button id="gallery-playback" type="button" aria-label="Pause automatic slideshow">Pause</button><button id="gallery-fit" type="button" aria-pressed="false">Fit image</button><button id="gallery-photos-toggle" type="button" aria-controls="gallery-contact-sheet" aria-expanded="false">Photos</button><button id="gallery-info-toggle" type="button" aria-controls="project-information" aria-expanded="false">Project info</button></div>
         </div>
+        <div id="gallery-progress" class="gallery-progress" aria-hidden="true" hidden></div>
+        <p id="gallery-help" class="gallery-accessible-text">Photographs fill the screen and advance every 12 seconds. Pause the slideshow, use the arrows or swipe to browse. Fit image shows the complete photograph. Escape closes an open panel, then the gallery. Automatic playback starts paused when reduced motion is preferred.</p>
+        <p id="gallery-announcement" class="gallery-accessible-text" role="status" aria-atomic="true"></p>
+        <section id="gallery-contact-sheet" class="gallery-panel" aria-labelledby="gallery-photos-title" hidden><div class="gallery-panel-header"><h2 id="gallery-photos-title">Photographs</h2><button type="button" data-gallery-panel-close aria-label="Close photographs">×</button></div><div id="gallery-thumbs" class="gallery-thumbs" role="group" aria-label="Choose a project photo"></div></section>
+        <section id="project-information" class="project-information gallery-panel" aria-labelledby="project-title" hidden><div class="gallery-panel-header"><p>About the project</p><button type="button" data-gallery-panel-close aria-label="Close project information">×</button></div><p id="project-category" class="eyebrow"></p><h2 id="project-title"></h2><dl id="project-facts"></dl><p id="project-description"></p><a id="project-inquire" class="text-link" href="https://wa.me/254748649103" target="_blank" rel="noopener noreferrer">Discuss a space like this <span aria-hidden="true">↗</span></a><button id="project-share" class="text-link" type="button">Copy project link <span aria-hidden="true">↗</span></button><p id="project-share-status" class="share-status" role="status"></p><div id="project-share-fallback" hidden><label for="studio-project-link">Project link</label><input id="studio-project-link" readonly type="text"></div><button id="next-project" class="next-project" type="button"><span>CONTINUE EXPLORING</span><span id="next-project-title"></span><span aria-hidden="true">↗</span></button></section>
     </dialog>
     <script src="assets/site-motion.js?v=fullscreen-2" defer></script>
     <script src="assets/catalogue.js?v=studio-images-1" defer></script>
     <script src="assets/studio-model.js" defer></script>
     <script src="assets/studio-stage.js?v=fullscreen-2" defer></script>
-    <script src="assets/studio.js?v=studio-images-3" defer></script>
+    <script src="assets/studio-gallery.js?v=gallery-1" defer></script>
+    <script src="assets/studio.js?v=gallery-1" defer></script>
 </body>
 </html>
