@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "isExample": false,
-  "updatedAt": "2026-10-30T21:32:48.988Z",
+  "updatedAt": "2026-10-31T05:34:53.313Z",
   "projects": [
     {
       "id": "arc-and-ember",
@@ -326,6 +326,254 @@
           "alt": "Floral centrepiece on a timber coffee table with upholstered seating and carved screens beyond",
           "caption": "Formal lounge / the finishing touches",
           "sortOrder": 52
+        }
+      ]
+    },
+    {
+      "id": "aurelia-house",
+      "title": "Aurelia House",
+      "location": "",
+      "category": "Residential",
+      "year": "",
+      "description": "An interior visualisation shaped by warm light, soft ivory tones and rich timber accents. Generous glazing brings daylight into the living spaces, while a fireplace forms the heart of the lounge and dining area. The kitchen, private suite and sitting rooms carry the same calm palette through layered lighting, stone textures and carefully framed views.",
+      "coverImage": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-living-03-1920.webp",
+      "coverAlt": "Sunlit living room with pale sofas, a fireplace, tall windows and a view towards the dining area",
+      "sortOrder": 2,
+      "featured": true,
+      "images": [
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-living-03-1920.webp",
+          "alt": "Sunlit living room with pale sofas, a fireplace, tall windows and a view towards the dining area",
+          "caption": "Living / light and connection",
+          "sortOrder": 1
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-living-02-1920.webp",
+          "alt": "Layered lounge seating around a timber coffee table beside the fireplace and illuminated display shelves",
+          "caption": "Living / soft forms and timber",
+          "sortOrder": 2
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-living-01-1920.webp",
+          "alt": "Living room with pale seating, a dark timber television wall and a glowing fireplace",
+          "caption": "Living / warmth at the centre",
+          "sortOrder": 3
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-living-04-1920.webp",
+          "alt": "Lounge seating and timber coffee table beneath a crystal chandelier and recessed ceiling lighting",
+          "caption": "Living / a welcoming composition",
+          "sortOrder": 4
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-living-06-1920.webp",
+          "alt": "Long view through the living room with layered seating, wall mouldings and sheer curtains",
+          "caption": "Living / depth and daylight",
+          "sortOrder": 5
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-living-05-1920.webp",
+          "alt": "Grey sofas and pale armchairs arranged around a coffee table beside a bright garden-facing window",
+          "caption": "Living / a quieter view",
+          "sortOrder": 6
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-connection-07-1272.webp",
+          "alt": "Fireplace and television wall beside a tall window with the dining area visible beyond",
+          "caption": "Living and dining / a shared focal point",
+          "sortOrder": 7
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-dining-12-1920.webp",
+          "alt": "Dining table beside full-height glazing and a fireplace beneath black-and-white abstract artwork",
+          "caption": "Dining / light beside the hearth",
+          "sortOrder": 8
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-dining-11-1920.webp",
+          "alt": "Wide dining-room view with a timber table, pale chairs, tall glazing and the kitchen doorway beyond",
+          "caption": "Dining / generous proportions",
+          "sortOrder": 9
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-dining-09-1920.webp",
+          "alt": "Dining room with upholstered chairs, large abstract prints, timber panelling and indoor planting",
+          "caption": "Dining / texture and artwork",
+          "sortOrder": 10
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-dining-08-1920.webp",
+          "alt": "Timber dining table with pale upholstered chairs beneath a linear pendant and framed abstract artwork",
+          "caption": "Dining / a place to gather",
+          "sortOrder": 11
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-dining-10-1920.webp",
+          "alt": "Dining setting beside a tall window with a timber-framed opening towards the kitchen",
+          "caption": "Dining / an open connection",
+          "sortOrder": 12
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-kitchen-14-1920.webp",
+          "alt": "Stone-patterned kitchen island framed by pale cabinetry, a bright sink window and linear ceiling lighting",
+          "caption": "Kitchen / the working heart",
+          "sortOrder": 13
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-kitchen-13-1920.webp",
+          "alt": "Pale kitchen island with four upholstered breakfast stools, white cabinetry and timber flooring",
+          "caption": "Kitchen / everyday gathering",
+          "sortOrder": 14
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-kitchen-15-1920.webp",
+          "alt": "Kitchen island and cabinetry seen from the dining side beneath layered ceiling lighting",
+          "caption": "Kitchen / a complete view",
+          "sortOrder": 15
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-kitchen-16-1920.webp",
+          "alt": "Long kitchen view with a stone-patterned island, pale cabinetry and a timber doorway",
+          "caption": "Kitchen / calm lines",
+          "sortOrder": 16
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-upper-lounge-20-1920.webp",
+          "alt": "Daylit sitting area with rounded armchairs, layered seating, indoor planting and ring pendant lights",
+          "caption": "Upper lounge / room to unwind",
+          "sortOrder": 17
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-upper-lounge-18-1920.webp",
+          "alt": "Sunlit upper lounge with pale armchairs, a low coffee table and a timber-accented television wall",
+          "caption": "Upper lounge / light across the room",
+          "sortOrder": 18
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-upper-lounge-22-1920.webp",
+          "alt": "Long view across the upper lounge with sofas, a television feature wall and garden-facing glazing",
+          "caption": "Upper lounge / the room as a whole",
+          "sortOrder": 19
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-upper-lounge-19-1920.webp",
+          "alt": "Grey sofa and pale armchairs beside tall windows and a timber-framed opening to the landing",
+          "caption": "Upper lounge / a view through",
+          "sortOrder": 20
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-upper-lounge-17-1920.webp",
+          "alt": "Upper lounge with grey seating, a dark television panel and sculptural ring pendant lighting",
+          "caption": "Upper lounge / an intimate setting",
+          "sortOrder": 21
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-upper-lounge-21-1920.webp",
+          "alt": "Television wall with pale cabinetry and timber accents facing a group of upholstered armchairs",
+          "caption": "Upper lounge / considered details",
+          "sortOrder": 22
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-gallery-24-1920.webp",
+          "alt": "View from the upper landing down to the dining room beside a tall timber-accented wall and suspended lighting",
+          "caption": "Gallery / light through the levels",
+          "sortOrder": 23
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bedroom-29-1920.webp",
+          "alt": "Bedroom with green bedding, an upholstered bench, pale wardrobes and tall garden-facing glazing",
+          "caption": "Bedroom / soft colour and daylight",
+          "sortOrder": 24
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bedroom-30-1920.webp",
+          "alt": "Wide bedroom view with green bedding, a bench, a sitting chair and full-height curtains",
+          "caption": "Bedroom / a complete view",
+          "sortOrder": 25
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bedroom-28-1920.webp",
+          "alt": "Green bedcover in the foreground with a daylit sitting corner, television wall and pale desk beyond",
+          "caption": "Bedroom / a place to pause",
+          "sortOrder": 26
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bedroom-25-1920.webp",
+          "alt": "Bedroom with green bedding, a timber television wall, a writing desk and tall windows",
+          "caption": "Bedroom / a warmer retreat",
+          "sortOrder": 27
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bedroom-27-1920.webp",
+          "alt": "Bedroom television wall and writing desk framed by timber panels and full-height pale wardrobes",
+          "caption": "Bedroom / timber and storage",
+          "sortOrder": 28
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bedroom-26-1920.webp",
+          "alt": "Bedroom with green bedding, pale wardrobes and a dressing mirror beneath soft ceiling lighting",
+          "caption": "Bedroom / layered light",
+          "sortOrder": 29
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-dressing-31-1920.webp",
+          "alt": "Dressing table with an illuminated mirror and upholstered chair between pale built-in wardrobes",
+          "caption": "Dressing / a quiet corner",
+          "sortOrder": 30
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-dressing-32-1920.webp",
+          "alt": "Pale built-in wardrobes around a timber doorway with sunlight falling across the floor",
+          "caption": "Dressing / storage and light",
+          "sortOrder": 31
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bathroom-33-1920.webp",
+          "alt": "Bathroom with stone-patterned walls, a double-basin vanity, glass shower and illuminated mirror",
+          "caption": "Bathroom / a generous composition",
+          "sortOrder": 32
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bathroom-34-1920.webp",
+          "alt": "Double vanity and freestanding bath beside tall windows and a glass shower enclosure",
+          "caption": "Bathroom / daylight and stone",
+          "sortOrder": 33
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bathroom-35-1920.webp",
+          "alt": "Freestanding bath beside a tall window, illuminated niches and a glass shower enclosure",
+          "caption": "Bathroom / the bathing space",
+          "sortOrder": 34
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-bathroom-36-1920.webp",
+          "alt": "Bathroom with a freestanding bath, double vanity, illuminated shelves and glass shower enclosure",
+          "caption": "Bathroom / a complete view",
+          "sortOrder": 35
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-study-lounge-40-1920.webp",
+          "alt": "Study lounge with a timber work table, pale chairs, open bookshelves and a crystal pendant",
+          "caption": "Study lounge / a wider view",
+          "sortOrder": 36
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-study-lounge-37-1920.webp",
+          "alt": "Study lounge with a bookcase, timber table, upholstered sofa and reading chairs",
+          "caption": "Study lounge / reading and conversation",
+          "sortOrder": 37
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-study-lounge-39-1920.webp",
+          "alt": "Reading chairs and a sofa beside a work table, framed wall art and tall windows",
+          "caption": "Study lounge / a softer setting",
+          "sortOrder": 38
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/aurelia-house-study-lounge-38-1920.webp",
+          "alt": "Long study-lounge view with a timber-frame sofa, reading chairs and a work table beneath sculptural lighting",
+          "caption": "Study lounge / room to think",
+          "sortOrder": 39
         }
       ]
     }

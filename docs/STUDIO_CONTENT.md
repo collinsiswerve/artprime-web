@@ -2,9 +2,11 @@
 
 The Studio is a fast, static portfolio. Visitors read `assets/studio-projects.json` from the website, not Google Sheets. The publishing workflow validates the sheet and replaces this snapshot only after the import succeeds. If an import fails, the previously published website stays available.
 
-The published portfolio includes **Arc & Ember**, a residential interior visualisation with all 52 supplied views. The cover is the double-height living room. Its public name is editorial; the project is described as a visualisation. Location and year are left blank until confirmed.
+The published portfolio includes **Arc & Ember** with 52 views and **Aurelia House** with 39 views. Both are residential interior visualisations. Their public names are editorial; location and year are left blank until confirmed.
 
-The project occupies `Projects!A2:K2`, with its ordered gallery in `ProjectImages!A2:E53`. Notes on each image-link cell identify the original scene filename. Each render has a 640px WebP version and a larger 1920px version, or 1280px where the source was smaller. All web copies preserve the original composition and aspect ratio. Full public website URLs select these prepared sizes automatically.
+Arc & Ember occupies `Projects!A2:K2`, with its ordered gallery in `ProjectImages!A2:E53`. Its cover is the double-height living room. Aurelia House occupies `Projects!A3:K3`, with its gallery in `ProjectImages!A54:E92`; its cover is the wide, sunlit living-room view. Arc & Ember is first in the opening portfolio and Aurelia House is second.
+
+Notes on each image-link cell identify the original scene filename. Every render has a 640px WebP copy and a larger web copy. Most larger files are 1920px wide; Arc & Ember's smaller files use 1280px, and Aurelia House's single smaller source keeps its native 1272px width. All web copies preserve the original composition and aspect ratio without enlarging the source. Public website URLs ending in the standard 1280px, 1600px or 1920px filename pattern use their prepared 640px version for thumbnails; the native-width 1272px view loads directly.
 
 The earlier illustrative photographs remain as unused reference assets with their credits below. The published snapshot uses the supplied project renders.
 
