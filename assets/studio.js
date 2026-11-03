@@ -39,7 +39,7 @@
             image.alt = `${alt} — photograph unavailable`;
             image.classList.remove('image-loading');
         };
-        image.sizes = kind === 'stage' ? '100vw' : kind === 'thumbnail' ? '68px' : '(min-width: 768px) 48vw, 88vw';
+        image.sizes = kind === 'stage' ? '(max-aspect-ratio: 8/5) 160vh, 100vw' : kind === 'thumbnail' ? '68px' : '(min-width: 768px) 48vw, 88vw';
         if (variants.srcset) image.srcset = variants.srcset;
         else image.removeAttribute('srcset');
         image.src = variants.src;

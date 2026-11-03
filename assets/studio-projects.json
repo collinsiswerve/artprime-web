@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "isExample": false,
-  "updatedAt": "2026-10-31T05:34:53.313Z",
+  "updatedAt": "2026-11-03T07:37:13.831Z",
   "projects": [
     {
       "id": "arc-and-ember",
@@ -574,6 +574,272 @@
           "alt": "Long study-lounge view with a timber-frame sofa, reading chairs and a work table beneath sculptural lighting",
           "caption": "Study lounge / room to think",
           "sortOrder": 39
+        }
+      ]
+    },
+    {
+      "id": "solenne-house",
+      "title": "Solenne House",
+      "location": "",
+      "category": "Residential",
+      "year": "",
+      "description": "An interior visualisation centred on a generous double-height living room, tall glazing and warm timber accents. White wall panelling and pale stone give the shared spaces a calm backdrop, while sculptural lighting and a reflective piece in the entrance hall bring moments of character. Connected dining and kitchen spaces lead to quieter lounges, a bedroom suite and a skylit bathroom.",
+      "coverImage": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-living-02-1920.webp",
+      "coverAlt": "Double-height living room with grey sofas, pale armchairs, tall glazing and a timber television wall",
+      "sortOrder": 3,
+      "featured": true,
+      "images": [
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-living-02-1920.webp",
+          "alt": "Double-height living room with grey sofas, pale armchairs, tall glazing and a timber television wall",
+          "caption": "Living / light through the volume",
+          "sortOrder": 1
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-living-03-1920.webp",
+          "alt": "Grey lounge seating beside full-height windows, a low timber media cabinet and white panelled walls",
+          "caption": "Living / framed by daylight",
+          "sortOrder": 2
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-living-04-1920.webp",
+          "alt": "Grey sectional seating facing a timber-framed opening to the entrance hall and staircase",
+          "caption": "Living / a view towards the arrival hall",
+          "sortOrder": 3
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-living-01-1920.webp",
+          "alt": "Timber-framed doorway opening into a double-height lounge between abstract artworks and white wall panels",
+          "caption": "Living / a considered threshold",
+          "sortOrder": 4
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-entrance-07-1920.webp",
+          "alt": "Entrance hall with a mirrored sculpture, upholstered chairs and a timber staircase with glass balustrades",
+          "caption": "Arrival / sculpture and circulation",
+          "sortOrder": 5
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-entrance-39-1920.webp",
+          "alt": "Reflective sculpture on a round table beside a glass-railed timber staircase and woven lounge chair",
+          "caption": "Arrival / a sculptural focal point",
+          "sortOrder": 6
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-entrance-05-1920.webp",
+          "alt": "Close view of a reflective sculpture and round console table beside the staircase and panelled hall",
+          "caption": "Arrival / reflective details",
+          "sortOrder": 7
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-stair-06-1920.webp",
+          "alt": "Timber stair flights with glass balustrades rising beside white wall panels and a reflective sculpture",
+          "caption": "Stair / a light-filled ascent",
+          "sortOrder": 8
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dining-29-1920.webp",
+          "alt": "Oval timber dining table with pale chairs between the double-height lounge and the kitchen breakfast counter",
+          "caption": "Dining / connected spaces",
+          "sortOrder": 9
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dining-08-1920.webp",
+          "alt": "Dining table and upholstered chairs beside the kitchen counter, garden-facing glazing and indoor planting",
+          "caption": "Dining / everyday gathering",
+          "sortOrder": 10
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dining-30-1920.webp",
+          "alt": "Timber dining table with curved upholstered chairs beneath circular pendants beside a breakfast counter",
+          "caption": "Dining / soft forms and timber",
+          "sortOrder": 11
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dining-31-1920.webp",
+          "alt": "Dining setting beneath circular pendant lights facing full-height glass doors and sheer curtains",
+          "caption": "Dining / a garden-facing setting",
+          "sortOrder": 12
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dining-09-1920.webp",
+          "alt": "Dining table in the foreground with upholstered chairs, framed artworks and a wide opening to the kitchen",
+          "caption": "Dining / a view into the kitchen",
+          "sortOrder": 13
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-kitchen-11-1920.webp",
+          "alt": "Pale kitchen cabinetry and a veined stone island with breakfast stools beneath linear ceiling lighting",
+          "caption": "Kitchen / stone and clean lines",
+          "sortOrder": 14
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-kitchen-10-1920.webp",
+          "alt": "Kitchen island with yellow breakfast stools, pale cabinetry, built-in appliances and a timber doorway",
+          "caption": "Kitchen / a place to gather",
+          "sortOrder": 15
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-kitchen-12-1920.webp",
+          "alt": "Long view across a pale kitchen island towards the dining room with a sink window and open shelving",
+          "caption": "Kitchen / a complete view",
+          "sortOrder": 16
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-kitchen-13-1920.webp",
+          "alt": "Veined stone kitchen island with pale cabinetry, yellow stools and timber flooring beside a bright sink window",
+          "caption": "Kitchen / the working side",
+          "sortOrder": 17
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-kitchen-28-1920.webp",
+          "alt": "Stone breakfast counter beneath black pendant lights with the dining room and lounge visible beyond",
+          "caption": "Kitchen / looking through to dining",
+          "sortOrder": 18
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-kitchen-image-1920.webp",
+          "alt": "Kitchen island with veined stone, two yellow stools and built-in appliances beneath linear ceiling lights",
+          "caption": "Kitchen / an alternate perspective",
+          "sortOrder": 19
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-kitchen-image-1-1920.webp",
+          "alt": "Close view along a stone breakfast counter with black pendant lights, open shelving and the dining setting beyond",
+          "caption": "Kitchen / details at the counter",
+          "sortOrder": 20
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-family-lounge-16-1920.webp",
+          "alt": "Family lounge with a pale sectional sofa, abstract artwork, timber trims and tall windows",
+          "caption": "Family lounge / a quieter retreat",
+          "sortOrder": 21
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-family-lounge-36-1920.webp",
+          "alt": "Long family-lounge view with pale seating, a timber media console and garden-facing glazed doors",
+          "caption": "Family lounge / a relaxed composition",
+          "sortOrder": 22
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-family-lounge-14-1920.webp",
+          "alt": "Pale lounge seating and round coffee tables beside sheer curtains, a timber media console and circular pendants",
+          "caption": "Family lounge / layered light",
+          "sortOrder": 23
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-family-lounge-35-1920.webp",
+          "alt": "Family-lounge television wall with stone texture and a floating timber console facing pale upholstered seating",
+          "caption": "Family lounge / texture at the media wall",
+          "sortOrder": 24
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-family-lounge-15-1920.webp",
+          "alt": "Family lounge with a dark television panel above a timber console and flowers on a round coffee table",
+          "caption": "Family lounge / a comfortable setting",
+          "sortOrder": 25
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-gallery-37-1920.webp",
+          "alt": "Upper-gallery view down into the double-height lounge with full-height glazing and timber wall accents",
+          "caption": "Gallery / a view through the levels",
+          "sortOrder": 26
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-gallery-image-2-1920.webp",
+          "alt": "High view over the living-room sofas towards tall glazing, a timber television wall and white wall panels",
+          "caption": "Gallery / the living room below",
+          "sortOrder": 27
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-gallery-38-1920.webp",
+          "alt": "Upper gallery with glass balustrades overlooking the hall and dining area beneath a sculptural suspended light",
+          "caption": "Gallery / connected volumes",
+          "sortOrder": 28
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bedroom-20-1920.webp",
+          "alt": "Bedroom with a timber headboard, dark blue bedding, a pale bench and generous corner glazing",
+          "caption": "Bedroom / daylight and timber",
+          "sortOrder": 29
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bedroom-17-1920.webp",
+          "alt": "Bed with dark blue bedding and a timber headboard beneath a high window, with woven pendants and a pale bench",
+          "caption": "Bedroom / a composed retreat",
+          "sortOrder": 30
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bedroom-34-1920.webp",
+          "alt": "Bedroom with dark blue bedding, a pale bench, framed botanical prints and a timber headboard",
+          "caption": "Bedroom / soft textures and artwork",
+          "sortOrder": 31
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bedroom-18-1920.webp",
+          "alt": "View across the bed towards botanical artwork, a reading chair and tall glazed doors beside sheer curtains",
+          "caption": "Bedroom / a place to pause",
+          "sortOrder": 32
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bedroom-21-1920.webp",
+          "alt": "Wide bedroom view with a pale upholstered bench, timber media console and large garden-facing windows",
+          "caption": "Bedroom / a generous view",
+          "sortOrder": 33
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bedroom-19-1920.webp",
+          "alt": "Bedroom television and timber media console beside full-height glazed doors and sheer curtains",
+          "caption": "Bedroom / the garden-facing side",
+          "sortOrder": 34
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dressing-22-1920.webp",
+          "alt": "White fitted wardrobes on both sides of a dressing table with an arched mirror and upholstered chair",
+          "caption": "Dressing / a quiet alcove",
+          "sortOrder": 35
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dressing-24-1920.webp",
+          "alt": "Sunlit dressing area with white wardrobes, a small vanity and a round woven rug",
+          "caption": "Dressing / storage and daylight",
+          "sortOrder": 36
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-dressing-23-1920.webp",
+          "alt": "Dressing table and chair beside a timber doorway, white fitted wardrobes and indoor planting",
+          "caption": "Dressing / a connected suite",
+          "sortOrder": 37
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bathroom-25-1920.webp",
+          "alt": "Bathroom with a freestanding bath, glass shower, marble-patterned walls and a wide window above recessed storage",
+          "caption": "Bathroom / light and pale stone",
+          "sortOrder": 38
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bathroom-26-1920.webp",
+          "alt": "Freestanding bath and timber vanity beneath a skylight with marble-patterned walls and a glass shower enclosure",
+          "caption": "Bathroom / a brighter bathing space",
+          "sortOrder": 39
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bathroom-27-1920.webp",
+          "alt": "Bath beside illuminated wall niches, a timber door, a towel rail and a pale upholstered stool",
+          "caption": "Bathroom / a softer material balance",
+          "sortOrder": 40
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bathroom-32-1920.webp",
+          "alt": "Glass shower enclosure beneath a skylight with marble-patterned surfaces and recessed toiletries shelving",
+          "caption": "Bathroom / the shower enclosure",
+          "sortOrder": 41
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/solenne-house-bathroom-33-1920.webp",
+          "alt": "Timber bathroom vanity with twin basins and a tall mirror beneath the skylight beside a glass shower",
+          "caption": "Bathroom / the vanity composition",
+          "sortOrder": 42
         }
       ]
     }

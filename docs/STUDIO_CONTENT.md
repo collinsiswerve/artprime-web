@@ -2,9 +2,11 @@
 
 The Studio is a fast, static portfolio. Visitors read `assets/studio-projects.json` from the website, not Google Sheets. The publishing workflow validates the sheet and replaces this snapshot only after the import succeeds. If an import fails, the previously published website stays available.
 
-The published portfolio includes **Arc & Ember** with 52 views and **Aurelia House** with 39 views. Both are residential interior visualisations. Their public names are editorial; location and year are left blank until confirmed.
+The published portfolio includes **Arc & Ember** with 52 views, **Aurelia House** with 39 views and **Solenne House** with 42 views. All three are residential interior visualisations. Their public names are editorial; location and year are left blank until confirmed.
 
-Arc & Ember occupies `Projects!A2:K2`, with its ordered gallery in `ProjectImages!A2:E53`. Its cover is the double-height living room. Aurelia House occupies `Projects!A3:K3`, with its gallery in `ProjectImages!A54:E92`; its cover is the wide, sunlit living-room view. Arc & Ember is first in the opening portfolio and Aurelia House is second.
+Arc & Ember occupies `Projects!A2:K2`, with its ordered gallery in `ProjectImages!A2:E53`. Its cover is the double-height living room. Aurelia House occupies `Projects!A3:K3`, with its gallery in `ProjectImages!A54:E92`; its cover is the wide, sunlit living-room view. Solenne House occupies `Projects!A4:K4`, with its gallery in `ProjectImages!A93:E134`; its cover is Scene 2, the wide double-height living room with grey seating and tall glazing. Arc & Ember is first in the opening portfolio, Aurelia House is second and Solenne House is third.
+
+Solenne House retains all 42 supplied views: 39 numbered scenes and three additional image files. Its gallery moves through the living room, entrance and stair, dining room, kitchen, family lounge, upper gallery, bedroom, dressing area and bathroom. Each view has a 640px and 1920px WebP copy, preserving the source composition and proportions without enlargement. The shared project link is `studio.html?project=solenne-house`. The Instructions tab lists the three projects and explains the full-screen gallery controls.
 
 Notes on each image-link cell identify the original scene filename. Every render has a 640px WebP copy and a larger web copy. Most larger files are 1920px wide; Arc & Ember's smaller files use 1280px, and Aurelia House's single smaller source keeps its native 1272px width. All web copies preserve the original composition and aspect ratio without enlarging the source. Public website URLs ending in the standard 1280px, 1600px or 1920px filename pattern use their prepared 640px version for thumbnails; the native-width 1272px view loads directly.
 

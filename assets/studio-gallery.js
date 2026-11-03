@@ -197,7 +197,9 @@
                 this.loads.add(cancel);
                 timeout = setTimeout(fallback, 15000);
                 const variants = window.ArtPrimeCatalogue.imageVariants(image.url, [640, 960, 1600, 1920], document.baseURI);
-                element.sizes = '100vw';
+                // A landscape photo covering a tall phone is sized by height.
+                // Request enough pixels for that crop rather than stretching a thumbnail.
+                element.sizes = '(max-aspect-ratio: 8/5) 160vh, 100vw';
                 if (variants.srcset) element.srcset = variants.srcset;
                 element.src = variants.src;
             });
