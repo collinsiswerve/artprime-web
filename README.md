@@ -68,8 +68,9 @@ The portfolio includes these residential interior visualisations:
 | Arc & Ember | 52 | 2 | 2–53 | Double-height living room |
 | Aurelia House | 39 | 3 | 54–92 | Sunlit living room with a fireplace and a view towards the dining area |
 | Solenne House | 42 | 4 | 93–134 | Wide double-height living room with tall glazing, grey seating and warm timber accents |
+| Naivasha House | 30 | 5 | 135–164 | Sunlit living room beneath a pitched timber ceiling |
 
-Arc & Ember comes first, followed by Aurelia House and Solenne House. All three appear in the full-screen opening portfolio. Each gallery follows a room-by-room sequence, with source filenames recorded in the image-link cell notes so I can trace each view back to the original render. Public project names are editorial; location and year stay blank until confirmed.
+Arc & Ember comes first, followed by Aurelia House, Solenne House and Naivasha House. All four appear in the full-screen opening portfolio. Each gallery follows a room-by-room sequence, with source filenames recorded in the image-link cell notes so I can trace each view back to the original render. The first three public project names are editorial; their location and year stay blank until confirmed. Naivasha House is a four-bedroom bungalow with a garage in Naivasha; its year stays blank because it was not confirmed. Its 30-view gallery ends with six cutaway layout views, and its public link is `studio.html?project=naivasha-house`.
 
 ### Projects: one row per project
 
@@ -128,7 +129,7 @@ For Postimages, prepare a sharp WebP or JPEG before uploading because this site 
 
 Cloudinary is an optional alternative when I want automatic resizing. Public delivery URLs receive responsive widths and automatic format and quality. Unsplash and Pexels delivery URLs also receive responsive sizes. Signed URLs are preserved. A shared Google Drive page is not a direct image URL. The importer checks URL format and known sharing pages; it cannot keep an external photo host online. If a photo later fails to load, the website uses its local placeholder so browsing and enquiries keep working.
 
-Local optimized images can also live in `assets/studio/`; use their full public website URLs in the sheet. Arc & Ember has a 640px WebP copy and a 1920px copy of each view, with 1280px used for its three smaller source renders. Aurelia House also has a 640px copy of every view and larger copies up to 1920px; its one smaller source stays at its native 1272px width. Solenne House has 640px and 1920px copies of all 42 views. No renders are enlarged. The original compositions and proportions are retained. The original PNG archives are kept separately; visitors load the web copies.
+Local optimized images can also live in `assets/studio/`; use their full public website URLs in the sheet. Arc & Ember has a 640px WebP copy and a 1920px copy of each view, with 1280px used for its three smaller source renders. Aurelia House also has a 640px copy of every view and larger copies up to 1920px; its one smaller source stays at its native 1272px width. Solenne House has 640px and 1920px copies of all 42 views. Naivasha House has 640px copies of all 30 views and larger copies at 1920px, except Scene 9, which uses 1600px to avoid enlargement. No renders are enlarged. The original compositions and proportions are retained. The original PNG archives are kept separately; visitors load the web copies.
 
 Website-hosted files named `NAME-1280.webp`, `NAME-1600.webp` or `NAME-1920.webp` use a matching `NAME-640.webp` file for smaller displays and gallery thumbnails. Keep both files together. This also works when the sheet contains the full public URL. Full-screen views request larger images on tall phones so the height-filling crop stays sharp. Cards load lazily, the opening image is prioritised and the gallery prepares the next view as I browse. No embedded social feeds or animation framework is required.
 
