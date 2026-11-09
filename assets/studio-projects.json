@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "isExample": false,
-  "updatedAt": "2026-11-03T07:37:13.831Z",
+  "updatedAt": "2026-11-09T11:30:46.678Z",
   "projects": [
     {
       "id": "arc-and-ember",
@@ -840,6 +840,200 @@
           "alt": "Timber bathroom vanity with twin basins and a tall mirror beneath the skylight beside a glass shower",
           "caption": "Bathroom / the vanity composition",
           "sortOrder": 42
+        }
+      ]
+    },
+    {
+      "id": "naivasha-house",
+      "title": "Naivasha House",
+      "location": "Naivasha",
+      "category": "Residential",
+      "year": "",
+      "description": "An interior visualisation for a four-bedroom bungalow in Naivasha, with a pitched timber ceiling bringing warmth and height to the living room. Stone textures, pale upholstery and generous glazing shape the shared spaces, while an open dining area connects to a light kitchen and pantry. A home office, bedroom suite, dressing area and bathroom carry the same calm palette through timber accents and layered lighting. Cutaway views show how the rooms and garage fit together.",
+      "coverImage": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-living-07-1920.webp",
+      "coverAlt": "Sunlit living room with a pitched timber ceiling, a white sofa, grey armchairs and tall glazing",
+      "sortOrder": 4,
+      "featured": true,
+      "images": [
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-living-07-1920.webp",
+          "alt": "Sunlit living room with a pitched timber ceiling, a white sofa, grey armchairs and tall glazing",
+          "caption": "Living room / light beneath the timber roof",
+          "sortOrder": 1
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-living-09-1600.webp",
+          "alt": "White sofas and dark accent seating beneath a pitched timber ceiling, with a stone-textured pier and tall windows",
+          "caption": "Living room / the vaulted space",
+          "sortOrder": 2
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-living-04-1920.webp",
+          "alt": "Living room viewed over a white sofa towards the television wall, with timber ceiling boards and a stone-textured pier",
+          "caption": "Living room / the television wall",
+          "sortOrder": 3
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-living-06-1920.webp",
+          "alt": "White sofa and grey armchairs facing a television and low cabinet beneath the pitched timber ceiling",
+          "caption": "Living room / seating and warm timber",
+          "sortOrder": 4
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-living-11-1920.webp",
+          "alt": "White sofa and round timber coffee table beside tall curtains, with an illuminated washbasin niche beyond",
+          "caption": "Living room / connections between spaces",
+          "sortOrder": 5
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-dining-14-1920.webp",
+          "alt": "Round dining table with upholstered chairs, a circular pendant and garden-facing glazing beside the breakfast counter",
+          "caption": "Dining / daylight and gathering",
+          "sortOrder": 6
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-dining-05-1920.webp",
+          "alt": "Round timber dining table and upholstered chairs beside a textured feature panel and vertical timber detailing",
+          "caption": "Dining / texture and timber",
+          "sortOrder": 7
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-dining-01-1920.webp",
+          "alt": "Dining table beside an open kitchen breakfast counter with white stools and black pendant lights",
+          "caption": "Dining / an open kitchen connection",
+          "sortOrder": 8
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-kitchen-15-1920.webp",
+          "alt": "Pale kitchen cabinetry and a marble-patterned island with a black tap and white breakfast stools",
+          "caption": "Kitchen / the island",
+          "sortOrder": 9
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-kitchen-16-1920.webp",
+          "alt": "Kitchen island with marble-patterned end panels, pale cabinetry, timber-look flooring and recessed ceiling lighting",
+          "caption": "Kitchen / pale surfaces and warm flooring",
+          "sortOrder": 10
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-kitchen-19-1920.webp",
+          "alt": "Kitchen viewed across the island towards the dining area, with pale cabinets and warm ceiling lighting",
+          "caption": "Kitchen / looking towards the dining room",
+          "sortOrder": 11
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-pantry-28-1920.webp",
+          "alt": "Illuminated pantry shelving and pale storage cabinets arranged with jars and bottles beside a window",
+          "caption": "Pantry / organised storage",
+          "sortOrder": 12
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-washbasin-03-1920.webp",
+          "alt": "Floating washbasin and cabinet within an illuminated circular feature, framed by timber panels and planting",
+          "caption": "Washbasin niche / a circular composition",
+          "sortOrder": 13
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-washbasin-02-1920.webp",
+          "alt": "Side view of a floating washbasin niche with a large mirror, timber detailing and sheer curtains",
+          "caption": "Washbasin niche / framed in timber",
+          "sortOrder": 14
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-corridor-12-1920.webp",
+          "alt": "Timber-floored corridor with framed monochrome artwork, a stone-textured pier and warm cove lighting",
+          "caption": "Corridor / art and warm light",
+          "sortOrder": 15
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-study-66-1920.webp",
+          "alt": "Home office with a timber desk, pale storage cabinets, illuminated shelving and large garden-facing glazing",
+          "caption": "Study / a place to work",
+          "sortOrder": 16
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-bedroom-24-1920.webp",
+          "alt": "Bedroom with an upholstered bed, layered grey bedding, a circular pendant and a door to the dressing area",
+          "caption": "Bedroom / a calm private retreat",
+          "sortOrder": 17
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-bedroom-23-1920.webp",
+          "alt": "Upholstered bed framed by a grey panelled headboard wall, timber bedside units and two table lamps",
+          "caption": "Bedroom / the headboard composition",
+          "sortOrder": 18
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-bedroom-22-1920.webp",
+          "alt": "Wide bedroom view showing the bed, grey rug, television wall and a compact desk beside the dressing area",
+          "caption": "Bedroom / the complete room",
+          "sortOrder": 19
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-bedroom-20-1920.webp",
+          "alt": "Bedroom desk and television wall with illuminated shelves, timber cabinetry and a lounge chair beside the curtains",
+          "caption": "Bedroom / work and relaxation",
+          "sortOrder": 20
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-bedroom-21-1920.webp",
+          "alt": "Television wall and dressing desk with an arched mirror, illuminated shelves and a pale lounge chair",
+          "caption": "Bedroom / the media and desk wall",
+          "sortOrder": 21
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-dressing-25-1920.webp",
+          "alt": "Dressing corridor with mirrored wardrobes, timber-look flooring and recessed ceiling lighting",
+          "caption": "Dressing / mirrored storage",
+          "sortOrder": 22
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-dressing-26-1920.webp",
+          "alt": "Dressing vanity with an illuminated arched mirror, circular stool and mirrored wardrobe beside the bedroom",
+          "caption": "Dressing / a personal vanity",
+          "sortOrder": 23
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-bathroom-27-1920.webp",
+          "alt": "Bathroom with a freestanding bath, glass shower, timber vanity and pale marble-patterned wall surfaces",
+          "caption": "Bathroom / bathing and pale stone textures",
+          "sortOrder": 24
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-layout-29-1920.webp",
+          "alt": "Top-down cutaway visualisation of the four-bedroom bungalow showing the living spaces, bedroom wings and garage",
+          "caption": "Layout / the bungalow from above",
+          "sortOrder": 25
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-layout-30-1920.webp",
+          "alt": "Oblique cutaway visualisation showing the bungalow living and dining spaces, bedrooms and garage in a landscaped setting",
+          "caption": "Layout / connected living spaces",
+          "sortOrder": 26
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-layout-31-1920.webp",
+          "alt": "Oblique cutaway view of the bungalow showing the kitchen, living spaces, bedroom wings and central garage",
+          "caption": "Layout / the arrangement of rooms",
+          "sortOrder": 27
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-layout-32-1920.webp",
+          "alt": "Cutaway perspective from the opposite side of the bungalow showing its bedrooms, living areas and garage",
+          "caption": "Layout / another perspective",
+          "sortOrder": 28
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-layout-33-1920.webp",
+          "alt": "Angled cutaway visualisation showing the bungalow bedroom wings around the shared living and service spaces",
+          "caption": "Layout / shared and private spaces",
+          "sortOrder": 29
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/naivasha-house-layout-34-1920.webp",
+          "alt": "Overhead cutaway view of the bungalow showing the bedroom wings, central garage, dining room and lounge",
+          "caption": "Layout / the overall plan",
+          "sortOrder": 30
         }
       ]
     }
