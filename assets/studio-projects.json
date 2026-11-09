@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "isExample": false,
-  "updatedAt": "2026-11-09T11:30:46.678Z",
+  "updatedAt": "2026-11-09T12:33:44.920Z",
   "projects": [
     {
       "id": "arc-and-ember",
@@ -1034,6 +1034,704 @@
           "alt": "Overhead cutaway view of the bungalow showing the bedroom wings, central garage, dining room and lounge",
           "caption": "Layout / the overall plan",
           "sortOrder": 30
+        }
+      ]
+    },
+    {
+      "id": "thika-greens-house",
+      "title": "Thika Greens House",
+      "location": "Thika Greens",
+      "category": "Residential",
+      "year": "",
+      "description": "An interior visualisation for a maisonette in Thika Greens, bringing soft neutral tones, green accents and warm timber together. A generous lounge connects to an oval dining area and a muted green kitchen with a dark stone-look island. Layered lighting, herringbone flooring and textured walls continue through the bedrooms, dressing rooms and home office. A family lounge, colourful children's playroom, games room, gym and planted balconies create spaces for both quiet routines and shared time.",
+      "coverImage": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-living-01-1920.webp",
+      "coverAlt": "Living room with a deep green sofa, pale armchairs, round stone-look coffee tables and a looping chandelier",
+      "sortOrder": 5,
+      "featured": true,
+      "images": [
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-living-01-1920.webp",
+          "alt": "Living room with a deep green sofa, pale armchairs, round stone-look coffee tables and a looping chandelier",
+          "caption": "Living room / a place to gather",
+          "sortOrder": 1
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-living-02-1920.webp",
+          "alt": "Living room looking past round coffee tables and pale armchairs towards the connected dining area",
+          "caption": "Living room / connected spaces",
+          "sortOrder": 2
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-living-03-1920.webp",
+          "alt": "Wide living-room view with pale sofas, a green sofa and a television wall beneath sculptural lighting",
+          "caption": "Living room / the complete room",
+          "sortOrder": 3
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-living-04-1920.webp",
+          "alt": "Living room viewed over a dark sofa towards a television set within a veined stone-look wall",
+          "caption": "Living room / the television wall",
+          "sortOrder": 4
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dining-01-1920.webp",
+          "alt": "Oval dining table with upholstered chairs, a curved linear pendant and full-height curtains",
+          "caption": "Dining / light above the table",
+          "sortOrder": 5
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dining-02-1920.webp",
+          "alt": "Dining area with an oval timber table, upholstered chairs and a view towards the kitchen and staircase",
+          "caption": "Dining / the kitchen connection",
+          "sortOrder": 6
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dining-03-1920.webp",
+          "alt": "Dining table beside a circular mirror and textured wall, with the kitchen breakfast counter beyond",
+          "caption": "Dining / layers of texture",
+          "sortOrder": 7
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dining-04-1920.webp",
+          "alt": "Oval dining table beneath a curved pendant, facing the muted green kitchen and stone-look island",
+          "caption": "Dining / gathering around the table",
+          "sortOrder": 8
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-kitchen-01-1920.webp",
+          "alt": "Muted green kitchen with a dark veined island, herringbone flooring and a view towards the dining area",
+          "caption": "Kitchen / the island and dining connection",
+          "sortOrder": 9
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-kitchen-02-1920.webp",
+          "alt": "Kitchen island with a black veined surface, green cabinetry, a window and open shelving",
+          "caption": "Kitchen / green cabinetry and dark stone textures",
+          "sortOrder": 10
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-kitchen-03-1920.webp",
+          "alt": "Kitchen viewed across a muted green breakfast counter towards the open living and dining spaces",
+          "caption": "Kitchen / the breakfast counter",
+          "sortOrder": 11
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-kitchen-04-1920.webp",
+          "alt": "Breakfast counter with upholstered stools, green cabinets and a veined splashback beneath dark pendants",
+          "caption": "Kitchen / a place for everyday meals",
+          "sortOrder": 12
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-pantry-01-1920.webp",
+          "alt": "Pantry with muted green open shelves, lower cupboards and a compact worktop",
+          "caption": "Pantry / organised storage",
+          "sortOrder": 13
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-pantry-02-1920.webp",
+          "alt": "Pantry shelving and a worktop extending around the corner beside a pale wall",
+          "caption": "Pantry / shelves and work surfaces",
+          "sortOrder": 14
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-pantry-03-1920.webp",
+          "alt": "Pantry with open shelving, green cabinets and a timber louvred door",
+          "caption": "Pantry / the storage wall",
+          "sortOrder": 15
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-pantry-04-1920.webp",
+          "alt": "Pantry viewed between tall open shelves towards a window, with a sink along the worktop",
+          "caption": "Pantry / the window and worktop",
+          "sortOrder": 16
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-hall-01-1920.webp",
+          "alt": "Pair of terracotta-toned abstract artworks set against a pale wall with fine dark horizontal trim",
+          "caption": "Hall / art in warm earth tones",
+          "sortOrder": 17
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-hall-02-1920.webp",
+          "alt": "Round mirror above a slim marble-look console with timber legs and small decorative objects",
+          "caption": "Hall / a circular composition",
+          "sortOrder": 18
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-hall-03-1920.webp",
+          "alt": "Pale corridor with a round mirror, slim console and terracotta-toned artwork leading towards timber doors",
+          "caption": "Hall / a considered arrival",
+          "sortOrder": 19
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-hall-04-1920.webp",
+          "alt": "Long corridor with terracotta-toned artwork, a slim console and an opening to the family lounge",
+          "caption": "Hall / connections between rooms",
+          "sortOrder": 20
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-hall-05-1920.webp",
+          "alt": "Floating washbasin with an arched mirror, pale drawers and a textured wall beside the staircase",
+          "caption": "Washbasin niche / an arched reflection",
+          "sortOrder": 21
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-cloakroom-01-1920.webp",
+          "alt": "Cloakroom with a floating vanity, illuminated rectangular mirror, toilet and framed artwork",
+          "caption": "Cloakroom / simple pale finishes",
+          "sortOrder": 22
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-guest-bedroom-01-1920.webp",
+          "alt": "Guest bedroom with a grey panelled headboard wall, an upholstered bed and warm bedside lighting",
+          "caption": "Guest bedroom / a quiet retreat",
+          "sortOrder": 23
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-guest-bedroom-02-1920.webp",
+          "alt": "Guest bedroom with an upholstered bed, a lounge chair, round mirror and a view into the dressing space",
+          "caption": "Guest bedroom / room to unwind",
+          "sortOrder": 24
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-guest-bedroom-03-1920.webp",
+          "alt": "Wide guest bedroom with pale seating, green curtains and a bed beneath a sculptural pendant",
+          "caption": "Guest bedroom / the complete room",
+          "sortOrder": 25
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-guest-bedroom-04-1920.webp",
+          "alt": "Guest bedroom seating area with pale armchairs, green curtains and framed monochrome artwork",
+          "caption": "Guest bedroom / a corner to sit",
+          "sortOrder": 26
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-guest-dressing-01-1920.webp",
+          "alt": "Dressing area with an illuminated oval mirror, a timber vanity, a green stool and pale wardrobes",
+          "caption": "Guest dressing / a personal vanity",
+          "sortOrder": 27
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-guest-dressing-02-1920.webp",
+          "alt": "Dressing area viewed past a timber vanity and oval mirror towards pale wardrobe doors",
+          "caption": "Guest dressing / storage and reflection",
+          "sortOrder": 28
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-guest-dressing-03-1920.webp",
+          "alt": "Dressing vanity with a tall oval mirror, small upholstered stool and open timber shelves",
+          "caption": "Guest dressing / timber and soft light",
+          "sortOrder": 29
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-laundry-01-1920.webp",
+          "alt": "Compact laundry with a front-loading machine, tall shelves, a hanging rail and a small sink",
+          "caption": "Laundry / practical everyday storage",
+          "sortOrder": 30
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-linen-01-1920.webp",
+          "alt": "Linen cupboards with pale doors, dark handles and open timber shelves holding folded towels",
+          "caption": "Linen store / a place for everything",
+          "sortOrder": 31
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-linen-02-1920.webp",
+          "alt": "Pale linen cupboards and timber shelves viewed beside a doorway",
+          "caption": "Linen store / built-in storage",
+          "sortOrder": 32
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-stairs-01-1920.webp",
+          "alt": "Timber staircase with a glass balustrade and dark handrail, framed by wall art and an arched mirror",
+          "caption": "Staircase / timber and glass",
+          "sortOrder": 33
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-landing-01-1920.webp",
+          "alt": "Upper landing with pale flooring, timber doors, planted greenery and a large monochrome portrait",
+          "caption": "Upper landing / art and greenery",
+          "sortOrder": 34
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-landing-02-1920.webp",
+          "alt": "Upper landing with a floating console, abstract artwork, timber doors and a glass stair balustrade",
+          "caption": "Upper landing / a pause between rooms",
+          "sortOrder": 35
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-landing-03-1920.webp",
+          "alt": "Upper landing viewed past the stair opening towards timber doors and textured wall finishes",
+          "caption": "Upper landing / the stair connection",
+          "sortOrder": 36
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-upper-hall-01-1920.webp",
+          "alt": "Upper corridor lined with framed monochrome photographs, timber doors and a pale textured wall",
+          "caption": "Upper hall / a gallery of photographs",
+          "sortOrder": 37
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-upper-hall-02-1920.webp",
+          "alt": "Upper corridor with framed photographs and a glazed stair edge leading towards full-height curtains",
+          "caption": "Upper hall / a framed perspective",
+          "sortOrder": 38
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-upper-hall-03-1920.webp",
+          "alt": "Upright piano beneath a framed lion portrait beside timber doors and the family entertainment area",
+          "caption": "Upper hall / a place for music",
+          "sortOrder": 39
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-upper-hall-04-1920.webp",
+          "alt": "Upper landing with a glass stair balustrade, textured wall and a long view towards timber doors",
+          "caption": "Upper landing / looking along the gallery",
+          "sortOrder": 40
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-upper-hall-05-1920.webp",
+          "alt": "Upper landing viewed past a colourful playroom and the stair opening towards a console and round mirror",
+          "caption": "Upper landing / spaces for the family",
+          "sortOrder": 41
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-family-lounge-01-1920.webp",
+          "alt": "Family lounge with a curved grey sofa, sculptural timber coffee table, framed art and layered ceiling lighting",
+          "caption": "Family lounge / a quieter place to gather",
+          "sortOrder": 42
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-family-lounge-02-1920.webp",
+          "alt": "Family lounge with a grey corner sofa against a panelled wall and warm timber details",
+          "caption": "Family lounge / soft seating and warm timber",
+          "sortOrder": 43
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-family-lounge-03-1920.webp",
+          "alt": "Family lounge viewed across grey seating towards a console, artwork and full-height curtains",
+          "caption": "Family lounge / a calm composition",
+          "sortOrder": 44
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-family-lounge-04-1920.webp",
+          "alt": "Grey sofa and a sculptural timber coffee table beneath framed artwork and a looped pendant",
+          "caption": "Family lounge / natural shapes and soft tones",
+          "sortOrder": 45
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-office-01-1920.webp",
+          "alt": "Home office with a timber desk, upholstered visitor chairs, a desk lamp and full-height curtains",
+          "caption": "Home office / a focused place to work",
+          "sortOrder": 46
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-office-02-1920.webp",
+          "alt": "Home office with a timber desk, dark shelving, a textured feature wall and framed drawings",
+          "caption": "Home office / books and drawings",
+          "sortOrder": 47
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-office-03-1920.webp",
+          "alt": "Timber desk and upholstered chairs in front of illuminated dark shelves and a stone-textured pier",
+          "caption": "Home office / the desk composition",
+          "sortOrder": 48
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-office-04-1920.webp",
+          "alt": "Home office viewed along a timber desk towards garden-facing glazing, with bookshelves along one wall",
+          "caption": "Home office / a view beyond the desk",
+          "sortOrder": 49
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-main-bedroom-01-1920.webp",
+          "alt": "Main bedroom with a large upholstered bed, pale seating, green curtains and a geometric headboard feature",
+          "caption": "Main bedroom / a generous private retreat",
+          "sortOrder": 50
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-main-bedroom-02-1920.webp",
+          "alt": "Main bedroom with a bed, wall-mounted television, framed art and an illuminated display shelf",
+          "caption": "Main bedroom / the media wall",
+          "sortOrder": 51
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-main-bedroom-03-1920.webp",
+          "alt": "Main bedroom with curved pale seating beside the bed beneath a looping pendant",
+          "caption": "Main bedroom / a place to settle",
+          "sortOrder": 52
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-main-bedroom-04-1920.webp",
+          "alt": "Wide main bedroom showing the bed, pale seating, green curtains and herringbone flooring",
+          "caption": "Main bedroom / the complete room",
+          "sortOrder": 53
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-main-bedroom-05-1920.webp",
+          "alt": "Main bedroom sitting area with a pale sofa, tall curtains and a circular ceiling light",
+          "caption": "Main bedroom / the sitting area",
+          "sortOrder": 54
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-vanity-01-1920.webp",
+          "alt": "Bright dressing room with pale wardrobes, open timber shelves and a vanity beneath an oval mirror",
+          "caption": "Dressing room / light and reflection",
+          "sortOrder": 55
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-vanity-02-1920.webp",
+          "alt": "Dressing-room wardrobes with pale doors, long dark handles, timber shelves and a small vanity",
+          "caption": "Dressing room / open and concealed storage",
+          "sortOrder": 56
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-vanity-03-1920.webp",
+          "alt": "Dressing room viewed past pale wardrobes and a timber vanity towards a doorway and wall art",
+          "caption": "Dressing room / connected storage",
+          "sortOrder": 57
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-vanity-04-1920.webp",
+          "alt": "Dressing vanity and pale cupboards framing two artworks and a small upholstered chair",
+          "caption": "Dressing room / a personal corner",
+          "sortOrder": 58
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-storage-01-1920.webp",
+          "alt": "Walk-in dressing corridor with pale wardrobe doors, dark handles and open timber shelves",
+          "caption": "Dressing room / a sequence of wardrobes",
+          "sortOrder": 59
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-storage-02-1920.webp",
+          "alt": "Pale wardrobe doors with long dark handles beside open timber shelving",
+          "caption": "Dressing room / clean lines and timber accents",
+          "sortOrder": 60
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-storage-03-1920.webp",
+          "alt": "Dressing room with pale cupboards, timber display shelves and a small vanity visible beyond",
+          "caption": "Dressing room / storage around the corner",
+          "sortOrder": 61
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-hall-01-1920.webp",
+          "alt": "Timber-floored dressing corridor with artwork, a large leafy plant and pale wardrobe doors",
+          "caption": "Dressing hall / art and greenery",
+          "sortOrder": 62
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-hall-02-1920.webp",
+          "alt": "Dressing corridor with a full-height mirror, timber doors and open shoe shelving",
+          "caption": "Dressing hall / mirrored connections",
+          "sortOrder": 63
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-hall-03-1920.webp",
+          "alt": "Pale full-height wardrobes and open timber shoe shelves with herringbone flooring",
+          "caption": "Dressing hall / shoe and wardrobe storage",
+          "sortOrder": 64
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-dressing-hall-04-1920.webp",
+          "alt": "Pale wardrobes, dark central cabinet doors and open shelves beside a small upholstered stool",
+          "caption": "Dressing hall / a complete storage wall",
+          "sortOrder": 65
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-suite-01-1920.webp",
+          "alt": "Bright bathroom with twin basins, a glazed shower, leafy planting and a graphic black-and-white floor",
+          "caption": "Bathroom / a graphic floor and pale surfaces",
+          "sortOrder": 66
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-suite-02-1920.webp",
+          "alt": "Long floating vanity with twin basins, illuminated mirrors and pale drawers beneath a wide window",
+          "caption": "Bathroom / the twin vanity",
+          "sortOrder": 67
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-suite-03-1920.webp",
+          "alt": "Bathroom viewed past a floating vanity and glass shower towards a patterned floor and timber doors",
+          "caption": "Bathroom / the complete space",
+          "sortOrder": 68
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-suite-04-1920.webp",
+          "alt": "Bathroom with a glass shower enclosure, illuminated shelves, pale stone-look walls and a toilet",
+          "caption": "Bathroom / glass and pale stone textures",
+          "sortOrder": 69
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-evening-01-1920.webp",
+          "alt": "Bathroom in evening light with a glass shower, a corner bath and a floating vanity",
+          "caption": "Bathroom / an evening atmosphere",
+          "sortOrder": 70
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-evening-02-1920.webp",
+          "alt": "Bathroom vanity and illuminated mirror beside a glazed shower and a corner bath",
+          "caption": "Bathroom / the mirror and bathing area",
+          "sortOrder": 71
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-evening-03-1920.webp",
+          "alt": "Corner bath beneath dark windows with a glass shower alongside",
+          "caption": "Bathroom / bathing at night",
+          "sortOrder": 72
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-one-01-1920.webp",
+          "alt": "Bedroom with an upholstered bed, timber bedside furniture and a dark woven pendant above a pale rug",
+          "caption": "Bedroom one / soft layers and woven light",
+          "sortOrder": 73
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-one-02-1920.webp",
+          "alt": "Bedroom with an upholstered bed, dark feature wall, round mirror and a small lounge chair",
+          "caption": "Bedroom one / a quiet corner",
+          "sortOrder": 74
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-one-03-1920.webp",
+          "alt": "Bedroom viewed beside an upholstered bed towards full-height curtains and a dark woven pendant",
+          "caption": "Bedroom one / a restful composition",
+          "sortOrder": 75
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-one-04-1920.webp",
+          "alt": "Bedroom television wall with a low pale cabinet, timber trim, framed artwork and leafy planting",
+          "caption": "Bedroom one / the television wall",
+          "sortOrder": 76
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-one-05-1920.webp",
+          "alt": "Bedroom viewed past a dressing table and round mirror towards the bed and media wall",
+          "caption": "Bedroom one / dressing and relaxation",
+          "sortOrder": 77
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-one-storage-01-1920.webp",
+          "alt": "Narrow dressing space with pale wardrobes, open shelves and a small vanity beside a window",
+          "caption": "Bedroom one / a compact dressing space",
+          "sortOrder": 78
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-one-storage-02-1920.webp",
+          "alt": "Pale wardrobe doors with long dark handles beside open timber shelves and a dressing desk",
+          "caption": "Bedroom one / built-in storage",
+          "sortOrder": 79
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-one-01-1920.webp",
+          "alt": "Pale bathroom with a glass shower, dark fittings, a floating vanity and a toilet",
+          "caption": "Bathroom one / simple pale finishes",
+          "sortOrder": 80
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-one-02-1920.webp",
+          "alt": "Glass shower enclosure with dark fittings, a window and warm beige wall tiles",
+          "caption": "Bathroom one / the shower enclosure",
+          "sortOrder": 81
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-one-03-1920.webp",
+          "alt": "Floating bathroom vanity with a rectangular illuminated mirror and pale drawers beside a toilet",
+          "caption": "Bathroom one / an illuminated vanity",
+          "sortOrder": 82
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-two-01-1920.webp",
+          "alt": "Bedroom with a blue geometric feature wall, upholstered bed, timber headboard trim and a beaded chandelier",
+          "caption": "Bedroom two / blue and warm timber",
+          "sortOrder": 83
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-two-02-1920.webp",
+          "alt": "Bedroom with a blue patterned wall, framed abstract artwork, pale bedding and a mustard-toned seat",
+          "caption": "Bedroom two / a playful accent palette",
+          "sortOrder": 84
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-two-03-1920.webp",
+          "alt": "Wide bedroom showing the bed, blue geometric wall, full-height curtains and mustard-toned seating",
+          "caption": "Bedroom two / the complete room",
+          "sortOrder": 85
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-two-storage-01-1920.webp",
+          "alt": "Pale wardrobes with long dark handles beside open timber shelves and a compact vanity",
+          "caption": "Bedroom two / wardrobe storage",
+          "sortOrder": 86
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-two-storage-02-1920.webp",
+          "alt": "Dressing corridor with timber doors, pale wardrobes and a small vanity beside a window",
+          "caption": "Bedroom two / the dressing connection",
+          "sortOrder": 87
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-two-01-1920.webp",
+          "alt": "Bathroom with a glazed shower, warm beige tiles, dark fittings and a timber door",
+          "caption": "Bathroom two / the shower and warm tiles",
+          "sortOrder": 88
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-two-02-1920.webp",
+          "alt": "Bathroom vanity with an illuminated mirror, pale drawers and a toilet beside a dark window",
+          "caption": "Bathroom two / a practical vanity",
+          "sortOrder": 89
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-two-03-1920.webp",
+          "alt": "Pale bathroom vanity and illuminated rectangular mirror beside a toilet and timber door",
+          "caption": "Bathroom two / pale surfaces and light",
+          "sortOrder": 90
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-three-01-1920.webp",
+          "alt": "Bedroom with a pale upholstered bed, textured feature wall, framed artwork and a beaded chandelier",
+          "caption": "Bedroom three / a calm natural palette",
+          "sortOrder": 91
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-three-02-1920.webp",
+          "alt": "Bedroom with a dressing desk, upholstered bed, framed abstract artwork and a textured headboard wall",
+          "caption": "Bedroom three / work and rest",
+          "sortOrder": 92
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-three-03-1920.webp",
+          "alt": "Wide bedroom with an upholstered bed, layered neutral bedding, dark curtains and warm timber flooring",
+          "caption": "Bedroom three / the complete room",
+          "sortOrder": 93
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bedroom-three-storage-01-1920.webp",
+          "alt": "Pale wardrobe doors with long dark handles and open timber shelves beside a doorway",
+          "caption": "Bedroom three / concealed storage",
+          "sortOrder": 94
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-three-01-1920.webp",
+          "alt": "Bathroom with a glass shower, dark fittings, floating vanity and warm stone-look tiles",
+          "caption": "Bathroom three / glass and warm textures",
+          "sortOrder": 95
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-bathroom-three-02-1920.webp",
+          "alt": "Overhead bathroom view showing a glazed shower, toilet and pale tiled floor beside a timber door",
+          "caption": "Bathroom three / the arrangement of fittings",
+          "sortOrder": 96
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-playroom-01-1920.webp",
+          "alt": "Children's playroom with colourful floor mats, small chairs, bookshelves and a rounded timber wall feature",
+          "caption": "Playroom / colour and imagination",
+          "sortOrder": 97
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-playroom-02-1920.webp",
+          "alt": "Children's playroom with animal illustrations, colourful activity mats, a small table and timber wall panels",
+          "caption": "Playroom / a space to explore",
+          "sortOrder": 98
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-playroom-03-1920.webp",
+          "alt": "Playroom with animal wall illustrations, two mustard-coloured armchairs and a small central toy unit",
+          "caption": "Playroom / playful characters",
+          "sortOrder": 99
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-playroom-04-1920.webp",
+          "alt": "Colourful playroom with low storage, a small activity table, animal illustrations and full-height curtains",
+          "caption": "Playroom / room for everyday play",
+          "sortOrder": 100
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-games-room-01-1920.webp",
+          "alt": "Games room with a table football game, pale sofas, a television and open shelving under layered ceiling lighting",
+          "caption": "Games room / time together",
+          "sortOrder": 101
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-games-room-02-1920.webp",
+          "alt": "Games room viewed past a table football game towards sofas, a rug and a television wall",
+          "caption": "Games room / play and relaxation",
+          "sortOrder": 102
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-games-room-03-1920.webp",
+          "alt": "Television wall with open dark shelving and a low cabinet in a family games room",
+          "caption": "Games room / the television wall",
+          "sortOrder": 103
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-games-room-04-1920.webp",
+          "alt": "Games room with pale seating, a table football game and timber doors beneath geometric ceiling lighting",
+          "caption": "Games room / the complete space",
+          "sortOrder": 104
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-games-room-05-1920.webp",
+          "alt": "Family games room seating with pale sofas, tall curtains and a leafy plant",
+          "caption": "Games room / a comfortable pause",
+          "sortOrder": 105
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-gym-01-1920.webp",
+          "alt": "Home gym with a treadmill, exercise bike, weight bench and full-height curtains beneath timber ceiling trim",
+          "caption": "Home gym / a daily routine",
+          "sortOrder": 106
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-gym-02-1920.webp",
+          "alt": "Home gym with a treadmill, exercise bike and training equipment reflected in a mirrored wall",
+          "caption": "Home gym / mirrored space",
+          "sortOrder": 107
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-gym-03-1920.webp",
+          "alt": "Home gym viewed alongside a treadmill and exercise bike towards a full-height mirrored wall",
+          "caption": "Home gym / equipment and reflection",
+          "sortOrder": 108
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-balcony-one-01-1920.webp",
+          "alt": "Balcony at night with a woven hanging chair, checkerboard floor tiles and dark-framed windows",
+          "caption": "Balcony / a hanging chair at night",
+          "sortOrder": 109
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-balcony-one-02-1920.webp",
+          "alt": "Night-time balcony with pale outdoor seating, a woven hanging chair and black-and-white floor tiles",
+          "caption": "Balcony / a sheltered place to sit",
+          "sortOrder": 110
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-balcony-two-01-1920.webp",
+          "alt": "Planted balcony at night with timber outdoor seating, a low table and checkerboard floor tiles",
+          "caption": "Balcony / greenery and outdoor seating",
+          "sortOrder": 111
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-balcony-two-02-1920.webp",
+          "alt": "Balcony with timber lounge chairs, potted plants and black-and-white floor tiles beneath a dark sky",
+          "caption": "Balcony / a place to unwind",
+          "sortOrder": 112
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-main-balcony-01-1920.webp",
+          "alt": "Long balcony at night with blue-grey outdoor cushions, timber seating and checkerboard floor tiles",
+          "caption": "Main balcony / an evening retreat",
+          "sortOrder": 113
+        },
+        {
+          "url": "https://collinsiswerve.github.io/artprime-web/assets/studio/thika-greens-house-main-balcony-02-1920.webp",
+          "alt": "Night-time balcony viewed beside full-height curtains towards outdoor lounge seating and potted greenery",
+          "caption": "Main balcony / the final view",
+          "sortOrder": 114
         }
       ]
     }
